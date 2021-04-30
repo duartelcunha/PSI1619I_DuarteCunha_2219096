@@ -159,6 +159,7 @@ namespace WindowsFormsApp1
             this.RegistoLinkLabel.TabIndex = 11;
             this.RegistoLinkLabel.TabStop = true;
             this.RegistoLinkLabel.Text = "Não tens uma conta? Cria aqui a tua conta";
+            this.RegistoLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.RegistoLinkLabel_LinkClicked);
             // 
             // cancelButton
             // 

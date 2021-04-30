@@ -39,6 +39,12 @@ namespace WindowsFormsApp1
         {
             Application.Exit();
         }
+
+        private void verUtilizadoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var veruser = new VerUtilizador();
+            veruser.Show();
+        }
     }
 
 }

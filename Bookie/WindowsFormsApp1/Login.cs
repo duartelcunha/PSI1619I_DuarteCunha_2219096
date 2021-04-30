@@ -19,22 +19,20 @@ namespace WindowsFormsApp1
         SqlConnection con;
         SqlCommand cmd;
         SqlDataReader reader;
-        //public static string stringConnection = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_LuisAgostinho_2219105;User Id=PSIM1619I_LuisAgostinho_2219105;Password=6qA8C127";
+        
         public Login()
         {
             InitializeComponent();
         }
 
  
-
-
         private void loginButton_Click(object sender, EventArgs e)
         {
             String result = "";
             try
             {
                 con = new SqlConnection(@"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21");
-                cmd = new SqlCommand("select * from login where UserId=@uid and Password=@password", con);
+                cmd = new SqlCommand("SELECT * FROM registo WHERE Username=@uid and Password=@password", con);
                 con.Open();
                 cmd.Parameters.AddWithValue("@uid", usernameTextBox.Text.ToString());
                 cmd.Parameters.AddWithValue("@password", passwordTextBox.Text.ToString());
@@ -43,7 +41,7 @@ namespace WindowsFormsApp1
                 {
                     if (reader["Password"].ToString().Equals(passwordTextBox.Text.ToString(), StringComparison.InvariantCulture))
                     {
-                        UserID = reader["UserId"].ToString();
+                        UserID = reader["Username"].ToString();
                         result = "1";
                     }
                     else
@@ -58,7 +56,7 @@ namespace WindowsFormsApp1
                 con.Close();
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -77,7 +75,7 @@ namespace WindowsFormsApp1
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void MPCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -96,6 +94,13 @@ namespace WindowsFormsApp1
         {
             passwordTextBox.UseSystemPasswordChar = true;
             usernameTextBox.Select();
+        }
+
+        private void RegistoLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var Registo = new Registo();
+            Registo.Closed += (s, args) => this.Close();
+            Registo.Show();
         }
     }
 }

@@ -30,18 +30,41 @@ namespace WindowsFormsApp1
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.livrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.utilizadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verUtilizadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inserirUtilizadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.livrosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.requisitarLivroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verLivrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inserirLivrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.retornarLivroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.requisitarLivroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.detalhesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.AllowDrop = true;
+            this.menuStrip1.BackColor = System.Drawing.Color.White;
+            this.menuStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.livrosToolStripMenuItem,
+            this.utilizadorToolStripMenuItem,
+            this.livrosToolStripMenuItem1,
+            this.retornarLivroToolStripMenuItem,
+            this.requisitarLivroToolStripMenuItem,
+            this.detalhesToolStripMenuItem,
+            this.sairToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.menuStrip1.Size = new System.Drawing.Size(269, 549);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
             // 
             // livrosToolStripMenuItem
             // 
@@ -74,6 +97,7 @@ namespace WindowsFormsApp1
             this.verUtilizadoresToolStripMenuItem.Name = "verUtilizadoresToolStripMenuItem";
             this.verUtilizadoresToolStripMenuItem.Size = new System.Drawing.Size(254, 30);
             this.verUtilizadoresToolStripMenuItem.Text = "Ver Utilizadores";
+            this.verUtilizadoresToolStripMenuItem.Click += new System.EventHandler(this.verUtilizadoresToolStripMenuItem_Click);
             // 
             // inserirUtilizadoresToolStripMenuItem
             // 
@@ -81,29 +105,11 @@ namespace WindowsFormsApp1
             this.inserirUtilizadoresToolStripMenuItem.Size = new System.Drawing.Size(254, 30);
             this.inserirUtilizadoresToolStripMenuItem.Text = "Inserir Utilizadores";
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.AllowDrop = true;
-            this.menuStrip1.BackColor = System.Drawing.Color.White;
-            this.menuStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.livrosToolStripMenuItem,
-            this.utilizadorToolStripMenuItem,
-            this.livrosToolStripMenuItem1,
-            this.requisitarLivroToolStripMenuItem,
-            this.retornarLivroToolStripMenuItem,
-            this.detalhesToolStripMenuItem,
-            this.sairToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip1.Size = new System.Drawing.Size(269, 549);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
             // livrosToolStripMenuItem1
             // 
+            this.livrosToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.verLivrosToolStripMenuItem,
+            this.inserirLivrosToolStripMenuItem});
             this.livrosToolStripMenuItem1.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.livrosToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("livrosToolStripMenuItem1.Image")));
             this.livrosToolStripMenuItem1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -112,15 +118,17 @@ namespace WindowsFormsApp1
             this.livrosToolStripMenuItem1.Size = new System.Drawing.Size(256, 68);
             this.livrosToolStripMenuItem1.Text = "Livros";
             // 
-            // requisitarLivroToolStripMenuItem
+            // verLivrosToolStripMenuItem
             // 
-            this.requisitarLivroToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.requisitarLivroToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("requisitarLivroToolStripMenuItem.Image")));
-            this.requisitarLivroToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.requisitarLivroToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.requisitarLivroToolStripMenuItem.Name = "requisitarLivroToolStripMenuItem";
-            this.requisitarLivroToolStripMenuItem.Size = new System.Drawing.Size(256, 68);
-            this.requisitarLivroToolStripMenuItem.Text = "Requisitar Livro";
+            this.verLivrosToolStripMenuItem.Name = "verLivrosToolStripMenuItem";
+            this.verLivrosToolStripMenuItem.Size = new System.Drawing.Size(200, 30);
+            this.verLivrosToolStripMenuItem.Text = "Ver Livros";
+            // 
+            // inserirLivrosToolStripMenuItem
+            // 
+            this.inserirLivrosToolStripMenuItem.Name = "inserirLivrosToolStripMenuItem";
+            this.inserirLivrosToolStripMenuItem.Size = new System.Drawing.Size(200, 30);
+            this.inserirLivrosToolStripMenuItem.Text = "Inserir Livros";
             // 
             // retornarLivroToolStripMenuItem
             // 
@@ -131,6 +139,16 @@ namespace WindowsFormsApp1
             this.retornarLivroToolStripMenuItem.Name = "retornarLivroToolStripMenuItem";
             this.retornarLivroToolStripMenuItem.Size = new System.Drawing.Size(256, 68);
             this.retornarLivroToolStripMenuItem.Text = "Retornar Livro";
+            // 
+            // requisitarLivroToolStripMenuItem
+            // 
+            this.requisitarLivroToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.requisitarLivroToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("requisitarLivroToolStripMenuItem.Image")));
+            this.requisitarLivroToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.requisitarLivroToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.requisitarLivroToolStripMenuItem.Name = "requisitarLivroToolStripMenuItem";
+            this.requisitarLivroToolStripMenuItem.Size = new System.Drawing.Size(256, 68);
+            this.requisitarLivroToolStripMenuItem.Text = "Requisitar Livro";
             // 
             // detalhesToolStripMenuItem
             // 
@@ -187,5 +205,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ToolStripMenuItem retornarLivroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem detalhesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verLivrosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inserirLivrosToolStripMenuItem;
     }
 }
