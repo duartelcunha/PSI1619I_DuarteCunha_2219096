@@ -70,9 +70,9 @@ namespace WindowsFormsApp1
 
         private void Cancelar_Click_1(object sender, EventArgs e)
         {
-            var login = new Login();
-            this.Hide();
-            login.Show();
+            
+            this.Close();
+            
         }
 
         private void contactoTextBox_TextChanged(object sender, EventArgs e)
@@ -167,6 +167,9 @@ namespace WindowsFormsApp1
             }
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

@@ -40,7 +40,6 @@ namespace WindowsFormsApp1
             this.usernameTextBox = new System.Windows.Forms.TextBox();
             this.loginButton = new System.Windows.Forms.Button();
             this.MPCheckBox = new System.Windows.Forms.CheckBox();
-            this.RegistoLinkLabel = new System.Windows.Forms.LinkLabel();
             this.cancelButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -148,19 +147,6 @@ namespace WindowsFormsApp1
             this.MPCheckBox.UseVisualStyleBackColor = true;
             this.MPCheckBox.CheckedChanged += new System.EventHandler(this.MPCheckBox_CheckedChanged);
             // 
-            // RegistoLinkLabel
-            // 
-            this.RegistoLinkLabel.AutoSize = true;
-            this.RegistoLinkLabel.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RegistoLinkLabel.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.RegistoLinkLabel.Location = new System.Drawing.Point(30, 420);
-            this.RegistoLinkLabel.Name = "RegistoLinkLabel";
-            this.RegistoLinkLabel.Size = new System.Drawing.Size(230, 16);
-            this.RegistoLinkLabel.TabIndex = 11;
-            this.RegistoLinkLabel.TabStop = true;
-            this.RegistoLinkLabel.Text = "Não tens uma conta? Cria aqui a tua conta";
-            this.RegistoLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.RegistoLinkLabel_LinkClicked);
-            // 
             // cancelButton
             // 
             this.cancelButton.BackColor = System.Drawing.Color.Chocolate;
@@ -180,9 +166,8 @@ namespace WindowsFormsApp1
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(296, 472);
+            this.ClientSize = new System.Drawing.Size(296, 441);
             this.Controls.Add(this.cancelButton);
-            this.Controls.Add(this.RegistoLinkLabel);
             this.Controls.Add(this.MPCheckBox);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.usernameTextBox);
@@ -221,7 +206,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox usernameTextBox;
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.CheckBox MPCheckBox;
-        private System.Windows.Forms.LinkLabel RegistoLinkLabel;
         private System.Windows.Forms.Button cancelButton;
     }
 }

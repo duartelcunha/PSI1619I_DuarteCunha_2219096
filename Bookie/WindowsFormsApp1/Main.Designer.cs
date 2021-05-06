@@ -38,8 +38,8 @@ namespace WindowsFormsApp1
             this.livrosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.verLivrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inserirLivrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.retornarLivroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.requisitarLivroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.retornarLivroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.detalhesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -55,8 +55,8 @@ namespace WindowsFormsApp1
             this.livrosToolStripMenuItem,
             this.utilizadorToolStripMenuItem,
             this.livrosToolStripMenuItem1,
-            this.retornarLivroToolStripMenuItem,
             this.requisitarLivroToolStripMenuItem,
+            this.retornarLivroToolStripMenuItem,
             this.detalhesToolStripMenuItem,
             this.sairToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -95,15 +95,16 @@ namespace WindowsFormsApp1
             // verUtilizadoresToolStripMenuItem
             // 
             this.verUtilizadoresToolStripMenuItem.Name = "verUtilizadoresToolStripMenuItem";
-            this.verUtilizadoresToolStripMenuItem.Size = new System.Drawing.Size(254, 30);
-            this.verUtilizadoresToolStripMenuItem.Text = "Ver Utilizadores";
+            this.verUtilizadoresToolStripMenuItem.Size = new System.Drawing.Size(234, 30);
+            this.verUtilizadoresToolStripMenuItem.Text = "Ver Utilizador";
             this.verUtilizadoresToolStripMenuItem.Click += new System.EventHandler(this.verUtilizadoresToolStripMenuItem_Click);
             // 
             // inserirUtilizadoresToolStripMenuItem
             // 
             this.inserirUtilizadoresToolStripMenuItem.Name = "inserirUtilizadoresToolStripMenuItem";
-            this.inserirUtilizadoresToolStripMenuItem.Size = new System.Drawing.Size(254, 30);
-            this.inserirUtilizadoresToolStripMenuItem.Text = "Inserir Utilizadores";
+            this.inserirUtilizadoresToolStripMenuItem.Size = new System.Drawing.Size(234, 30);
+            this.inserirUtilizadoresToolStripMenuItem.Text = "Inserir Utilizador";
+            this.inserirUtilizadoresToolStripMenuItem.Click += new System.EventHandler(this.inserirUtilizadoresToolStripMenuItem_Click);
             // 
             // livrosToolStripMenuItem1
             // 
@@ -123,22 +124,14 @@ namespace WindowsFormsApp1
             this.verLivrosToolStripMenuItem.Name = "verLivrosToolStripMenuItem";
             this.verLivrosToolStripMenuItem.Size = new System.Drawing.Size(200, 30);
             this.verLivrosToolStripMenuItem.Text = "Ver Livros";
+            this.verLivrosToolStripMenuItem.Click += new System.EventHandler(this.verLivrosToolStripMenuItem_Click);
             // 
             // inserirLivrosToolStripMenuItem
             // 
             this.inserirLivrosToolStripMenuItem.Name = "inserirLivrosToolStripMenuItem";
             this.inserirLivrosToolStripMenuItem.Size = new System.Drawing.Size(200, 30);
             this.inserirLivrosToolStripMenuItem.Text = "Inserir Livros";
-            // 
-            // retornarLivroToolStripMenuItem
-            // 
-            this.retornarLivroToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.retornarLivroToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("retornarLivroToolStripMenuItem.Image")));
-            this.retornarLivroToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.retornarLivroToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.retornarLivroToolStripMenuItem.Name = "retornarLivroToolStripMenuItem";
-            this.retornarLivroToolStripMenuItem.Size = new System.Drawing.Size(256, 68);
-            this.retornarLivroToolStripMenuItem.Text = "Retornar Livro";
+            this.inserirLivrosToolStripMenuItem.Click += new System.EventHandler(this.inserirLivrosToolStripMenuItem_Click);
             // 
             // requisitarLivroToolStripMenuItem
             // 
@@ -149,6 +142,16 @@ namespace WindowsFormsApp1
             this.requisitarLivroToolStripMenuItem.Name = "requisitarLivroToolStripMenuItem";
             this.requisitarLivroToolStripMenuItem.Size = new System.Drawing.Size(256, 68);
             this.requisitarLivroToolStripMenuItem.Text = "Requisitar Livro";
+            // 
+            // retornarLivroToolStripMenuItem
+            // 
+            this.retornarLivroToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.retornarLivroToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("retornarLivroToolStripMenuItem.Image")));
+            this.retornarLivroToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.retornarLivroToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.retornarLivroToolStripMenuItem.Name = "retornarLivroToolStripMenuItem";
+            this.retornarLivroToolStripMenuItem.Size = new System.Drawing.Size(256, 68);
+            this.retornarLivroToolStripMenuItem.Text = "Retornar Livro";
             // 
             // detalhesToolStripMenuItem
             // 

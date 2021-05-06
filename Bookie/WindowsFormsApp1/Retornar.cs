@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1.Splash_Screen
+namespace WindowsFormsApp1
 {
-    public partial class Splash : Form
+    public partial class Retornar : Form
     {
-        public Splash()
+        public Retornar()
         {
             InitializeComponent();
         }

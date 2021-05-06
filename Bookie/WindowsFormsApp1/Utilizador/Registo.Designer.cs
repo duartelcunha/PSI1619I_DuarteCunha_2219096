@@ -50,25 +50,28 @@ namespace WindowsFormsApp1
             this.primeiroNomeTextBox = new System.Windows.Forms.TextBox();
             this.ultimoNomeTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 171);
+            this.label1.Location = new System.Drawing.Point(12, 182);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Username";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-76, -48);
+            this.pictureBox1.Location = new System.Drawing.Point(-66, -46);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(428, 225);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -89,7 +92,7 @@ namespace WindowsFormsApp1
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 205);
+            this.label2.Location = new System.Drawing.Point(12, 216);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 20);
             this.label2.TabIndex = 3;
@@ -97,7 +100,7 @@ namespace WindowsFormsApp1
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(150, 205);
+            this.passwordTextBox.Location = new System.Drawing.Point(150, 216);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(146, 20);
             this.passwordTextBox.TabIndex = 7;
@@ -105,7 +108,7 @@ namespace WindowsFormsApp1
             // 
             // usernameTextBox
             // 
-            this.usernameTextBox.Location = new System.Drawing.Point(150, 171);
+            this.usernameTextBox.Location = new System.Drawing.Point(150, 182);
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(146, 20);
             this.usernameTextBox.TabIndex = 8;
@@ -117,7 +120,7 @@ namespace WindowsFormsApp1
             this.Registar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.Registar.Font = new System.Drawing.Font("Lucida Sans Unicode", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Registar.ForeColor = System.Drawing.Color.White;
-            this.Registar.Location = new System.Drawing.Point(164, 435);
+            this.Registar.Location = new System.Drawing.Point(176, 445);
             this.Registar.Name = "Registar";
             this.Registar.Size = new System.Drawing.Size(120, 57);
             this.Registar.TabIndex = 9;
@@ -129,7 +132,7 @@ namespace WindowsFormsApp1
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 347);
+            this.label3.Location = new System.Drawing.Point(12, 358);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 20);
             this.label3.TabIndex = 11;
@@ -139,7 +142,7 @@ namespace WindowsFormsApp1
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 382);
+            this.label4.Location = new System.Drawing.Point(12, 393);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 20);
             this.label4.TabIndex = 12;
@@ -147,7 +150,7 @@ namespace WindowsFormsApp1
             // 
             // contactoTextBox
             // 
-            this.contactoTextBox.Location = new System.Drawing.Point(150, 347);
+            this.contactoTextBox.Location = new System.Drawing.Point(150, 358);
             this.contactoTextBox.Name = "contactoTextBox";
             this.contactoTextBox.Size = new System.Drawing.Size(146, 20);
             this.contactoTextBox.TabIndex = 14;
@@ -158,7 +161,7 @@ namespace WindowsFormsApp1
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 310);
+            this.label5.Location = new System.Drawing.Point(12, 321);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 20);
             this.label5.TabIndex = 15;
@@ -166,7 +169,7 @@ namespace WindowsFormsApp1
             // 
             // emailTextBox
             // 
-            this.emailTextBox.Location = new System.Drawing.Point(150, 382);
+            this.emailTextBox.Location = new System.Drawing.Point(150, 393);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(146, 20);
             this.emailTextBox.TabIndex = 16;
@@ -179,7 +182,7 @@ namespace WindowsFormsApp1
             this.sexoTextBox.Items.AddRange(new object[] {
             "Masculino",
             "Feminino"});
-            this.sexoTextBox.Location = new System.Drawing.Point(150, 309);
+            this.sexoTextBox.Location = new System.Drawing.Point(150, 320);
             this.sexoTextBox.Name = "sexoTextBox";
             this.sexoTextBox.Size = new System.Drawing.Size(146, 21);
             this.sexoTextBox.TabIndex = 17;
@@ -190,7 +193,7 @@ namespace WindowsFormsApp1
             this.Cancelar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.Cancelar.Font = new System.Drawing.Font("Lucida Sans Unicode", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cancelar.ForeColor = System.Drawing.Color.White;
-            this.Cancelar.Location = new System.Drawing.Point(21, 435);
+            this.Cancelar.Location = new System.Drawing.Point(31, 445);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(120, 57);
             this.Cancelar.TabIndex = 18;
@@ -202,7 +205,7 @@ namespace WindowsFormsApp1
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(12, 240);
+            this.label6.Location = new System.Drawing.Point(12, 251);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(129, 20);
             this.label6.TabIndex = 19;
@@ -212,7 +215,7 @@ namespace WindowsFormsApp1
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(12, 275);
+            this.label7.Location = new System.Drawing.Point(12, 286);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(113, 20);
             this.label7.TabIndex = 20;
@@ -220,7 +223,7 @@ namespace WindowsFormsApp1
             // 
             // primeiroNomeTextBox
             // 
-            this.primeiroNomeTextBox.Location = new System.Drawing.Point(150, 240);
+            this.primeiroNomeTextBox.Location = new System.Drawing.Point(150, 251);
             this.primeiroNomeTextBox.Name = "primeiroNomeTextBox";
             this.primeiroNomeTextBox.Size = new System.Drawing.Size(146, 20);
             this.primeiroNomeTextBox.TabIndex = 21;
@@ -229,7 +232,7 @@ namespace WindowsFormsApp1
             // 
             // ultimoNomeTextBox
             // 
-            this.ultimoNomeTextBox.Location = new System.Drawing.Point(150, 275);
+            this.ultimoNomeTextBox.Location = new System.Drawing.Point(150, 286);
             this.ultimoNomeTextBox.Name = "ultimoNomeTextBox";
             this.ultimoNomeTextBox.Size = new System.Drawing.Size(146, 20);
             this.ultimoNomeTextBox.TabIndex = 22;
@@ -240,12 +243,23 @@ namespace WindowsFormsApp1
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(45, 33);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(80, 79);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox3.TabIndex = 23;
+            this.pictureBox3.TabStop = false;
+            // 
             // Registo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(333, 533);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.ultimoNomeTextBox);
             this.Controls.Add(this.primeiroNomeTextBox);
             this.Controls.Add(this.label7);
@@ -274,6 +288,7 @@ namespace WindowsFormsApp1
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -300,5 +315,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox primeiroNomeTextBox;
         private System.Windows.Forms.TextBox ultimoNomeTextBox;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

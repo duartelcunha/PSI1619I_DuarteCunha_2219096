@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class VerUtilizador : Form
+    public partial class Requisitar : Form
     {
-        public VerUtilizador()
+        public Requisitar()
         {
             InitializeComponent();
         }

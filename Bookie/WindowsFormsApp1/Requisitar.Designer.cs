@@ -1,7 +1,7 @@
 ﻿
 namespace WindowsFormsApp1
 {
-    partial class VerUtilizador
+    partial class Requisitar
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@ namespace WindowsFormsApp1
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "VerUtilizador";
+            this.Text = "Requisitar";
         }
 
         #endregion

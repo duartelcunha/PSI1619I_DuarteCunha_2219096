@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class VerUtilizador : Form
+    public partial class Splash : Form
     {
-        public VerUtilizador()
+        public Splash()
         {
             InitializeComponent();
+        }
+
+        public void Main()
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

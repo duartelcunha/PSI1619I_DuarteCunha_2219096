@@ -104,17 +104,35 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Splash Screen\Splash.cs">
+    <Compile Include="Detalhes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Splash Screen\Splash.Designer.cs">
+    <Compile Include="Detalhes.Designer.cs">
+      <DependentUpon>Detalhes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Livro\InserirLivro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Livro\InserirLivro.Designer.cs">
+      <DependentUpon>InserirLivro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Requisitar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Requisitar.Designer.cs">
+      <DependentUpon>Requisitar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Retornar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Retornar.Designer.cs">
+      <DependentUpon>Retornar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Splash.Designer.cs">
       <DependentUpon>Splash.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Utilizador\InserirUtilizador.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Utilizador\InserirUtilizador.Designer.cs">
-      <DependentUpon>InserirUtilizador.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -122,10 +140,10 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Registo.cs">
+    <Compile Include="Utilizador\Registo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Registo.Designer.cs">
+    <Compile Include="Utilizador\Registo.Designer.cs">
       <DependentUpon>Registo.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -136,22 +154,28 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Livro\VerLivro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Livro\VerLivro.Designer.cs">
+      <DependentUpon>VerLivro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilizador\VerUtilizador.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Utilizador\VerUtilizador.Designer.cs">
       <DependentUpon>VerUtilizador.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Splash Screen\Splash.resx">
-      <DependentUpon>Splash.cs</DependentUpon>
+    <EmbeddedResource Include="Livro\InserirLivro.resx">
+      <DependentUpon>InserirLivro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Utilizador\InserirUtilizador.resx">
-      <DependentUpon>InserirUtilizador.cs</DependentUpon>
+    <EmbeddedResource Include="Splash.resx">
+      <DependentUpon>Splash.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Registo.resx">
+    <EmbeddedResource Include="Utilizador\Registo.resx">
       <DependentUpon>Registo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -167,8 +191,8 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Utilizador\VerUtilizador.resx">
-      <DependentUpon>VerUtilizador.cs</DependentUpon>
+    <EmbeddedResource Include="Livro\VerLivro.resx">
+      <DependentUpon>VerLivro.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

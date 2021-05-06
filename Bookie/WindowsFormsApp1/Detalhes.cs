@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class InserirUtilizador : Form
+    public partial class Detalhes : Form
     {
-        public InserirUtilizador()
+        public Detalhes()
         {
             InitializeComponent();
         }
