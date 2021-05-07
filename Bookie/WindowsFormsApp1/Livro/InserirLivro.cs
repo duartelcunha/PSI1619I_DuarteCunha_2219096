@@ -46,6 +46,7 @@ namespace WindowsFormsApp1
             nomelivroTextBox.Clear();
             nomeautorTextBox.Clear();
             nomelivroTextBox.Clear();
+             anoTextBox.Clear();
             precoTextBox.Clear();
             quantidadeTextBox.Clear();
             }
@@ -67,6 +68,11 @@ namespace WindowsFormsApp1
         private void InserirLivro_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

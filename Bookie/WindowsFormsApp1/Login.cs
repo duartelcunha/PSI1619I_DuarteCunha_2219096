@@ -63,7 +63,7 @@ namespace WindowsFormsApp1
 
             if (result == "1")
             {
-                this.Hide();
+                this.Close();
                 var Main = new Main();
                 Main.Closed += (s, args) => this.Close();
                 Main.Show();
@@ -96,11 +96,6 @@ namespace WindowsFormsApp1
             usernameTextBox.Select();
         }
 
-        private void RegistoLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            var Registo = new Registo();
-            Registo.Closed += (s, args) => this.Close();
-            Registo.Show();
-        }
+        
     }
 }

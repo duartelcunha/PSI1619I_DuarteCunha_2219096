@@ -169,6 +169,9 @@
     <EmbeddedResource Include="Livro\InserirLivro.resx">
       <DependentUpon>InserirLivro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Requisitar.resx">
+      <DependentUpon>Requisitar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>
     </EmbeddedResource>
@@ -193,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Livro\VerLivro.resx">
       <DependentUpon>VerLivro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utilizador\VerUtilizador.resx">
+      <DependentUpon>VerUtilizador.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

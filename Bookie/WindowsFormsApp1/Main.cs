@@ -15,11 +15,20 @@ namespace WindowsFormsApp1
     {
         public Main()
         {
+            InitializeComponent();
             Thread a = new Thread(new ThreadStart(StartForm));
             a.Start();
-            Thread.Sleep(5000);
-            InitializeComponent();
+            Thread.Sleep(2500);
             a.Abort();
+            
+           
+           
+
+        }
+        public void StartForm()
+        {
+            Application.Run(new Splash());
+           
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -51,10 +60,7 @@ namespace WindowsFormsApp1
             veruser.Show();
         }
 
-        public void StartForm()
-        {
-            Application.Run(new Splash());
-        }
+       
 
         private void inserirUtilizadoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
