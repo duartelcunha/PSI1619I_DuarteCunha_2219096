@@ -15,21 +15,42 @@ namespace WindowsFormsApp1
     {
         public Main()
         {
-            InitializeComponent();
             Thread a = new Thread(new ThreadStart(StartForm));
             a.Start();
-            Thread.Sleep(2500);
+            Thread.Sleep(1500);
             a.Abort();
-            
-           
-           
+            InitializeComponent();
+            menuStrip1.Renderer = new MyRenderer();
 
         }
-        public void StartForm()
+        private class MyRenderer : ToolStripProfessionalRenderer
         {
-            Application.Run(new Splash());
-           
+            public MyRenderer() : base(new MyColors()) { }
         }
+
+        private class MyColors : ProfessionalColorTable
+        {
+            public override Color MenuItemSelected
+            {
+                get { return Color.LightSkyBlue; }
+            }
+            public override Color MenuItemSelectedGradientBegin
+            {
+                get { return Color.LightSkyBlue; }
+            }
+            public override Color MenuItemSelectedGradientEnd
+            {
+                get { return Color.White; }
+            }
+            public override Color MenuItemBorder
+            {
+                get { return Color.White; }
+            }
+        }
+            public void StartForm()
+         {
+             Application.Run(new Splash());
+         }
 
         private void Main_Load(object sender, EventArgs e)
         {
@@ -77,6 +98,12 @@ namespace WindowsFormsApp1
         private void verLivrosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var a = new VerLivro();
+            a.Show();
+        }
+
+        private void requisitarLivroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var a = new Requisitar();
             a.Show();
         }
     }

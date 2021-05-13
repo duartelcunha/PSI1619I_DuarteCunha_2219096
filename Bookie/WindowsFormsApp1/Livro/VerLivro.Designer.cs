@@ -285,9 +285,9 @@ namespace WindowsFormsApp1
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.ForeColor = System.Drawing.Color.SandyBrown;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(707, 28);
+            this.button1.Location = new System.Drawing.Point(698, 28);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(42, 39);
             this.button1.TabIndex = 23;

@@ -32,7 +32,7 @@ namespace WindowsFormsApp1
             try
             {
                 con = new SqlConnection(@"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21");
-                cmd = new SqlCommand("SELECT * FROM registo WHERE Username=@uid and Password=@password", con);
+                cmd = new SqlCommand("SELECT * FROM NovoUtilizador WHERE Username=@uid and Password=@password", con);
                 con.Open();
                 cmd.Parameters.AddWithValue("@uid", usernameTextBox.Text.ToString());
                 cmd.Parameters.AddWithValue("@password", passwordTextBox.Text.ToString());
@@ -63,10 +63,9 @@ namespace WindowsFormsApp1
 
             if (result == "1")
             {
-                this.Close();
-                var Main = new Main();
-                Main.Closed += (s, args) => this.Close();
-                Main.Show();
+               this.Hide();
+               var main = new Main();
+                main.Show();
 
             }
             else

@@ -142,6 +142,7 @@ namespace WindowsFormsApp1
             this.requisitarLivroToolStripMenuItem.Name = "requisitarLivroToolStripMenuItem";
             this.requisitarLivroToolStripMenuItem.Size = new System.Drawing.Size(256, 68);
             this.requisitarLivroToolStripMenuItem.Text = "Requisitar Livro";
+            this.requisitarLivroToolStripMenuItem.Click += new System.EventHandler(this.requisitarLivroToolStripMenuItem_Click);
             // 
             // retornarLivroToolStripMenuItem
             // 

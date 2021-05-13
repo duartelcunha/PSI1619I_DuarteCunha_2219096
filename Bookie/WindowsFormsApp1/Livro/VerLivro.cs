@@ -49,18 +49,18 @@ namespace WindowsFormsApp1
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
                 
-            cmd.CommandText = "SELECT * FROM NovoLivro WHERE bid = "+bid+"";
+            cmd.CommandText = "SELECT * FROM NovoLivro WHERE Id = "+bid+"";
             SqlDataAdapter dt = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             dt.Fill(ds);
 
             rowid = Int64.Parse(ds.Tables[0].Rows[0][0].ToString());
 
-            nomelivrotextBox.Text = ds.Tables[0].Rows[0][1].ToString();
-            nomeautortextBox.Text = ds.Tables[0].Rows[0][2].ToString();
-            anotextBox.Text = ds.Tables[0].Rows[0][3].ToString();
-            precotextBox.Text = ds.Tables[0].Rows[0][4].ToString();
-            qtdtextBox.Text = ds.Tables[0].Rows[0][5].ToString();
+            nomelivrotextBox.Text = ds.Tables[0].Rows[0]["Livro"].ToString();
+            nomeautortextBox.Text = ds.Tables[0].Rows[0]["Autor"].ToString();
+            anotextBox.Text = ds.Tables[0].Rows[0]["Ano"].ToString();
+            precotextBox.Text = ds.Tables[0].Rows[0]["Preco"].ToString();
+            qtdtextBox.Text = ds.Tables[0].Rows[0]["Quantidade"].ToString();
         }
 
         private void Cancelar_Click(object sender, EventArgs e)
@@ -76,7 +76,7 @@ namespace WindowsFormsApp1
                 con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = "SELECT * FROM NovoLivro WHERE bLivro LIKE '"+nomelivroproctextBox.Text+"%'";
+                cmd.CommandText = "SELECT * FROM NovoLivro WHERE Livro LIKE '"+nomelivroproctextBox.Text+"%'";
                 SqlDataAdapter dt = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 dt.Fill(ds);
@@ -119,7 +119,7 @@ namespace WindowsFormsApp1
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
 
-                cmd.CommandText = "UPDATE NovoLivro SET bLivro = '" + bLivro + "', bAutor = '" + bAutor + "', bAno = '" + bAno + "', bPreco = " + Preco + ", bQuantidade = " + Quantidade + " WHERE bid = " + rowid + "";
+                cmd.CommandText = "UPDATE NovoLivro SET Livro = '" + bLivro + "', Autor = '" + bAutor + "', Ano = '" + bAno + "', Preco = " + Preco + ", Quantidade = " + Quantidade + " WHERE Id = " + rowid + "";
                 SqlDataAdapter dt = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 dt.Fill(ds);
@@ -141,7 +141,7 @@ namespace WindowsFormsApp1
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
 
-                cmd.CommandText = "DELETE FROM NovoLivro WHERE bid  = "+rowid+"";
+                cmd.CommandText = "DELETE FROM NovoLivro WHERE Id  = "+rowid+"";
                 SqlDataAdapter dt = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 dt.Fill(ds);
