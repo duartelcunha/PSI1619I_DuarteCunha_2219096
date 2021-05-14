@@ -1,0 +1,75 @@
+private async void button1_ClickAsync(object sender, EventArgs e)
+{
+Cursor = Cursor.WaiCursor;
+flowLayountPanel.Controls.Clear();
+for(int i=0;i<=100;i++)
+{
+Button btn = new Button()
+{
+Width= 75,
+Height= 75,
+Text= $"Botao{i}",
+Tag= i,
+Image= await GetFromURLAsync ($"")
+};
+btn.Click += Btn_Click;
+flowLayountPanel.Controls.Add(btn);
+
+}
+Cursor = Cursors.Default;
+}
+
+private void Btn_Click(object sender, EventArgs e)
+{
+MessageBox.Show($"Premiu o butao {(sender as button).Tag}");
+}
+
+private async Image GetFromURLAsync(string url)
+{
+WebRequest req = WebRequest.Create(url);
+WebResponse res = await req.GetResponseAsync();
+Stream imgStream = res.GetResponse
+Image img1 = Image.FromStream(imgStream);
+imgStream.Close();
+return img1;
+
+
+}
+
+
+ private async void button2_ClickAsync(object sender, EventArgs e)
+        {
+            
+            flowLayoutPanel1.Controls.Clear();
+            for (int i = 0; i <= 100; i++)
+            {
+                Button btn = new Button()
+                {
+                    Width = 75,
+                    Height = 75,
+                    Text = $"Butao{i}",
+                    Tag = i,
+                    Image = await URL($"https://robohash.org/{i}")
+                };
+                btn.Click += Btn_Click;
+                flowLayoutPanel1.Controls.Add(btn);
+
+            }
+            Cursor = Cursors.Default;
+        }
+        private void Btn_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"Premiu o butao {(sender as Button).Tag}");
+        }
+
+        private async Image URL(string url)
+        {
+            WebRequest req = WebRequest.Create(url);
+            WebResponse res = await req.GetResponseAsync();
+            Stream imgStream = res.GetResponseStream();
+            Image img1 = Image.FromStream(imgStream);
+            imgStream.Close();
+            return img1;
+
+
+        }
