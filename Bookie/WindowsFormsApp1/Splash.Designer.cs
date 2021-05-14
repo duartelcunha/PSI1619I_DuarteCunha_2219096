@@ -46,7 +46,6 @@ namespace WindowsFormsApp1
             this.pictureBox1.Size = new System.Drawing.Size(611, 487);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-  
             // 
             // progressBar1
             // 
@@ -56,7 +55,7 @@ namespace WindowsFormsApp1
             this.progressBar1.MarqueeAnimationSpeed = 80;
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(170, 23);
-            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar1.TabIndex = 1;
             // 
             // pictureBox2

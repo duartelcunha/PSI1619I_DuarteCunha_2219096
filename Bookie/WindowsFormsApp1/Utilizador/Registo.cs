@@ -173,5 +173,15 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void txtContribuinte_TextChanged(object sender, EventArgs e)
+        {
+            this.txtContribuinte.MaxLength = 9;
+
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtContribuinte.Text, "  ^ [0-9]"))
+            {
+                txtContribuinte.Text = "";
+            }
+        }
     }
 }

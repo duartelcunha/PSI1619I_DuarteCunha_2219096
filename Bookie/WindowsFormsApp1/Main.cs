@@ -17,7 +17,7 @@ namespace WindowsFormsApp1
         {
             Thread a = new Thread(new ThreadStart(StartForm));
             a.Start();
-            Thread.Sleep(1500);
+            Thread.Sleep(4000);
             a.Abort();
             InitializeComponent();
             menuStrip1.Renderer = new MyRenderer();
