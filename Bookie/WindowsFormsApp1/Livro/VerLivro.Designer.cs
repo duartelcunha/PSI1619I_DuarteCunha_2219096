@@ -52,6 +52,7 @@ namespace WindowsFormsApp1
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -118,7 +119,7 @@ namespace WindowsFormsApp1
             this.Atualizar.BackColor = System.Drawing.Color.Chocolate;
             this.Atualizar.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Atualizar.ForeColor = System.Drawing.Color.White;
-            this.Atualizar.Location = new System.Drawing.Point(418, 134);
+            this.Atualizar.Location = new System.Drawing.Point(508, 134);
             this.Atualizar.Name = "Atualizar";
             this.Atualizar.Size = new System.Drawing.Size(87, 45);
             this.Atualizar.TabIndex = 6;
@@ -131,7 +132,7 @@ namespace WindowsFormsApp1
             this.Apagar.BackColor = System.Drawing.Color.Chocolate;
             this.Apagar.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Apagar.ForeColor = System.Drawing.Color.White;
-            this.Apagar.Location = new System.Drawing.Point(511, 134);
+            this.Apagar.Location = new System.Drawing.Point(418, 134);
             this.Apagar.Name = "Apagar";
             this.Apagar.Size = new System.Drawing.Size(84, 45);
             this.Apagar.TabIndex = 7;
@@ -263,9 +264,9 @@ namespace WindowsFormsApp1
             // Atualiza
             // 
             this.Atualiza.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Atualiza.Location = new System.Drawing.Point(516, 107);
+            this.Atualiza.Location = new System.Drawing.Point(516, 106);
             this.Atualiza.Name = "Atualiza";
-            this.Atualiza.Size = new System.Drawing.Size(101, 28);
+            this.Atualiza.Size = new System.Drawing.Size(101, 29);
             this.Atualiza.TabIndex = 19;
             this.Atualiza.Text = "Atualizar";
             this.Atualiza.UseVisualStyleBackColor = true;
@@ -304,13 +305,21 @@ namespace WindowsFormsApp1
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(63, 150);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(644, 333);
+            this.flowLayoutPanel1.TabIndex = 22;
+            // 
             // VerLivro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(778, 610);
+            this.ClientSize = new System.Drawing.Size(778, 501);
             this.ControlBox = false;
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.Atualiza);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.nomelivroproctextBox);
@@ -357,5 +366,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

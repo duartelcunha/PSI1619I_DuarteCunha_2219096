@@ -141,7 +141,7 @@ namespace WindowsFormsApp1
             this.requisitarLivroToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.requisitarLivroToolStripMenuItem.Name = "requisitarLivroToolStripMenuItem";
             this.requisitarLivroToolStripMenuItem.Size = new System.Drawing.Size(256, 68);
-            this.requisitarLivroToolStripMenuItem.Text = "Requisitar Livro";
+            this.requisitarLivroToolStripMenuItem.Text = "Requisição";
             this.requisitarLivroToolStripMenuItem.Click += new System.EventHandler(this.requisitarLivroToolStripMenuItem_Click);
             // 
             // retornarLivroToolStripMenuItem
@@ -152,7 +152,7 @@ namespace WindowsFormsApp1
             this.retornarLivroToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.retornarLivroToolStripMenuItem.Name = "retornarLivroToolStripMenuItem";
             this.retornarLivroToolStripMenuItem.Size = new System.Drawing.Size(256, 68);
-            this.retornarLivroToolStripMenuItem.Text = "Retornar Livro";
+            this.retornarLivroToolStripMenuItem.Text = "Devolução";
             // 
             // detalhesToolStripMenuItem
             // 

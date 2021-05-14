@@ -10,11 +10,20 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Detalhes : Form
+    public partial class UserControl : System.Windows.Forms.UserControl
     {
-        public Detalhes()
+        public UserControl()
         {
             InitializeComponent();
         }
+
+        
+
+        private void UserControl1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

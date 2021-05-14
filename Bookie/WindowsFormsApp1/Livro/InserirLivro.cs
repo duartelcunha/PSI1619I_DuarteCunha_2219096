@@ -38,7 +38,7 @@ namespace WindowsFormsApp1
             cmd.Connection = con;
 
             con.Open();
-            cmd.CommandText = "INSERT INTO NovoLivro (Livro,Autor,Ano,Preco,Quantidade) values ('" + bLivro + "','" + bAutor + "', '" + bAno + "', " + Preco + "," + Quantidade + ") ";
+            cmd.CommandText = "INSERT INTO NovoLivro (Livro,Autor,Ano,Aluguer,Quantidade) values ('" + bLivro + "','" + bAutor + "', '" + bAno + "', " + Preco + "," + Quantidade + ") ";
             cmd.ExecuteNonQuery();
             con.Close();
 

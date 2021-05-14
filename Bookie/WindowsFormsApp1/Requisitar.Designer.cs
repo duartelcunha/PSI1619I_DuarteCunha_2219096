@@ -197,9 +197,9 @@ namespace WindowsFormsApp1
             this.label1.Location = new System.Drawing.Point(11, 168);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 22);
+            this.label1.Size = new System.Drawing.Size(145, 22);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Utilizador:";
+            this.label1.Text = "Nº Contribuinte:";
             // 
             // utilizadorprocTextBox
             // 

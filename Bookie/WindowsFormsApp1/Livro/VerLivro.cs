@@ -59,7 +59,7 @@ namespace WindowsFormsApp1
             nomelivrotextBox.Text = ds.Tables[0].Rows[0]["Livro"].ToString();
             nomeautortextBox.Text = ds.Tables[0].Rows[0]["Autor"].ToString();
             anotextBox.Text = ds.Tables[0].Rows[0]["Ano"].ToString();
-            precotextBox.Text = ds.Tables[0].Rows[0]["Preco"].ToString();
+            precotextBox.Text = ds.Tables[0].Rows[0]["Aluguer"].ToString();
             qtdtextBox.Text = ds.Tables[0].Rows[0]["Quantidade"].ToString();
         }
 
@@ -111,7 +111,7 @@ namespace WindowsFormsApp1
                 String bLivro = nomelivrotextBox.Text;
                 String bAutor = nomeautortextBox.Text;
                 String bAno = anotextBox.Text;
-                Int64 Preco = Int64.Parse(precotextBox.Text);
+                Int64 Aluguer = Int64.Parse(precotextBox.Text);
                 Int64 Quantidade = Int64.Parse(qtdtextBox.Text);
 
                 SqlConnection con = new SqlConnection();
@@ -119,7 +119,7 @@ namespace WindowsFormsApp1
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
 
-                cmd.CommandText = "UPDATE NovoLivro SET Livro = '" + bLivro + "', Autor = '" + bAutor + "', Ano = '" + bAno + "', Preco = " + Preco + ", Quantidade = " + Quantidade + " WHERE Id = " + rowid + "";
+                cmd.CommandText = "UPDATE NovoLivro SET Livro = '" + bLivro + "', Autor = '" + bAutor + "', Ano = '" + bAno + "', Aluguer = " + Aluguer + ", Quantidade = " + Quantidade + " WHERE Id = " + rowid + "";
                 SqlDataAdapter dt = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 dt.Fill(ds);
@@ -133,7 +133,7 @@ namespace WindowsFormsApp1
                 String bLivro = nomelivrotextBox.Text;
                 String bAutor = nomeautortextBox.Text;
                 String bAno = anotextBox.Text;
-                Int64 Preco = Int64.Parse(precotextBox.Text);
+                Int64 Aluguer = Int64.Parse(precotextBox.Text);
                 Int64 Quantidade = Int64.Parse(qtdtextBox.Text);
 
                 SqlConnection con = new SqlConnection();
@@ -151,6 +151,11 @@ namespace WindowsFormsApp1
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
     }

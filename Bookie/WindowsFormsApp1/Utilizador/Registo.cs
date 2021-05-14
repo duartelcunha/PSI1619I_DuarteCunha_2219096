@@ -55,6 +55,7 @@ namespace WindowsFormsApp1
                     sqlCmd.Parameters.AddWithValue("@Sexo", sexoTextBox.Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@Contacto", contactoTextBox.Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@Email", emailTextBox.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@NContribuinte", txtContribuinte.Text.Trim());
                     sqlCmd.ExecuteNonQuery();
                     MessageBox.Show("Registro Completo");
                     usernameTextBox.Clear();
@@ -63,6 +64,7 @@ namespace WindowsFormsApp1
                     ultimoNomeTextBox.Clear();
                     contactoTextBox.Clear();
                     emailTextBox.Clear();
+                    txtContribuinte.Clear();
                 }
             }
             
