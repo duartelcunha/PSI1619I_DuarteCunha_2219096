@@ -68,24 +68,24 @@ namespace WindowsFormsApp1
             this.label1.Size = new System.Drawing.Size(89, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Username";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-56, -57);
+            this.pictureBox1.Location = new System.Drawing.Point(138, 42);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(428, 225);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.Size = new System.Drawing.Size(149, 65);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(-46, 115);
+            this.pictureBox2.Location = new System.Drawing.Point(-46, 99);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(418, 50);
+            this.pictureBox2.Size = new System.Drawing.Size(418, 66);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
@@ -128,7 +128,7 @@ namespace WindowsFormsApp1
             this.Registar.TabIndex = 9;
             this.Registar.Text = "Registar";
             this.Registar.UseVisualStyleBackColor = false;
-            this.Registar.Click += new System.EventHandler(this.button1_Click);
+            this.Registar.Click += new System.EventHandler(this.Registar_Click);
             // 
             // label3
             // 
@@ -158,6 +158,7 @@ namespace WindowsFormsApp1
             this.contactoTextBox.TabIndex = 14;
             this.contactoTextBox.TextChanged += new System.EventHandler(this.contactoTextBox_TextChanged);
             this.contactoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
+            this.contactoTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.contactoTextBox_Validating);
             // 
             // label5
             // 
@@ -248,12 +249,13 @@ namespace WindowsFormsApp1
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(61, 21);
+            this.pictureBox3.Location = new System.Drawing.Point(62, 28);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(80, 79);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 23;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // label8
             // 
@@ -272,6 +274,7 @@ namespace WindowsFormsApp1
             this.txtContribuinte.Size = new System.Drawing.Size(146, 20);
             this.txtContribuinte.TabIndex = 25;
             this.txtContribuinte.TextChanged += new System.EventHandler(this.txtContribuinte_TextChanged);
+            this.txtContribuinte.Validating += new System.ComponentModel.CancelEventHandler(this.txtContribuinte_Validating);
             // 
             // Registo
             // 

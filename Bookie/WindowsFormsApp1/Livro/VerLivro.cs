@@ -40,7 +40,6 @@ namespace WindowsFormsApp1
             if(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value!=null)
             {
                 bid = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
-               // MessageBox.Show(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
                
             }
             panel1.Visible = true;
@@ -100,8 +99,17 @@ namespace WindowsFormsApp1
 
         private void Atualiza_Click(object sender, EventArgs e)
         {
-            nomelivroproctextBox.Clear();
-            panel1.Visible = false;
+            string con = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
+            using (SqlConnection sqlCon = new SqlConnection(con))
+            {
+
+                string query = "SELECT * FROM NovoLivro";
+                SqlCommand cmd = new SqlCommand(query, sqlCon);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+            }
         }
 
         private void Atualizar_Click(object sender, EventArgs e)
@@ -130,11 +138,6 @@ namespace WindowsFormsApp1
         {
             if (MessageBox.Show("Os campos serão apagados.", "Confirme", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
             {
-                String bLivro = nomelivrotextBox.Text;
-                String bAutor = nomeautortextBox.Text;
-                String bAno = anotextBox.Text;
-                Int64 Aluguer = Int64.Parse(precotextBox.Text);
-                Int64 Quantidade = Int64.Parse(qtdtextBox.Text);
 
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
@@ -153,10 +156,7 @@ namespace WindowsFormsApp1
             this.Close();
         }
 
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+      
     }
     }
 

@@ -33,7 +33,7 @@ namespace WindowsFormsApp1
         }
 
      
-        private void button1_Click(object sender, EventArgs e)
+        private void Registar_Click(object sender, EventArgs e)
         {
             string con = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
             if (usernameTextBox.Text == "" || passwordTextBox.Text == "")
@@ -55,8 +55,9 @@ namespace WindowsFormsApp1
                     sqlCmd.Parameters.AddWithValue("@Sexo", sexoTextBox.Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@Contacto", contactoTextBox.Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@Email", emailTextBox.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@NContribuinte", txtContribuinte.Text.Trim());
+                    sqlCmd.Parameters.AddWithValue("@NC", txtContribuinte.Text.Trim());
                     sqlCmd.ExecuteNonQuery();
+                    
                     MessageBox.Show("Registro Completo");
                     usernameTextBox.Clear();
                     passwordTextBox.Clear();
@@ -65,6 +66,7 @@ namespace WindowsFormsApp1
                     contactoTextBox.Clear();
                     emailTextBox.Clear();
                     txtContribuinte.Clear();
+                    sexoTextBox.Items.Clear();
                 }
             }
             
@@ -87,14 +89,25 @@ namespace WindowsFormsApp1
             }
         }
 
-        
+        private void contactoTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            if (contactoTextBox.Text.Length == 0) return;
+
+            if (contactoTextBox.Text.Length < 9)
+            {
+                e.Cancel = true;
+                MessageBox.Show("Digite 9 caracteres", "Contacto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+
         private void ultimoNomeTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) &&
                (e.KeyChar != '.'))
             {
                 e.Handled = true;
-                MessageBox.Show("Digite letras do alfabeto");
+                MessageBox.Show("Digite letras do alfabeto", "Nome", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -105,7 +118,7 @@ namespace WindowsFormsApp1
             if (ultimoNomeTextBox.Text.Length < 2 || ultimoNomeTextBox.Text.Length > 20)
             {
                 e.Cancel = true;
-                MessageBox.Show("Digite entre 2 a 20 caracteres");
+                MessageBox.Show("Digite entre 2 a 20 caracteres", "Nome", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -116,7 +129,7 @@ namespace WindowsFormsApp1
             if (primeiroNomeTextBox.Text.Length < 2 || primeiroNomeTextBox.Text.Length > 20)
             {
                 e.Cancel = true;
-                MessageBox.Show("Digite entre 2 a 20 caracteres");
+                MessageBox.Show("Digite entre 2 a 20 caracteres", "Nome", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -126,7 +139,7 @@ namespace WindowsFormsApp1
                (e.KeyChar != '.'))
             {
                 e.Handled = true;
-                MessageBox.Show("Digite letras do alfabeto");
+                MessageBox.Show("Digite letras do alfabeto", "Nome", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -136,10 +149,10 @@ namespace WindowsFormsApp1
            
             if (passwordTextBox.Text.Length == 0) return;
 
-            if (passwordTextBox.Text.Length < 7 || passwordTextBox.Text.Length > 15)
+            if (passwordTextBox.Text.Length < 6 || passwordTextBox.Text.Length > 16)
             {
                 e.Cancel = true;
-                MessageBox.Show("Digite entre 7 a 15 caracteres");
+                MessageBox.Show("Digite entre 6 a 16 caracteres", "Password", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -151,7 +164,7 @@ namespace WindowsFormsApp1
             if (usernameTextBox.Text.Length < 4 || usernameTextBox.Text.Length > 20)
             {
                 e.Cancel = true;
-                MessageBox.Show("Digite entre 4 a 20 caracteres");
+                MessageBox.Show("Digite entre 4 a 20 caracteres","Username", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -165,13 +178,9 @@ namespace WindowsFormsApp1
             else
             {
                 errorProvider1.SetError(this.emailTextBox, "Digite um email válido");
+                MessageBox.Show("Digite um email válido","Email", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void txtContribuinte_TextChanged(object sender, EventArgs e)
@@ -182,6 +191,26 @@ namespace WindowsFormsApp1
             {
                 txtContribuinte.Text = "";
             }
+        }
+        private void txtContribuinte_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtContribuinte.Text.Length == 0) return;
+
+            if (txtContribuinte.Text.Length < 9)
+            {
+                e.Cancel = true;
+                MessageBox.Show("Digite 9 caracteres", "Número de Contribuinte", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -42,6 +42,7 @@ namespace WindowsFormsApp1
             this.retornarLivroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.detalhesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.feitoPorDuarteCunhaTGPSITurmaIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,6 +70,8 @@ namespace WindowsFormsApp1
             // livrosToolStripMenuItem
             // 
             this.livrosToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.livrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.feitoPorDuarteCunhaTGPSITurmaIToolStripMenuItem});
             this.livrosToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.livrosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("livrosToolStripMenuItem.Image")));
             this.livrosToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
@@ -83,7 +86,7 @@ namespace WindowsFormsApp1
             this.utilizadorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.verUtilizadoresToolStripMenuItem,
             this.inserirUtilizadoresToolStripMenuItem});
-            this.utilizadorToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.utilizadorToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.utilizadorToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("utilizadorToolStripMenuItem.Image")));
             this.utilizadorToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.utilizadorToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
@@ -95,14 +98,14 @@ namespace WindowsFormsApp1
             // verUtilizadoresToolStripMenuItem
             // 
             this.verUtilizadoresToolStripMenuItem.Name = "verUtilizadoresToolStripMenuItem";
-            this.verUtilizadoresToolStripMenuItem.Size = new System.Drawing.Size(234, 30);
+            this.verUtilizadoresToolStripMenuItem.Size = new System.Drawing.Size(245, 30);
             this.verUtilizadoresToolStripMenuItem.Text = "Ver Utilizador";
             this.verUtilizadoresToolStripMenuItem.Click += new System.EventHandler(this.verUtilizadoresToolStripMenuItem_Click);
             // 
             // inserirUtilizadoresToolStripMenuItem
             // 
             this.inserirUtilizadoresToolStripMenuItem.Name = "inserirUtilizadoresToolStripMenuItem";
-            this.inserirUtilizadoresToolStripMenuItem.Size = new System.Drawing.Size(234, 30);
+            this.inserirUtilizadoresToolStripMenuItem.Size = new System.Drawing.Size(245, 30);
             this.inserirUtilizadoresToolStripMenuItem.Text = "Inserir Utilizador";
             this.inserirUtilizadoresToolStripMenuItem.Click += new System.EventHandler(this.inserirUtilizadoresToolStripMenuItem_Click);
             // 
@@ -111,7 +114,7 @@ namespace WindowsFormsApp1
             this.livrosToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.verLivrosToolStripMenuItem,
             this.inserirLivrosToolStripMenuItem});
-            this.livrosToolStripMenuItem1.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.livrosToolStripMenuItem1.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.livrosToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("livrosToolStripMenuItem1.Image")));
             this.livrosToolStripMenuItem1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.livrosToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
@@ -122,20 +125,20 @@ namespace WindowsFormsApp1
             // verLivrosToolStripMenuItem
             // 
             this.verLivrosToolStripMenuItem.Name = "verLivrosToolStripMenuItem";
-            this.verLivrosToolStripMenuItem.Size = new System.Drawing.Size(200, 30);
+            this.verLivrosToolStripMenuItem.Size = new System.Drawing.Size(206, 30);
             this.verLivrosToolStripMenuItem.Text = "Ver Livros";
             this.verLivrosToolStripMenuItem.Click += new System.EventHandler(this.verLivrosToolStripMenuItem_Click);
             // 
             // inserirLivrosToolStripMenuItem
             // 
             this.inserirLivrosToolStripMenuItem.Name = "inserirLivrosToolStripMenuItem";
-            this.inserirLivrosToolStripMenuItem.Size = new System.Drawing.Size(200, 30);
+            this.inserirLivrosToolStripMenuItem.Size = new System.Drawing.Size(206, 30);
             this.inserirLivrosToolStripMenuItem.Text = "Inserir Livros";
             this.inserirLivrosToolStripMenuItem.Click += new System.EventHandler(this.inserirLivrosToolStripMenuItem_Click);
             // 
             // requisitarLivroToolStripMenuItem
             // 
-            this.requisitarLivroToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.requisitarLivroToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.requisitarLivroToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("requisitarLivroToolStripMenuItem.Image")));
             this.requisitarLivroToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.requisitarLivroToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
@@ -146,7 +149,7 @@ namespace WindowsFormsApp1
             // 
             // retornarLivroToolStripMenuItem
             // 
-            this.retornarLivroToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.retornarLivroToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.retornarLivroToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("retornarLivroToolStripMenuItem.Image")));
             this.retornarLivroToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.retornarLivroToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
@@ -156,7 +159,7 @@ namespace WindowsFormsApp1
             // 
             // detalhesToolStripMenuItem
             // 
-            this.detalhesToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.detalhesToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.detalhesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("detalhesToolStripMenuItem.Image")));
             this.detalhesToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.detalhesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
@@ -166,7 +169,7 @@ namespace WindowsFormsApp1
             // 
             // sairToolStripMenuItem
             // 
-            this.sairToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sairToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sairToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("sairToolStripMenuItem.Image")));
             this.sairToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.sairToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
@@ -174,6 +177,13 @@ namespace WindowsFormsApp1
             this.sairToolStripMenuItem.Size = new System.Drawing.Size(256, 68);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
+            // 
+            // feitoPorDuarteCunhaTGPSITurmaIToolStripMenuItem
+            // 
+            this.feitoPorDuarteCunhaTGPSITurmaIToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.feitoPorDuarteCunhaTGPSITurmaIToolStripMenuItem.Name = "feitoPorDuarteCunhaTGPSITurmaIToolStripMenuItem";
+            this.feitoPorDuarteCunhaTGPSITurmaIToolStripMenuItem.Size = new System.Drawing.Size(298, 22);
+            this.feitoPorDuarteCunhaTGPSITurmaIToolStripMenuItem.Text = "Feito por: Duarte Cunha - TGPSI - Turma I";
             // 
             // Main
             // 
@@ -212,5 +222,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verLivrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inserirLivrosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem feitoPorDuarteCunhaTGPSITurmaIToolStripMenuItem;
     }
 }

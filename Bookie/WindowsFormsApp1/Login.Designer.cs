@@ -50,10 +50,10 @@ namespace WindowsFormsApp1
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(40, 199);
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(44, 198);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 21);
+            this.label1.Size = new System.Drawing.Size(90, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Username";
             // 
@@ -80,10 +80,10 @@ namespace WindowsFormsApp1
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(40, 256);
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(45, 255);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 21);
+            this.label2.Size = new System.Drawing.Size(89, 22);
             this.label2.TabIndex = 3;
             this.label2.Text = "Password";
             // 
@@ -109,16 +109,18 @@ namespace WindowsFormsApp1
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(137, 259);
+            this.passwordTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordTextBox.Location = new System.Drawing.Point(138, 254);
             this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(146, 20);
+            this.passwordTextBox.Size = new System.Drawing.Size(146, 25);
             this.passwordTextBox.TabIndex = 7;
             // 
             // usernameTextBox
             // 
-            this.usernameTextBox.Location = new System.Drawing.Point(137, 202);
+            this.usernameTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameTextBox.Location = new System.Drawing.Point(138, 197);
             this.usernameTextBox.Name = "usernameTextBox";
-            this.usernameTextBox.Size = new System.Drawing.Size(146, 20);
+            this.usernameTextBox.Size = new System.Drawing.Size(146, 25);
             this.usernameTextBox.TabIndex = 8;
             // 
             // loginButton
@@ -127,7 +129,7 @@ namespace WindowsFormsApp1
             this.loginButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.loginButton.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginButton.ForeColor = System.Drawing.Color.White;
-            this.loginButton.Location = new System.Drawing.Point(149, 344);
+            this.loginButton.Location = new System.Drawing.Point(163, 344);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(111, 54);
             this.loginButton.TabIndex = 9;
@@ -153,7 +155,7 @@ namespace WindowsFormsApp1
             this.cancelButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.cancelButton.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelButton.ForeColor = System.Drawing.Color.White;
-            this.cancelButton.Location = new System.Drawing.Point(33, 344);
+            this.cancelButton.Location = new System.Drawing.Point(23, 344);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(111, 54);
             this.cancelButton.TabIndex = 12;

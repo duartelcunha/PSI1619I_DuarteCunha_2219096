@@ -52,7 +52,7 @@ namespace WindowsFormsApp1
             // 
             // nomelivroTextBox
             // 
-            this.nomelivroTextBox.Location = new System.Drawing.Point(173, 160);
+            this.nomelivroTextBox.Location = new System.Drawing.Point(180, 160);
             this.nomelivroTextBox.Margin = new System.Windows.Forms.Padding(5);
             this.nomelivroTextBox.Name = "nomelivroTextBox";
             this.nomelivroTextBox.Size = new System.Drawing.Size(412, 29);
@@ -60,7 +60,7 @@ namespace WindowsFormsApp1
             // 
             // nomeautorTextBox
             // 
-            this.nomeautorTextBox.Location = new System.Drawing.Point(173, 212);
+            this.nomeautorTextBox.Location = new System.Drawing.Point(180, 212);
             this.nomeautorTextBox.Margin = new System.Windows.Forms.Padding(5);
             this.nomeautorTextBox.Name = "nomeautorTextBox";
             this.nomeautorTextBox.Size = new System.Drawing.Size(412, 29);
@@ -68,7 +68,7 @@ namespace WindowsFormsApp1
             // 
             // quantidadeTextBox
             // 
-            this.quantidadeTextBox.Location = new System.Drawing.Point(173, 363);
+            this.quantidadeTextBox.Location = new System.Drawing.Point(180, 363);
             this.quantidadeTextBox.Margin = new System.Windows.Forms.Padding(5);
             this.quantidadeTextBox.Name = "quantidadeTextBox";
             this.quantidadeTextBox.Size = new System.Drawing.Size(111, 29);
@@ -77,11 +77,12 @@ namespace WindowsFormsApp1
             // Cancelar
             // 
             this.Cancelar.BackColor = System.Drawing.Color.Chocolate;
+            this.Cancelar.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cancelar.ForeColor = System.Drawing.Color.White;
-            this.Cancelar.Location = new System.Drawing.Point(315, 416);
+            this.Cancelar.Location = new System.Drawing.Point(332, 388);
             this.Cancelar.Margin = new System.Windows.Forms.Padding(5);
             this.Cancelar.Name = "Cancelar";
-            this.Cancelar.Size = new System.Drawing.Size(125, 37);
+            this.Cancelar.Size = new System.Drawing.Size(125, 53);
             this.Cancelar.TabIndex = 3;
             this.Cancelar.Text = "Cancelar";
             this.Cancelar.UseVisualStyleBackColor = false;
@@ -90,11 +91,12 @@ namespace WindowsFormsApp1
             // Inserir
             // 
             this.Inserir.BackColor = System.Drawing.Color.Chocolate;
+            this.Inserir.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Inserir.ForeColor = System.Drawing.Color.White;
-            this.Inserir.Location = new System.Drawing.Point(460, 416);
+            this.Inserir.Location = new System.Drawing.Point(467, 388);
             this.Inserir.Margin = new System.Windows.Forms.Padding(5);
             this.Inserir.Name = "Inserir";
-            this.Inserir.Size = new System.Drawing.Size(125, 37);
+            this.Inserir.Size = new System.Drawing.Size(125, 53);
             this.Inserir.TabIndex = 4;
             this.Inserir.Text = "Inserir";
             this.Inserir.UseVisualStyleBackColor = false;
@@ -103,56 +105,61 @@ namespace WindowsFormsApp1
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(37, 163);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 21);
+            this.label1.Size = new System.Drawing.Size(133, 22);
             this.label1.TabIndex = 7;
             this.label1.Text = "Nome do Livro";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 220);
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(31, 219);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 21);
+            this.label2.Size = new System.Drawing.Size(139, 22);
             this.label2.TabIndex = 8;
             this.label2.Text = "Nome do Autor";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(119, 265);
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(127, 265);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 21);
+            this.label3.Size = new System.Drawing.Size(43, 22);
             this.label3.TabIndex = 9;
             this.label3.Text = "Ano";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(110, 317);
+            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(114, 317);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 21);
+            this.label4.Size = new System.Drawing.Size(56, 22);
             this.label4.TabIndex = 10;
             this.label4.Text = "Preço";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(63, 366);
+            this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(66, 366);
             this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(100, 21);
+            this.label5.Size = new System.Drawing.Size(104, 22);
             this.label5.TabIndex = 11;
             this.label5.Text = "Quantidade";
             // 
             // anoTextBox
             // 
-            this.anoTextBox.Location = new System.Drawing.Point(173, 262);
+            this.anoTextBox.Location = new System.Drawing.Point(180, 262);
             this.anoTextBox.Margin = new System.Windows.Forms.Padding(5);
             this.anoTextBox.Name = "anoTextBox";
             this.anoTextBox.Size = new System.Drawing.Size(111, 29);
@@ -160,7 +167,7 @@ namespace WindowsFormsApp1
             // 
             // precoTextBox
             // 
-            this.precoTextBox.Location = new System.Drawing.Point(173, 314);
+            this.precoTextBox.Location = new System.Drawing.Point(180, 314);
             this.precoTextBox.Margin = new System.Windows.Forms.Padding(5);
             this.precoTextBox.Name = "precoTextBox";
             this.precoTextBox.Size = new System.Drawing.Size(111, 29);
@@ -202,7 +209,7 @@ namespace WindowsFormsApp1
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.SandyBrown;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(568, 44);
+            this.button1.Location = new System.Drawing.Point(577, 44);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(42, 39);
             this.button1.TabIndex = 24;

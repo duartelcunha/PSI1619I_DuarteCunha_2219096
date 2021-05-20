@@ -29,7 +29,7 @@ namespace WindowsFormsApp1
             String bLivro = nomelivroTextBox.Text;
             String bAutor = nomeautorTextBox.Text;
             String bAno = anoTextBox.Text;
-            Int64 Preco = Int64.Parse(precoTextBox.Text);
+            Int64 Aluguer = Int64.Parse(precoTextBox.Text);
             Int64 Quantidade = Int64.Parse(quantidadeTextBox.Text);
 
             SqlConnection con = new SqlConnection();
@@ -38,7 +38,7 @@ namespace WindowsFormsApp1
             cmd.Connection = con;
 
             con.Open();
-            cmd.CommandText = "INSERT INTO NovoLivro (Livro,Autor,Ano,Aluguer,Quantidade) values ('" + bLivro + "','" + bAutor + "', '" + bAno + "', " + Preco + "," + Quantidade + ") ";
+            cmd.CommandText = "INSERT INTO NovoLivro (Livro,Autor,Ano,Aluguer,Quantidade) values ('" + bLivro + "','" + bAutor + "', '" + bAno + "', " + Aluguer + "," + Quantidade + ") ";
             cmd.ExecuteNonQuery();
             con.Close();
 

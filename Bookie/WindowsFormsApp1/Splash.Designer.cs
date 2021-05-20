@@ -52,10 +52,10 @@ namespace WindowsFormsApp1
             this.progressBar1.BackColor = System.Drawing.Color.White;
             this.progressBar1.ForeColor = System.Drawing.Color.Chocolate;
             this.progressBar1.Location = new System.Drawing.Point(117, 242);
-            this.progressBar1.MarqueeAnimationSpeed = 80;
+            this.progressBar1.MarqueeAnimationSpeed = 120;
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(170, 23);
-            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.progressBar1.TabIndex = 1;
             // 
             // pictureBox2
