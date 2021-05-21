@@ -53,7 +53,7 @@ namespace WindowsFormsApp1
 
             pnTextBox.Text = ds.Tables[0].Rows[0]["PrimeiroNome"].ToString();
             unTextBox.Text = ds.Tables[0].Rows[0]["UltimoNome"].ToString();
-            sexoTextBox.Text = ds.Tables[0].Rows[0]["Sexo"].ToString();
+            sexoComboBox.Text = ds.Tables[0].Rows[0]["Sexo"].ToString();
             contactoTextBox.Text = ds.Tables[0].Rows[0]["Contacto"].ToString();
             emailTextBox.Text = ds.Tables[0].Rows[0]["Email"].ToString();
 
@@ -84,7 +84,7 @@ namespace WindowsFormsApp1
             {
                 String bPN = pnTextBox.Text;
                 String bUN = unTextBox.Text;
-                String bSexo = sexoTextBox.Text;
+                String bSexo = sexoComboBox.Text;
                 String bContacto = contactoTextBox.Text;
                 String bEmail = emailTextBox.Text;
 
@@ -119,20 +119,7 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void Atualiza_Click(object sender, EventArgs e)
-        {
-            string con = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
-            using (SqlConnection sqlCon = new SqlConnection(con))
-            {
-
-                string query = "SELECT * FROM NovoUtilizador";
-                SqlCommand cmd = new SqlCommand(query, sqlCon);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                dataGridView1.DataSource = dt;
-            }
-        }
+        
    
         
 
@@ -166,6 +153,19 @@ namespace WindowsFormsApp1
             }
         }
 
-        
+        private void Atualiza_Click_1(object sender, EventArgs e)
+        {
+            string con = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
+            using (SqlConnection sqlCon = new SqlConnection(con))
+            {
+
+                string query = "SELECT * FROM NovoUtilizador";
+                SqlCommand cmd = new SqlCommand(query, sqlCon);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+            }
+        }
     }
 }

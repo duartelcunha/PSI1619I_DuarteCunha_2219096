@@ -139,12 +139,12 @@ namespace WindowsFormsApp1
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(114, 317);
+            this.label4.Location = new System.Drawing.Point(96, 317);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 22);
+            this.label4.Size = new System.Drawing.Size(74, 22);
             this.label4.TabIndex = 10;
-            this.label4.Text = "Preço";
+            this.label4.Text = "Aluguer";
             // 
             // label5
             // 
@@ -243,7 +243,6 @@ namespace WindowsFormsApp1
             this.Name = "InserirLivro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "⠀⠀⠀⠀⠀⠀⠀⠀⠀";
-            this.Load += new System.EventHandler(this.InserirLivro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

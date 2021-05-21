@@ -47,8 +47,8 @@ namespace WindowsFormsApp1
             con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-                
-            cmd.CommandText = "SELECT * FROM NovoLivro WHERE Id = "+bid+"";
+            cmd.CommandText = "SELECT * FROM NovoLivro WHERE Id = @bid";
+            cmd.Parameters.Add("@bid", SqlDbType.VarChar).Value = bid;
             SqlDataAdapter dt = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             dt.Fill(ds);
@@ -75,7 +75,7 @@ namespace WindowsFormsApp1
                 con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = "SELECT * FROM NovoLivro WHERE Livro LIKE '"+nomelivroproctextBox.Text+"%'";
+                cmd.CommandText = "SELECT * FROM NovoLivro WHERE Livro LIKE '" + nomelivroproctextBox.Text+"%'";     
                 SqlDataAdapter dt = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 dt.Fill(ds);
@@ -116,21 +116,23 @@ namespace WindowsFormsApp1
         {
             if (MessageBox.Show("Os campos serão atualizados.", "Confirme", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-                String bLivro = nomelivrotextBox.Text;
-                String bAutor = nomeautortextBox.Text;
-                String bAno = anotextBox.Text;
-                Int64 Aluguer = Int64.Parse(precotextBox.Text);
-                Int64 Quantidade = Int64.Parse(qtdtextBox.Text);
 
+                
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
+                con.Open();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
-
-                cmd.CommandText = "UPDATE NovoLivro SET Livro = '" + bLivro + "', Autor = '" + bAutor + "', Ano = '" + bAno + "', Aluguer = " + Aluguer + ", Quantidade = " + Quantidade + " WHERE Id = " + rowid + "";
-                SqlDataAdapter dt = new SqlDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                dt.Fill(ds);
+                cmd.CommandText = "UPDATE NovoLivro SET Livro = @bLivro,Autor = @bAutor,Ano = @bAno,Aluguer = @Aluguer,Quantidade=@Quantidade WHERE Id = @rowid";
+                cmd.Parameters.Add("@bLivro", SqlDbType.VarChar).Value = nomelivrotextBox.Text;
+                cmd.Parameters.Add("@bAutor", SqlDbType.VarChar).Value = nomeautortextBox.Text;
+                cmd.Parameters.Add("@bAno", SqlDbType.VarChar).Value = anotextBox.Text;
+                cmd.Parameters.Add("@Aluguer", SqlDbType.VarChar).Value = Int64.Parse(precotextBox.Text);
+                cmd.Parameters.Add("@Quantidade", SqlDbType.VarChar).Value = Int64.Parse(qtdtextBox.Text);
+                cmd.Parameters.Add("@rowid", SqlDbType.VarChar).Value = rowid;
+                cmd.ExecuteNonQuery();
+                con.Close();
+       
             }
         }
 
@@ -141,13 +143,13 @@ namespace WindowsFormsApp1
 
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
+                con.Open();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
-
-                cmd.CommandText = "DELETE FROM NovoLivro WHERE Id  = "+rowid+"";
-                SqlDataAdapter dt = new SqlDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                dt.Fill(ds);
+                cmd.CommandText = "DELETE FROM NovoLivro WHERE Id  = @rowid";
+                cmd.Parameters.Add("@rowid", SqlDbType.VarChar).Value = rowid;
+                cmd.ExecuteNonQuery();
+                con.Close();
             }
         }
 
@@ -156,7 +158,7 @@ namespace WindowsFormsApp1
             this.Close();
         }
 
-      
+       
     }
     }
 

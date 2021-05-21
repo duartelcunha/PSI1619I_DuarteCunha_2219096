@@ -63,7 +63,8 @@ namespace WindowsFormsApp1
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.SandyBrown;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 30);
+            this.label1.Location = new System.Drawing.Point(14, 28);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(133, 22);
             this.label1.TabIndex = 0;
@@ -74,7 +75,8 @@ namespace WindowsFormsApp1
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.SandyBrown;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(10, 81);
+            this.label2.Location = new System.Drawing.Point(8, 81);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(139, 22);
             this.label2.TabIndex = 1;
@@ -85,7 +87,8 @@ namespace WindowsFormsApp1
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.SandyBrown;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(106, 131);
+            this.label3.Location = new System.Drawing.Point(104, 133);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 22);
             this.label3.TabIndex = 2;
@@ -96,7 +99,8 @@ namespace WindowsFormsApp1
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.SandyBrown;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(451, 77);
+            this.label4.Location = new System.Drawing.Point(481, 81);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(74, 22);
             this.label4.TabIndex = 3;
@@ -107,7 +111,8 @@ namespace WindowsFormsApp1
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.SandyBrown;
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(421, 30);
+            this.label5.Location = new System.Drawing.Point(451, 28);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(104, 22);
             this.label5.TabIndex = 4;
@@ -118,9 +123,10 @@ namespace WindowsFormsApp1
             this.Atualizar.BackColor = System.Drawing.Color.Chocolate;
             this.Atualizar.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Atualizar.ForeColor = System.Drawing.Color.White;
-            this.Atualizar.Location = new System.Drawing.Point(525, 123);
+            this.Atualizar.Location = new System.Drawing.Point(445, 122);
+            this.Atualizar.Margin = new System.Windows.Forms.Padding(4);
             this.Atualizar.Name = "Atualizar";
-            this.Atualizar.Size = new System.Drawing.Size(96, 45);
+            this.Atualizar.Size = new System.Drawing.Size(105, 45);
             this.Atualizar.TabIndex = 6;
             this.Atualizar.Text = "Atualizar";
             this.Atualizar.UseVisualStyleBackColor = false;
@@ -131,9 +137,10 @@ namespace WindowsFormsApp1
             this.Apagar.BackColor = System.Drawing.Color.Chocolate;
             this.Apagar.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Apagar.ForeColor = System.Drawing.Color.White;
-            this.Apagar.Location = new System.Drawing.Point(426, 123);
+            this.Apagar.Location = new System.Drawing.Point(558, 122);
+            this.Apagar.Margin = new System.Windows.Forms.Padding(4);
             this.Apagar.Name = "Apagar";
-            this.Apagar.Size = new System.Drawing.Size(93, 45);
+            this.Apagar.Size = new System.Drawing.Size(105, 45);
             this.Apagar.TabIndex = 7;
             this.Apagar.Text = "Apagar";
             this.Apagar.UseVisualStyleBackColor = false;
@@ -144,9 +151,10 @@ namespace WindowsFormsApp1
             this.Cancelar.BackColor = System.Drawing.Color.Chocolate;
             this.Cancelar.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cancelar.ForeColor = System.Drawing.Color.White;
-            this.Cancelar.Location = new System.Drawing.Point(326, 123);
+            this.Cancelar.Location = new System.Drawing.Point(332, 122);
+            this.Cancelar.Margin = new System.Windows.Forms.Padding(4);
             this.Cancelar.Name = "Cancelar";
-            this.Cancelar.Size = new System.Drawing.Size(94, 45);
+            this.Cancelar.Size = new System.Drawing.Size(105, 45);
             this.Cancelar.TabIndex = 8;
             this.Cancelar.Text = "Cancelar";
             this.Cancelar.UseVisualStyleBackColor = false;
@@ -161,52 +169,58 @@ namespace WindowsFormsApp1
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.GridColor = System.Drawing.Color.White;
-            this.dataGridView1.Location = new System.Drawing.Point(53, 164);
+            this.dataGridView1.Location = new System.Drawing.Point(30, 180);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridView1.Size = new System.Drawing.Size(659, 312);
+            this.dataGridView1.Size = new System.Drawing.Size(695, 444);
             this.dataGridView1.TabIndex = 9;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // nomelivrotextBox
             // 
             this.nomelivrotextBox.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nomelivrotextBox.Location = new System.Drawing.Point(153, 27);
+            this.nomelivrotextBox.Location = new System.Drawing.Point(155, 25);
+            this.nomelivrotextBox.Margin = new System.Windows.Forms.Padding(4);
             this.nomelivrotextBox.Name = "nomelivrotextBox";
-            this.nomelivrotextBox.Size = new System.Drawing.Size(232, 29);
+            this.nomelivrotextBox.Size = new System.Drawing.Size(261, 29);
             this.nomelivrotextBox.TabIndex = 10;
             // 
             // nomeautortextBox
             // 
             this.nomeautortextBox.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nomeautortextBox.Location = new System.Drawing.Point(153, 77);
+            this.nomeautortextBox.Location = new System.Drawing.Point(155, 78);
+            this.nomeautortextBox.Margin = new System.Windows.Forms.Padding(4);
             this.nomeautortextBox.Name = "nomeautortextBox";
-            this.nomeautortextBox.Size = new System.Drawing.Size(232, 29);
+            this.nomeautortextBox.Size = new System.Drawing.Size(261, 29);
             this.nomeautortextBox.TabIndex = 11;
             // 
             // anotextBox
             // 
             this.anotextBox.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.anotextBox.Location = new System.Drawing.Point(153, 128);
+            this.anotextBox.Location = new System.Drawing.Point(155, 130);
+            this.anotextBox.Margin = new System.Windows.Forms.Padding(4);
             this.anotextBox.Name = "anotextBox";
-            this.anotextBox.Size = new System.Drawing.Size(65, 29);
+            this.anotextBox.Size = new System.Drawing.Size(77, 29);
             this.anotextBox.TabIndex = 12;
             // 
             // qtdtextBox
             // 
             this.qtdtextBox.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.qtdtextBox.Location = new System.Drawing.Point(531, 27);
+            this.qtdtextBox.Location = new System.Drawing.Point(563, 25);
+            this.qtdtextBox.Margin = new System.Windows.Forms.Padding(4);
             this.qtdtextBox.Name = "qtdtextBox";
-            this.qtdtextBox.Size = new System.Drawing.Size(90, 29);
+            this.qtdtextBox.Size = new System.Drawing.Size(100, 29);
             this.qtdtextBox.TabIndex = 13;
             // 
             // precotextBox
             // 
             this.precotextBox.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.precotextBox.Location = new System.Drawing.Point(531, 74);
+            this.precotextBox.Location = new System.Drawing.Point(563, 78);
+            this.precotextBox.Margin = new System.Windows.Forms.Padding(4);
             this.precotextBox.Name = "precotextBox";
-            this.precotextBox.Size = new System.Drawing.Size(90, 29);
+            this.precotextBox.Size = new System.Drawing.Size(100, 29);
             this.precotextBox.TabIndex = 14;
             // 
             // panel1
@@ -214,20 +228,21 @@ namespace WindowsFormsApp1
             this.panel1.BackColor = System.Drawing.Color.SandyBrown;
             this.panel1.Controls.Add(this.nomeautortextBox);
             this.panel1.Controls.Add(this.qtdtextBox);
-            this.panel1.Controls.Add(this.precotextBox);
-            this.panel1.Controls.Add(this.nomelivrotextBox);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.precotextBox);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.anotextBox);
+            this.panel1.Controls.Add(this.nomelivrotextBox);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.Cancelar);
+            this.panel1.Controls.Add(this.Apagar);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.Atualizar);
-            this.panel1.Controls.Add(this.Apagar);
-            this.panel1.Controls.Add(this.Cancelar);
-            this.panel1.Location = new System.Drawing.Point(53, 481);
+            this.panel1.Location = new System.Drawing.Point(30, 643);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(659, 199);
+            this.panel1.Size = new System.Drawing.Size(695, 189);
             this.panel1.TabIndex = 15;
             // 
             // label6
@@ -235,7 +250,8 @@ namespace WindowsFormsApp1
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(82, 40);
+            this.label6.Location = new System.Drawing.Point(85, 45);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(163, 39);
             this.label6.TabIndex = 16;
@@ -244,9 +260,10 @@ namespace WindowsFormsApp1
             // nomelivroproctextBox
             // 
             this.nomelivroproctextBox.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nomelivroproctextBox.Location = new System.Drawing.Point(229, 127);
+            this.nomelivroproctextBox.Location = new System.Drawing.Point(248, 136);
+            this.nomelivroproctextBox.Margin = new System.Windows.Forms.Padding(4);
             this.nomelivroproctextBox.Name = "nomelivroproctextBox";
-            this.nomelivroproctextBox.Size = new System.Drawing.Size(329, 27);
+            this.nomelivroproctextBox.Size = new System.Drawing.Size(297, 27);
             this.nomelivroproctextBox.TabIndex = 17;
             this.nomelivroproctextBox.TextChanged += new System.EventHandler(this.nomelivroproctextBox_TextChanged);
             // 
@@ -254,7 +271,8 @@ namespace WindowsFormsApp1
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(85, 129);
+            this.label7.Location = new System.Drawing.Point(102, 138);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(138, 22);
             this.label7.TabIndex = 18;
@@ -262,14 +280,17 @@ namespace WindowsFormsApp1
             // 
             // Atualiza
             // 
-            this.Atualiza.BackColor = System.Drawing.Color.Chocolate;
+            this.Atualiza.AutoSize = true;
+            this.Atualiza.BackColor = System.Drawing.Color.White;
+            this.Atualiza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Atualiza.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Atualiza.ForeColor = System.Drawing.Color.White;
-            this.Atualiza.Location = new System.Drawing.Point(564, 124);
+            this.Atualiza.Image = ((System.Drawing.Image)(resources.GetObject("Atualiza.Image")));
+            this.Atualiza.Location = new System.Drawing.Point(564, 126);
+            this.Atualiza.Margin = new System.Windows.Forms.Padding(4);
             this.Atualiza.Name = "Atualiza";
-            this.Atualiza.Size = new System.Drawing.Size(107, 34);
+            this.Atualiza.Size = new System.Drawing.Size(46, 46);
             this.Atualiza.TabIndex = 19;
-            this.Atualiza.Text = "Atualizar";
             this.Atualiza.UseVisualStyleBackColor = false;
             this.Atualiza.Click += new System.EventHandler(this.Atualiza_Click);
             // 
@@ -280,9 +301,10 @@ namespace WindowsFormsApp1
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Location = new System.Drawing.Point(0, -3);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(761, 118);
+            this.panel2.Size = new System.Drawing.Size(738, 121);
             this.panel2.TabIndex = 21;
             // 
             // button1
@@ -290,9 +312,10 @@ namespace WindowsFormsApp1
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.SandyBrown;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(707, 40);
+            this.button1.Location = new System.Drawing.Point(682, 42);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(42, 39);
+            this.button1.Size = new System.Drawing.Size(43, 42);
             this.button1.TabIndex = 23;
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button1.UseVisualStyleBackColor = true;
@@ -301,27 +324,30 @@ namespace WindowsFormsApp1
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 26);
+            this.pictureBox1.Location = new System.Drawing.Point(13, 16);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 67);
+            this.pictureBox1.Size = new System.Drawing.Size(64, 68);
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
             // 
             // VerLivro
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(778, 501);
+            this.ClientSize = new System.Drawing.Size(755, 660);
             this.ControlBox = false;
             this.Controls.Add(this.Atualiza);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.nomelivroproctextBox);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.dataGridView1);
+            this.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "VerLivro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "⠀⠀⠀⠀⠀⠀⠀⠀⠀";

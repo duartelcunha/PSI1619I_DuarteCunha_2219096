@@ -24,21 +24,18 @@ namespace WindowsFormsApp1
         {
             if(nomelivroTextBox.Text!="" && nomeautorTextBox.Text!="" && anoTextBox.Text!="" && precoTextBox.Text != "" && quantidadeTextBox.Text != "")
             {
-
-            
-            String bLivro = nomelivroTextBox.Text;
-            String bAutor = nomeautorTextBox.Text;
-            String bAno = anoTextBox.Text;
-            Int64 Aluguer = Int64.Parse(precoTextBox.Text);
-            Int64 Quantidade = Int64.Parse(quantidadeTextBox.Text);
-
             SqlConnection con = new SqlConnection();
             con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
 
             con.Open();
-            cmd.CommandText = "INSERT INTO NovoLivro (Livro,Autor,Ano,Aluguer,Quantidade) values ('" + bLivro + "','" + bAutor + "', '" + bAno + "', " + Aluguer + "," + Quantidade + ") ";
+                cmd.Parameters.AddWithValue("@bLivro", nomelivroTextBox.Text.ToString());
+                cmd.Parameters.AddWithValue("@bAutor", nomeautorTextBox.Text.ToString());
+                cmd.Parameters.AddWithValue("@bAno", anoTextBox.Text.ToString());
+                cmd.Parameters.AddWithValue("@Aluguer", Int64.Parse(precoTextBox.Text));
+                cmd.Parameters.AddWithValue("@Quantidade", Int64.Parse(quantidadeTextBox.Text));
+                cmd.CommandText = "INSERT INTO NovoLivro (Livro,Autor,Ano,Aluguer,Quantidade) VALUES (@bLivro,@bAutor,@bAno,@Aluguer,@Quantidade)";
             cmd.ExecuteNonQuery();
             con.Close();
 
@@ -65,10 +62,6 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void InserirLivro_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {

@@ -29,6 +29,7 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControl));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -78,7 +79,6 @@ namespace WindowsFormsApp1
             this.label4.Size = new System.Drawing.Size(46, 13);
             this.label4.TabIndex = 4;
             this.label4.Text = "Aluguer:";
-           
             // 
             // label5
             // 
@@ -105,9 +105,11 @@ namespace WindowsFormsApp1
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(25, 15);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(191, 211);
+            this.pictureBox1.Size = new System.Drawing.Size(170, 186);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
@@ -132,7 +134,7 @@ namespace WindowsFormsApp1
             this.maskedTextBox4.Size = new System.Drawing.Size(129, 20);
             this.maskedTextBox4.TabIndex = 11;
             // 
-            // UserControl1
+            // UserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -147,7 +149,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "UserControl1";
+            this.Name = "UserControl";
             this.Size = new System.Drawing.Size(215, 349);
             this.Load += new System.EventHandler(this.UserControl1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
