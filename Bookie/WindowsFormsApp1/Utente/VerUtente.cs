@@ -43,7 +43,8 @@ namespace WindowsFormsApp1
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
 
-            cmd.CommandText = "SELECT * FROM NovoUtilizador WHERE Id = " + bid + "";
+            cmd.CommandText = "SELECT * FROM NovoUtente WHERE Id = @bid";
+            cmd.Parameters.Add("@bid", SqlDbType.VarChar).Value = bid;
             SqlDataAdapter dt = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             dt.Fill(ds);
@@ -65,7 +66,7 @@ namespace WindowsFormsApp1
             con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "SELECT * FROM NovoUtilizador";
+            cmd.CommandText = "SELECT * FROM NovoUtente";
             SqlDataAdapter dt = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             dt.Fill(ds);
@@ -93,9 +94,13 @@ namespace WindowsFormsApp1
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
 
-                cmd.CommandText = "UPDATE NovoUtilizador SET PrimeiroNome = '" + bPN + "', UltimoNome = '" + bUN + "', Sexo = '" + bSexo + "', Contacto = '" + bContacto + "', Email = '" + bEmail + "' WHERE Id = " + rowid + "";
-                dataGridView1.Update();
-                dataGridView1.Refresh();
+                cmd.CommandText = "UPDATE NovoUtente SET PrimeiroNome = @bPN, UltimoNome = @bUN, Sexo = @bSexo, Contacto = @bContacto, Email = @bEmail WHERE Id = @rowid";
+                cmd.Parameters.Add("@bPN", SqlDbType.VarChar).Value = pnTextBox.Text;
+                cmd.Parameters.Add("@bUN", SqlDbType.VarChar).Value = unTextBox.Text;
+                cmd.Parameters.Add("@bSexo", SqlDbType.VarChar).Value = sexoComboBox.Text;
+                cmd.Parameters.Add("@bContacto", SqlDbType.VarChar).Value = contactoTextBox.Text;
+                cmd.Parameters.Add("@bEmail", SqlDbType.VarChar).Value = emailTextBox.Text;
+                cmd.Parameters.Add("@rowid", SqlDbType.VarChar).Value = rowid;
                 SqlDataAdapter dt = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 dt.Fill(ds);
@@ -112,7 +117,8 @@ namespace WindowsFormsApp1
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
 
-                cmd.CommandText = "DELETE FROM NovoUtilizador WHERE Id  = " + rowid + "";
+                cmd.CommandText = "DELETE FROM NovoUtente WHERE Id  = @rowid";
+                cmd.Parameters.Add("@rowid", SqlDbType.VarChar).Value = rowid;
                 SqlDataAdapter dt = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 dt.Fill(ds);
@@ -131,7 +137,7 @@ namespace WindowsFormsApp1
                 con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = "SELECT * FROM NovoUtilizador WHERE Username LIKE '" + nomeuserproctextBox.Text + "%'";
+                cmd.CommandText = "SELECT * FROM NovoUtente WHERE PrimeiroNome LIKE '" + nomeuserproctextBox.Text + "%'";
                 SqlDataAdapter dt = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 dt.Fill(ds);
@@ -144,7 +150,7 @@ namespace WindowsFormsApp1
                 con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = "SELECT * FROM NovoUtilizador";
+                cmd.CommandText = "SELECT * FROM NovoUtente";
                 SqlDataAdapter dt = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 dt.Fill(ds);
@@ -159,7 +165,7 @@ namespace WindowsFormsApp1
             using (SqlConnection sqlCon = new SqlConnection(con))
             {
 
-                string query = "SELECT * FROM NovoUtilizador";
+                string query = "SELECT * FROM NovoUtente";
                 SqlCommand cmd = new SqlCommand(query, sqlCon);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();

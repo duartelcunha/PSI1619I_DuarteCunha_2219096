@@ -11,9 +11,9 @@ using System.Data.SqlClient;
 
 namespace WindowsFormsApp1
 {
-    public partial class Requisitar : Form
+    public partial class Req : Form
     {
-        public Requisitar()
+        public Req()
         {
             InitializeComponent();
         }
@@ -46,23 +46,22 @@ namespace WindowsFormsApp1
         int count;
         private void Procurar_Click(object sender, EventArgs e)
         {
-            if (utilizadorprocTextBox.Text != "")
+            if (ProcUtenteTextBox.Text != "")
             {
-                String NC = utilizadorprocTextBox.Text;
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
 
-                cmd.Parameters.AddWithValue("@NC", utilizadorprocTextBox.Text.ToString());
+                cmd.Parameters.AddWithValue("@NIF", ProcUtenteTextBox.Text.ToString());
 
-                cmd.CommandText = "SELECT * FROM NovoUtilizador WHERE NC = @NC";
+                cmd.CommandText = "SELECT * FROM NovoUtente WHERE NIF = @NIF";
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 da.Fill(ds);
 
 
-                cmd.CommandText = "SELECT Count(nu_NC) FROM Req WHERE nu_NC = @NC AND DataReturn is null";
+                cmd.CommandText = "SELECT Count(NIF) FROM Req WHERE NIF = @NIF AND DataReturn is null";
                 SqlDataAdapter da2 = new SqlDataAdapter(cmd);
                 DataSet ds2 = new DataSet();
                 da2.Fill(ds2);
@@ -71,7 +70,7 @@ namespace WindowsFormsApp1
                
                 if (ds.Tables[0].Rows.Count != 0)
                 {
-                    usernameTextBox.Text = ds.Tables[0].Rows[0]["Username"].ToString();
+                    NIFTextBox.Text = ds.Tables[0].Rows[0]["NIF"].ToString();
                     nomecompletoTextBox.Text = $"{ds.Tables[0].Rows[0]["PrimeiroNome"].ToString()} {ds.Tables[0].Rows[0]["UltimoNome"].ToString()}"; // ds.Tables[0].Rows[0]["PrimeiroNome"].ToString();
                     ContactoTextBox.Text = ds.Tables[0].Rows[0]["Contacto"].ToString();
                     emailTextBox.Text = ds.Tables[0].Rows[0]["Email"].ToString();
@@ -79,11 +78,11 @@ namespace WindowsFormsApp1
                 }
                 else
                 {
-                    usernameTextBox.Clear();
+                    NIFTextBox.Clear();
                     nomecompletoTextBox.Clear();
                     ContactoTextBox.Clear();
                     emailTextBox.Clear();
-                    MessageBox.Show("Número de Contribuinte Inválido", "Tente Novamente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Número de Identificação Fiscal Inválido", "Tente Novamente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
@@ -95,7 +94,7 @@ namespace WindowsFormsApp1
 
         private void Req_Click(object sender, EventArgs e)
         {
-            if(usernameTextBox.Text != "")
+            if(NIFTextBox.Text != "")
             {
                 if(nomelivroComboBox.SelectedIndex != -1 && count <=2)
                 {
@@ -104,14 +103,14 @@ namespace WindowsFormsApp1
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = con;
                     con.Open();
-                    cmd.Parameters.AddWithValue("@proc", utilizadorprocTextBox.Text.ToString());
-                    cmd.Parameters.AddWithValue("@user", usernameTextBox.Text.ToString());
-                    cmd.Parameters.AddWithValue("@nome", nomecompletoTextBox.Text.ToString());
-                    cmd.Parameters.AddWithValue("@email", emailTextBox.Text.ToString());
-                    cmd.Parameters.AddWithValue("@nl", nomelivroComboBox.Text.ToString());
-                    cmd.Parameters.AddWithValue("@contacto", Int64.Parse(ContactoTextBox.Text));
-                    cmd.Parameters.AddWithValue("@datareq", datareqDataPicker.Text.ToString());
-                    cmd.CommandText = cmd.CommandText = "INSERT INTO Req (nu_NC,nu_Username,nu_Nome,nu_Email,nl_NomeLivro,nu_Contacto,DataReq) VALUES (@proc,@user,@nome,@email,@nl,@contacto,@datareq)";
+                    cmd.Parameters.Add("@proc", SqlDbType.VarChar).Value = ProcUtenteTextBox.Text;
+                    cmd.Parameters.Add("@NIF", SqlDbType.VarChar).Value = NIFTextBox.Text;
+                    cmd.Parameters.Add("@nome", SqlDbType.VarChar).Value = nomecompletoTextBox.Text;
+                    cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = emailTextBox.Text;
+                    cmd.Parameters.Add("@nl", SqlDbType.VarChar).Value = nomelivroComboBox.Text;
+                    cmd.Parameters.Add("@contacto", SqlDbType.VarChar).Value = Int64.Parse(ContactoTextBox.Text);
+                    cmd.Parameters.Add("@datareq", SqlDbType.VarChar).Value = datareqDataPicker.Text;
+                    cmd.CommandText = cmd.CommandText = "INSERT INTO Req (NIF,NIF,Nome,Email,NomeLivro,Contacto,DataReq) VALUES (@proc,@NIF,@nome,@email,@nl,@contacto,@datareq)";
                     cmd.ExecuteNonQuery();
                     con.Close();
                     MessageBox.Show("Livro Requisitado", "Requisição", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -119,7 +118,7 @@ namespace WindowsFormsApp1
                 }
                 else
                 {
-                    MessageBox.Show("Escolha um livro. Ou o número máximo de livros foi requisitado","Confirme", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    MessageBox.Show("Escolha um livro. Ou então o nº máximo de livros foi requisitado","Confirme", MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
             }
         }
@@ -131,5 +130,7 @@ namespace WindowsFormsApp1
             var a = new VerUtilizador();
             a.Show();
         }
+
+ 
     }
 }

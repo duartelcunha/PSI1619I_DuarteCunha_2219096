@@ -17,7 +17,7 @@ namespace WindowsFormsApp1
         {
             Thread a = new Thread(new ThreadStart(StartForm));
             a.Start();
-            Thread.Sleep(200);
+            Thread.Sleep(4000);
             a.Abort();
             InitializeComponent();
             menuStrip1.Renderer = new MyRenderer();
@@ -103,7 +103,28 @@ namespace WindowsFormsApp1
 
         private void requisitarLivroToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var a = new Requisitar();
+            var a = new Req();
+            a.Show();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if(Opacity == 1)
+            {
+                timer1.Stop();
+            }
+            Opacity += .2;
+        }
+
+        private void retornarLivroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var a = new Dev();
+            a.Show();
+        }
+
+        private void detalhesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var a = new Info();
             a.Show();
         }
     }

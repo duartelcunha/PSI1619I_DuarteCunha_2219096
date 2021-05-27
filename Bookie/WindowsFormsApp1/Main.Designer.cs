@@ -29,9 +29,11 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.livrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.feitoPorDuarteCunhaTGPSITurmaIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.utilizadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verUtilizadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inserirUtilizadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,7 +44,8 @@ namespace WindowsFormsApp1
             this.retornarLivroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.detalhesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.feitoPorDuarteCunhaTGPSITurmaIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,6 +82,13 @@ namespace WindowsFormsApp1
             this.livrosToolStripMenuItem.Size = new System.Drawing.Size(256, 115);
             this.livrosToolStripMenuItem.Text = "Livros";
             // 
+            // feitoPorDuarteCunhaTGPSITurmaIToolStripMenuItem
+            // 
+            this.feitoPorDuarteCunhaTGPSITurmaIToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.feitoPorDuarteCunhaTGPSITurmaIToolStripMenuItem.Name = "feitoPorDuarteCunhaTGPSITurmaIToolStripMenuItem";
+            this.feitoPorDuarteCunhaTGPSITurmaIToolStripMenuItem.Size = new System.Drawing.Size(298, 22);
+            this.feitoPorDuarteCunhaTGPSITurmaIToolStripMenuItem.Text = "Feito por: Duarte Cunha - TGPSI - Turma I";
+            // 
             // utilizadorToolStripMenuItem
             // 
             this.utilizadorToolStripMenuItem.BackColor = System.Drawing.Color.White;
@@ -93,20 +103,20 @@ namespace WindowsFormsApp1
             this.utilizadorToolStripMenuItem.Margin = new System.Windows.Forms.Padding(1, 2, 2, 2);
             this.utilizadorToolStripMenuItem.Name = "utilizadorToolStripMenuItem";
             this.utilizadorToolStripMenuItem.Size = new System.Drawing.Size(253, 68);
-            this.utilizadorToolStripMenuItem.Text = "Utilizador";
+            this.utilizadorToolStripMenuItem.Text = "Utente";
             // 
             // verUtilizadoresToolStripMenuItem
             // 
             this.verUtilizadoresToolStripMenuItem.Name = "verUtilizadoresToolStripMenuItem";
-            this.verUtilizadoresToolStripMenuItem.Size = new System.Drawing.Size(245, 30);
-            this.verUtilizadoresToolStripMenuItem.Text = "Ver Utilizador";
+            this.verUtilizadoresToolStripMenuItem.Size = new System.Drawing.Size(215, 30);
+            this.verUtilizadoresToolStripMenuItem.Text = "Ver Utente";
             this.verUtilizadoresToolStripMenuItem.Click += new System.EventHandler(this.verUtilizadoresToolStripMenuItem_Click);
             // 
             // inserirUtilizadoresToolStripMenuItem
             // 
             this.inserirUtilizadoresToolStripMenuItem.Name = "inserirUtilizadoresToolStripMenuItem";
-            this.inserirUtilizadoresToolStripMenuItem.Size = new System.Drawing.Size(245, 30);
-            this.inserirUtilizadoresToolStripMenuItem.Text = "Inserir Utilizador";
+            this.inserirUtilizadoresToolStripMenuItem.Size = new System.Drawing.Size(215, 30);
+            this.inserirUtilizadoresToolStripMenuItem.Text = "Inserir Utente";
             this.inserirUtilizadoresToolStripMenuItem.Click += new System.EventHandler(this.inserirUtilizadoresToolStripMenuItem_Click);
             // 
             // livrosToolStripMenuItem1
@@ -156,6 +166,7 @@ namespace WindowsFormsApp1
             this.retornarLivroToolStripMenuItem.Name = "retornarLivroToolStripMenuItem";
             this.retornarLivroToolStripMenuItem.Size = new System.Drawing.Size(256, 68);
             this.retornarLivroToolStripMenuItem.Text = "Devolução";
+            this.retornarLivroToolStripMenuItem.Click += new System.EventHandler(this.retornarLivroToolStripMenuItem_Click);
             // 
             // detalhesToolStripMenuItem
             // 
@@ -165,7 +176,8 @@ namespace WindowsFormsApp1
             this.detalhesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.detalhesToolStripMenuItem.Name = "detalhesToolStripMenuItem";
             this.detalhesToolStripMenuItem.Size = new System.Drawing.Size(256, 68);
-            this.detalhesToolStripMenuItem.Text = "Detalhes";
+            this.detalhesToolStripMenuItem.Text = "Informações";
+            this.detalhesToolStripMenuItem.Click += new System.EventHandler(this.detalhesToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 
@@ -178,12 +190,19 @@ namespace WindowsFormsApp1
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
-            // feitoPorDuarteCunhaTGPSITurmaIToolStripMenuItem
+            // timer1
             // 
-            this.feitoPorDuarteCunhaTGPSITurmaIToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.feitoPorDuarteCunhaTGPSITurmaIToolStripMenuItem.Name = "feitoPorDuarteCunhaTGPSITurmaIToolStripMenuItem";
-            this.feitoPorDuarteCunhaTGPSITurmaIToolStripMenuItem.Size = new System.Drawing.Size(298, 22);
-            this.feitoPorDuarteCunhaTGPSITurmaIToolStripMenuItem.Text = "Feito por: Duarte Cunha - TGPSI - Turma I";
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 60;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.SandyBrown;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(8, 553);
+            this.panel1.TabIndex = 3;
             // 
             // Main
             // 
@@ -192,12 +211,14 @@ namespace WindowsFormsApp1
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1098, 549);
             this.ControlBox = false;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
+            this.Opacity = 0D;
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Main_Load);
@@ -223,5 +244,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ToolStripMenuItem verLivrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inserirLivrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem feitoPorDuarteCunhaTGPSITurmaIToolStripMenuItem;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

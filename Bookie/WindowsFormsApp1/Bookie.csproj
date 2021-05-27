@@ -104,17 +104,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Info.Designer.cs">
+      <DependentUpon>Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dev.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dev.Designer.cs">
+      <DependentUpon>Dev.cs</DependentUpon>
+    </Compile>
     <Compile Include="Livro\InserirLivro.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Livro\InserirLivro.Designer.cs">
       <DependentUpon>InserirLivro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Requisitar.cs">
+    <Compile Include="Req.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Requisitar.Designer.cs">
-      <DependentUpon>Requisitar.cs</DependentUpon>
+    <Compile Include="Req.Designer.cs">
+      <DependentUpon>Req.cs</DependentUpon>
     </Compile>
     <Compile Include="Splash.cs">
       <SubType>Form</SubType>
@@ -134,10 +146,10 @@
     <Compile Include="UserControl.Designer.cs">
       <DependentUpon>UserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Utilizador\Registo.cs">
+    <Compile Include="Utente\Registo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Utilizador\Registo.Designer.cs">
+    <Compile Include="Utente\Registo.Designer.cs">
       <DependentUpon>Registo.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -154,17 +166,23 @@
     <Compile Include="Livro\VerLivro.Designer.cs">
       <DependentUpon>VerLivro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Utilizador\VerUtilizador.cs">
+    <Compile Include="Utente\VerUtente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Utilizador\VerUtilizador.Designer.cs">
-      <DependentUpon>VerUtilizador.cs</DependentUpon>
+    <Compile Include="Utente\VerUtente.Designer.cs">
+      <DependentUpon>VerUtente.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Info.resx">
+      <DependentUpon>Info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dev.resx">
+      <DependentUpon>Dev.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Livro\InserirLivro.resx">
       <DependentUpon>InserirLivro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Requisitar.resx">
-      <DependentUpon>Requisitar.cs</DependentUpon>
+    <EmbeddedResource Include="Req.resx">
+      <DependentUpon>Req.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>
@@ -175,7 +193,7 @@
     <EmbeddedResource Include="UserControl.resx">
       <DependentUpon>UserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Utilizador\Registo.resx">
+    <EmbeddedResource Include="Utente\Registo.resx">
       <DependentUpon>Registo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -194,8 +212,8 @@
     <EmbeddedResource Include="Livro\VerLivro.resx">
       <DependentUpon>VerLivro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Utilizador\VerUtilizador.resx">
-      <DependentUpon>VerUtilizador.cs</DependentUpon>
+    <EmbeddedResource Include="Utente\VerUtente.resx">
+      <DependentUpon>VerUtente.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

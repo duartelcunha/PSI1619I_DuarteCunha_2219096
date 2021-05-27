@@ -29,14 +29,14 @@ namespace WindowsFormsApp1
         
         private void Registo_Load(object sender, EventArgs e)
         {
-            usernameTextBox.Select();
+            primeiroNomeTextBox.Select();
         }
 
      
         private void Registar_Click(object sender, EventArgs e)
         {
             string con = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
-            if (usernameTextBox.Text == "" || passwordTextBox.Text == "")
+            if (primeiroNomeTextBox.Text == "" || contactoTextBox.Text == "")
             {
                 MessageBox.Show("Preencha todos os campos");
             }
@@ -48,8 +48,6 @@ namespace WindowsFormsApp1
                     sqlCon.Open();
                     SqlCommand sqlCmd = new SqlCommand("UserAdd", sqlCon);
                     sqlCmd.CommandType = CommandType.StoredProcedure;
-                    sqlCmd.Parameters.AddWithValue("@Username", usernameTextBox.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@Password", passwordTextBox.Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@PrimeiroNome", primeiroNomeTextBox.Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@UltimoNome", ultimoNomeTextBox.Text.Trim());
                     sqlCmd.Parameters.AddWithValue("@Sexo", sexoTextBox.Text.Trim());
@@ -59,8 +57,6 @@ namespace WindowsFormsApp1
                     sqlCmd.ExecuteNonQuery();
                     
                     MessageBox.Show("Registro Completo");
-                    usernameTextBox.Clear();
-                    passwordTextBox.Clear();
                     primeiroNomeTextBox.Clear();
                     ultimoNomeTextBox.Clear();
                     contactoTextBox.Clear();
@@ -144,29 +140,7 @@ namespace WindowsFormsApp1
         }
 
      
-        private void passwordTextBox_Validating(object sender, CancelEventArgs e)
-        {
-           
-            if (passwordTextBox.Text.Length == 0) return;
-
-            if (passwordTextBox.Text.Length < 6 || passwordTextBox.Text.Length > 16)
-            {
-                e.Cancel = true;
-                MessageBox.Show("Digite entre 6 a 16 caracteres", "Password", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
-        private void usernameTextBox_Validating(object sender, CancelEventArgs e)
-        {
-
-            if (usernameTextBox.Text.Length == 0) return;
-
-            if (usernameTextBox.Text.Length < 4 || usernameTextBox.Text.Length > 20)
-            {
-                e.Cancel = true;
-                MessageBox.Show("Digite entre 4 a 20 caracteres","Username", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
+       
 
         private void emailTextBox_Leave(object sender, EventArgs e)
         {
@@ -209,6 +183,21 @@ namespace WindowsFormsApp1
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }

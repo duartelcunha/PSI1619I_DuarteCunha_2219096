@@ -52,6 +52,8 @@ namespace WindowsFormsApp1
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Atualiza = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -67,12 +69,12 @@ namespace WindowsFormsApp1
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.GridColor = System.Drawing.Color.White;
-            this.dataGridView1.Location = new System.Drawing.Point(11, 174);
+            this.dataGridView1.Location = new System.Drawing.Point(44, 161);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridView1.Size = new System.Drawing.Size(639, 319);
+            this.dataGridView1.Size = new System.Drawing.Size(597, 342);
             this.dataGridView1.TabIndex = 26;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
@@ -92,10 +94,10 @@ namespace WindowsFormsApp1
             this.panel2.Controls.Add(this.Atualizar);
             this.panel2.Controls.Add(this.Apagar);
             this.panel2.Controls.Add(this.Cancelar);
-            this.panel2.Location = new System.Drawing.Point(11, 509);
+            this.panel2.Location = new System.Drawing.Point(24, 509);
             this.panel2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(639, 184);
+            this.panel2.Size = new System.Drawing.Size(637, 184);
             this.panel2.TabIndex = 27;
             // 
             // sexoComboBox
@@ -126,7 +128,7 @@ namespace WindowsFormsApp1
             this.contactoTextBox.Location = new System.Drawing.Point(439, 79);
             this.contactoTextBox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.contactoTextBox.Name = "contactoTextBox";
-            this.contactoTextBox.Size = new System.Drawing.Size(176, 29);
+            this.contactoTextBox.Size = new System.Drawing.Size(187, 29);
             this.contactoTextBox.TabIndex = 26;
             // 
             // emailTextBox
@@ -135,7 +137,7 @@ namespace WindowsFormsApp1
             this.emailTextBox.Location = new System.Drawing.Point(439, 33);
             this.emailTextBox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(176, 29);
+            this.emailTextBox.Size = new System.Drawing.Size(187, 29);
             this.emailTextBox.TabIndex = 27;
             // 
             // pnTextBox
@@ -212,10 +214,10 @@ namespace WindowsFormsApp1
             this.Atualizar.BackColor = System.Drawing.Color.Chocolate;
             this.Atualizar.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Atualizar.ForeColor = System.Drawing.Color.White;
-            this.Atualizar.Location = new System.Drawing.Point(416, 126);
+            this.Atualizar.Location = new System.Drawing.Point(427, 126);
             this.Atualizar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Atualizar.Name = "Atualizar";
-            this.Atualizar.Size = new System.Drawing.Size(99, 41);
+            this.Atualizar.Size = new System.Drawing.Size(99, 46);
             this.Atualizar.TabIndex = 20;
             this.Atualizar.Text = "Atualizar";
             this.Atualizar.UseVisualStyleBackColor = false;
@@ -226,10 +228,10 @@ namespace WindowsFormsApp1
             this.Apagar.BackColor = System.Drawing.Color.Chocolate;
             this.Apagar.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Apagar.ForeColor = System.Drawing.Color.White;
-            this.Apagar.Location = new System.Drawing.Point(519, 126);
+            this.Apagar.Location = new System.Drawing.Point(530, 126);
             this.Apagar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Apagar.Name = "Apagar";
-            this.Apagar.Size = new System.Drawing.Size(96, 41);
+            this.Apagar.Size = new System.Drawing.Size(96, 46);
             this.Apagar.TabIndex = 21;
             this.Apagar.Text = "Apagar";
             this.Apagar.UseVisualStyleBackColor = false;
@@ -240,10 +242,10 @@ namespace WindowsFormsApp1
             this.Cancelar.BackColor = System.Drawing.Color.Chocolate;
             this.Cancelar.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cancelar.ForeColor = System.Drawing.Color.White;
-            this.Cancelar.Location = new System.Drawing.Point(314, 126);
+            this.Cancelar.Location = new System.Drawing.Point(325, 126);
             this.Cancelar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Cancelar.Name = "Cancelar";
-            this.Cancelar.Size = new System.Drawing.Size(98, 41);
+            this.Cancelar.Size = new System.Drawing.Size(98, 46);
             this.Cancelar.TabIndex = 22;
             this.Cancelar.Text = "Cancelar";
             this.Cancelar.UseVisualStyleBackColor = false;
@@ -252,17 +254,17 @@ namespace WindowsFormsApp1
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(114, 136);
+            this.label7.Location = new System.Drawing.Point(117, 123);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(177, 22);
+            this.label7.Size = new System.Drawing.Size(151, 22);
             this.label7.TabIndex = 29;
-            this.label7.Text = "Nome do Utilizador:";
+            this.label7.Text = "Nome do Utente:";
             // 
             // nomeuserproctextBox
             // 
             this.nomeuserproctextBox.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nomeuserproctextBox.Location = new System.Drawing.Point(295, 134);
+            this.nomeuserproctextBox.Location = new System.Drawing.Point(275, 121);
             this.nomeuserproctextBox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.nomeuserproctextBox.Name = "nomeuserproctextBox";
             this.nomeuserproctextBox.Size = new System.Drawing.Size(174, 27);
@@ -274,17 +276,17 @@ namespace WindowsFormsApp1
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(87, 44);
+            this.label6.Location = new System.Drawing.Point(87, 37);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(251, 39);
+            this.label6.Size = new System.Drawing.Size(176, 39);
             this.label6.TabIndex = 16;
-            this.label6.Text = "Ver Utilizadores";
+            this.label6.Text = "Ver Utente";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 18);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(71, 71);
@@ -297,7 +299,7 @@ namespace WindowsFormsApp1
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.SandyBrown;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(608, 37);
+            this.button1.Location = new System.Drawing.Point(583, 37);
             this.button1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(43, 46);
@@ -312,10 +314,10 @@ namespace WindowsFormsApp1
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Location = new System.Drawing.Point(-1, 0);
+            this.panel1.Location = new System.Drawing.Point(24, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(662, 119);
+            this.panel1.Size = new System.Drawing.Size(637, 105);
             this.panel1.TabIndex = 2;
             // 
             // Atualiza
@@ -326,7 +328,7 @@ namespace WindowsFormsApp1
             this.Atualiza.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Atualiza.ForeColor = System.Drawing.Color.White;
             this.Atualiza.Image = ((System.Drawing.Image)(resources.GetObject("Atualiza.Image")));
-            this.Atualiza.Location = new System.Drawing.Point(486, 127);
+            this.Atualiza.Location = new System.Drawing.Point(476, 114);
             this.Atualiza.Margin = new System.Windows.Forms.Padding(4);
             this.Atualiza.Name = "Atualiza";
             this.Atualiza.Size = new System.Drawing.Size(40, 40);
@@ -334,14 +336,33 @@ namespace WindowsFormsApp1
             this.Atualiza.UseVisualStyleBackColor = false;
             this.Atualiza.Click += new System.EventHandler(this.Atualiza_Click_1);
             // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.SandyBrown;
+            this.panel6.Location = new System.Drawing.Point(24, 113);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(15, 390);
+            this.panel6.TabIndex = 30;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.SandyBrown;
+            this.panel3.Location = new System.Drawing.Point(646, 113);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(15, 390);
+            this.panel3.TabIndex = 31;
+            // 
             // VerUtilizador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.AutoScrollMargin = new System.Drawing.Size(0, 14);
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(678, 528);
             this.ControlBox = false;
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel6);
             this.Controls.Add(this.Atualiza);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label7);
@@ -349,7 +370,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.nomeuserproctextBox);
             this.Controls.Add(this.dataGridView1);
             this.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "VerUtilizador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -389,5 +410,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox sexoComboBox;
         private System.Windows.Forms.Button Atualiza;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel3;
     }
 }

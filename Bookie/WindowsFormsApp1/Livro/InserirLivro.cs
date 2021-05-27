@@ -28,14 +28,13 @@ namespace WindowsFormsApp1
             con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-
             con.Open();
-                cmd.Parameters.AddWithValue("@bLivro", nomelivroTextBox.Text.ToString());
-                cmd.Parameters.AddWithValue("@bAutor", nomeautorTextBox.Text.ToString());
-                cmd.Parameters.AddWithValue("@bAno", anoTextBox.Text.ToString());
-                cmd.Parameters.AddWithValue("@Aluguer", Int64.Parse(precoTextBox.Text));
-                cmd.Parameters.AddWithValue("@Quantidade", Int64.Parse(quantidadeTextBox.Text));
                 cmd.CommandText = "INSERT INTO NovoLivro (Livro,Autor,Ano,Aluguer,Quantidade) VALUES (@bLivro,@bAutor,@bAno,@Aluguer,@Quantidade)";
+                cmd.Parameters.Add("@bLivro", SqlDbType.VarChar).Value = nomelivroTextBox.Text;
+                cmd.Parameters.Add("@bAutor", SqlDbType.VarChar).Value = nomeautorTextBox.Text;
+                cmd.Parameters.Add("@bAno", SqlDbType.VarChar).Value = anoTextBox.Text;
+                cmd.Parameters.Add("@Aluguer", SqlDbType.VarChar).Value = Int64.Parse(precoTextBox.Text);
+                cmd.Parameters.Add("@Quantidade", SqlDbType.VarChar).Value = Int64.Parse(quantidadeTextBox.Text);
             cmd.ExecuteNonQuery();
             con.Close();
 
@@ -63,9 +62,9 @@ namespace WindowsFormsApp1
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
+        private void ParaTras_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
         }
     }
 }
