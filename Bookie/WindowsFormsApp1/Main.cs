@@ -18,10 +18,9 @@ namespace WindowsFormsApp1
             Thread a = new Thread(new ThreadStart(StartForm));
             a.Start();
             Thread.Sleep(4000);
-            a.Abort();
             InitializeComponent();
             menuStrip1.Renderer = new MyRenderer();
-
+            a.Abort();
         }
         private class MyRenderer : ToolStripProfessionalRenderer
         {
@@ -47,10 +46,18 @@ namespace WindowsFormsApp1
                 get { return Color.White; }
             }
         }
-            public void StartForm()
-         {
-             Application.Run(new Splash());
-         }
+        public static void StartForm()
+        {
+            try
+            {
+                Application.Run(new Splash());
+            }
+            catch
+            { 
+            }
+
+
+        }
 
         private void Main_Load(object sender, EventArgs e)
         {

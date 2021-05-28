@@ -50,7 +50,7 @@ namespace WindowsFormsApp1
             this.label7 = new System.Windows.Forms.Label();
             this.Atualiza = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.PT = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -299,7 +299,7 @@ namespace WindowsFormsApp1
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.SandyBrown;
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.PT);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -309,19 +309,19 @@ namespace WindowsFormsApp1
             this.panel2.Size = new System.Drawing.Size(716, 105);
             this.panel2.TabIndex = 21;
             // 
-            // button1
+            // PT
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.SandyBrown;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(649, 39);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(43, 42);
-            this.button1.TabIndex = 23;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.PT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PT.ForeColor = System.Drawing.Color.SandyBrown;
+            this.PT.Image = ((System.Drawing.Image)(resources.GetObject("PT.Image")));
+            this.PT.Location = new System.Drawing.Point(649, 39);
+            this.PT.Margin = new System.Windows.Forms.Padding(4);
+            this.PT.Name = "PT";
+            this.PT.Size = new System.Drawing.Size(43, 42);
+            this.PT.TabIndex = 23;
+            this.PT.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.PT.UseVisualStyleBackColor = true;
+            this.PT.Click += new System.EventHandler(this.PT_Click);
             // 
             // pictureBox1
             // 
@@ -356,7 +356,7 @@ namespace WindowsFormsApp1
             this.AutoScroll = true;
             this.AutoScrollMargin = new System.Drawing.Size(0, 14);
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(755, 660);
+            this.ClientSize = new System.Drawing.Size(772, 660);
             this.ControlBox = false;
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel6);
@@ -407,7 +407,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button Atualiza;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button PT;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel3;
     }

@@ -19,7 +19,8 @@ namespace WindowsFormsApp1
         SqlConnection con;
         SqlCommand cmd;
         SqlDataReader reader;
-        
+
+        static public bool login = false;
         public Login()
         {
             InitializeComponent();
@@ -34,8 +35,8 @@ namespace WindowsFormsApp1
                 con = new SqlConnection(@"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21");
                 cmd = new SqlCommand("SELECT * FROM Login WHERE Username=@uid and Password=@password", con);
                 con.Open();
-                cmd.Parameters.AddWithValue("@uid", usernameTextBox.Text.ToString());
-                cmd.Parameters.AddWithValue("@password", passwordTextBox.Text.ToString());
+                cmd.Parameters.Add("@uid", SqlDbType.VarChar).Value = usernameTextBox.Text;
+                cmd.Parameters.Add("@password", SqlDbType.VarChar).Value = passwordTextBox.Text;
                 reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
@@ -43,6 +44,7 @@ namespace WindowsFormsApp1
                     {
                         UserID = reader["Username"].ToString();
                         result = "1";
+                        login = true;
                     }
                     else
                         result = "Credênciais Inválidas";
@@ -68,8 +70,7 @@ namespace WindowsFormsApp1
                 main.Show();
 
             }
-            else
-                MessageBox.Show(result);
+            
         }
 
         private void cancelButton_Click(object sender, EventArgs e)

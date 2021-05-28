@@ -64,7 +64,6 @@ namespace WindowsFormsApp1
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox2
             // 
@@ -130,7 +129,6 @@ namespace WindowsFormsApp1
             this.label5.Size = new System.Drawing.Size(49, 22);
             this.label5.TabIndex = 15;
             this.label5.Text = "Sexo";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // emailTextBox
             // 
@@ -177,7 +175,6 @@ namespace WindowsFormsApp1
             this.label6.Size = new System.Drawing.Size(136, 22);
             this.label6.TabIndex = 19;
             this.label6.Text = "Primeiro Nome";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -188,7 +185,6 @@ namespace WindowsFormsApp1
             this.label7.Size = new System.Drawing.Size(121, 22);
             this.label7.TabIndex = 20;
             this.label7.Text = "Último Nome";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // primeiroNomeTextBox
             // 
@@ -223,7 +219,6 @@ namespace WindowsFormsApp1
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 23;
             this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // label8
             // 

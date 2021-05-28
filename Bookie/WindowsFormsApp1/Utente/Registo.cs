@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
+
 namespace WindowsFormsApp1
 {
     public partial class Registo : Form
@@ -48,12 +49,12 @@ namespace WindowsFormsApp1
                     sqlCon.Open();
                     SqlCommand sqlCmd = new SqlCommand("UserAdd", sqlCon);
                     sqlCmd.CommandType = CommandType.StoredProcedure;
-                    sqlCmd.Parameters.AddWithValue("@PrimeiroNome", primeiroNomeTextBox.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@UltimoNome", ultimoNomeTextBox.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@Sexo", sexoTextBox.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@Contacto", contactoTextBox.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@Email", emailTextBox.Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@NC", txtContribuinte.Text.Trim());
+                    sqlCmd.Parameters.Add("@Pn", SqlDbType.VarChar).Value = primeiroNomeTextBox.Text.Trim();
+                    sqlCmd.Parameters.Add("@Un", SqlDbType.VarChar).Value = ultimoNomeTextBox.Text.Trim();
+                    sqlCmd.Parameters.Add("@Sexo", SqlDbType.VarChar).Value = sexoTextBox.Text.Trim();
+                    sqlCmd.Parameters.Add("@Contacto", SqlDbType.VarChar).Value = contactoTextBox.Text.Trim();
+                    sqlCmd.Parameters.Add("@Email", SqlDbType.VarChar).Value = emailTextBox.Text.Trim();
+                    sqlCmd.Parameters.Add("@NIF", SqlDbType.VarChar).Value = txtContribuinte.Text.Trim();
                     sqlCmd.ExecuteNonQuery();
                     
                     MessageBox.Show("Registro Completo");
@@ -177,29 +178,6 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
+     
     }
 }

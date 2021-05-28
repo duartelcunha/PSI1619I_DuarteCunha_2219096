@@ -31,16 +31,16 @@ namespace WindowsFormsApp1
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Req));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Sair = new System.Windows.Forms.Button();
+            this.PT = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.NIFTextBox = new System.Windows.Forms.TextBox();
+            this.nifTextBox = new System.Windows.Forms.TextBox();
             this.nomecompletoTextBox = new System.Windows.Forms.TextBox();
-            this.ContactoTextBox = new System.Windows.Forms.TextBox();
+            this.contactoTextBox = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Procurar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.ProcUtenteTextBox = new System.Windows.Forms.TextBox();
+            this.procutenteTextBox = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.ProcButton = new System.Windows.Forms.Button();
@@ -66,7 +66,7 @@ namespace WindowsFormsApp1
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SandyBrown;
-            this.panel1.Controls.Add(this.Sair);
+            this.panel1.Controls.Add(this.PT);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.ForeColor = System.Drawing.Color.SandyBrown;
@@ -76,19 +76,19 @@ namespace WindowsFormsApp1
             this.panel1.Size = new System.Drawing.Size(831, 106);
             this.panel1.TabIndex = 0;
             // 
-            // Sair
+            // PT
             // 
-            this.Sair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Sair.ForeColor = System.Drawing.Color.SandyBrown;
-            this.Sair.Image = ((System.Drawing.Image)(resources.GetObject("Sair.Image")));
-            this.Sair.Location = new System.Drawing.Point(769, 37);
-            this.Sair.Margin = new System.Windows.Forms.Padding(4);
-            this.Sair.Name = "Sair";
-            this.Sair.Size = new System.Drawing.Size(46, 41);
-            this.Sair.TabIndex = 26;
-            this.Sair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.Sair.UseVisualStyleBackColor = true;
-            this.Sair.Click += new System.EventHandler(this.Sair_Click_1);
+            this.PT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PT.ForeColor = System.Drawing.Color.SandyBrown;
+            this.PT.Image = ((System.Drawing.Image)(resources.GetObject("PT.Image")));
+            this.PT.Location = new System.Drawing.Point(769, 37);
+            this.PT.Margin = new System.Windows.Forms.Padding(4);
+            this.PT.Name = "PT";
+            this.PT.Size = new System.Drawing.Size(46, 41);
+            this.PT.TabIndex = 26;
+            this.PT.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.PT.UseVisualStyleBackColor = true;
+            this.PT.Click += new System.EventHandler(this.PT_Click);
             // 
             // label6
             // 
@@ -112,17 +112,17 @@ namespace WindowsFormsApp1
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // NIFTextBox
+            // nifTextBox
             // 
-            this.NIFTextBox.BackColor = System.Drawing.Color.White;
-            this.NIFTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.NIFTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NIFTextBox.Location = new System.Drawing.Point(223, 166);
-            this.NIFTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.NIFTextBox.Name = "NIFTextBox";
-            this.NIFTextBox.ReadOnly = true;
-            this.NIFTextBox.Size = new System.Drawing.Size(277, 29);
-            this.NIFTextBox.TabIndex = 18;
+            this.nifTextBox.BackColor = System.Drawing.Color.White;
+            this.nifTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nifTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nifTextBox.Location = new System.Drawing.Point(223, 166);
+            this.nifTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.nifTextBox.Name = "nifTextBox";
+            this.nifTextBox.ReadOnly = true;
+            this.nifTextBox.Size = new System.Drawing.Size(277, 29);
+            this.nifTextBox.TabIndex = 18;
             // 
             // nomecompletoTextBox
             // 
@@ -136,24 +136,24 @@ namespace WindowsFormsApp1
             this.nomecompletoTextBox.Size = new System.Drawing.Size(277, 29);
             this.nomecompletoTextBox.TabIndex = 19;
             // 
-            // ContactoTextBox
+            // contactoTextBox
             // 
-            this.ContactoTextBox.BackColor = System.Drawing.Color.White;
-            this.ContactoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ContactoTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ContactoTextBox.Location = new System.Drawing.Point(223, 308);
-            this.ContactoTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.ContactoTextBox.Name = "ContactoTextBox";
-            this.ContactoTextBox.ReadOnly = true;
-            this.ContactoTextBox.Size = new System.Drawing.Size(275, 29);
-            this.ContactoTextBox.TabIndex = 21;
+            this.contactoTextBox.BackColor = System.Drawing.Color.White;
+            this.contactoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.contactoTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contactoTextBox.Location = new System.Drawing.Point(223, 308);
+            this.contactoTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.contactoTextBox.Name = "contactoTextBox";
+            this.contactoTextBox.ReadOnly = true;
+            this.contactoTextBox.Size = new System.Drawing.Size(275, 29);
+            this.contactoTextBox.TabIndex = 21;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.SandyBrown;
             this.panel2.Controls.Add(this.Procurar);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.ProcUtenteTextBox);
+            this.panel2.Controls.Add(this.procutenteTextBox);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Location = new System.Drawing.Point(544, 127);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
@@ -186,16 +186,16 @@ namespace WindowsFormsApp1
             this.label1.TabIndex = 2;
             this.label1.Text = "Nº de Identificação Fiscal:";
             // 
-            // ProcUtenteTextBox
+            // procutenteTextBox
             // 
-            this.ProcUtenteTextBox.BackColor = System.Drawing.Color.White;
-            this.ProcUtenteTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ProcUtenteTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProcUtenteTextBox.Location = new System.Drawing.Point(15, 194);
-            this.ProcUtenteTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.ProcUtenteTextBox.Name = "ProcUtenteTextBox";
-            this.ProcUtenteTextBox.Size = new System.Drawing.Size(233, 29);
-            this.ProcUtenteTextBox.TabIndex = 0;
+            this.procutenteTextBox.BackColor = System.Drawing.Color.White;
+            this.procutenteTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.procutenteTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.procutenteTextBox.Location = new System.Drawing.Point(15, 194);
+            this.procutenteTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.procutenteTextBox.Name = "procutenteTextBox";
+            this.procutenteTextBox.Size = new System.Drawing.Size(233, 29);
+            this.procutenteTextBox.TabIndex = 0;
             // 
             // panel3
             // 
@@ -228,7 +228,7 @@ namespace WindowsFormsApp1
             this.ProcButton.Size = new System.Drawing.Size(120, 107);
             this.ProcButton.TabIndex = 8;
             this.ProcButton.UseVisualStyleBackColor = true;
-            this.ProcButton.Click += new System.EventHandler(this.ProcButton_Click_1);
+            this.ProcButton.Click += new System.EventHandler(this.ProcButton_Click);
             // 
             // emailTextBox
             // 
@@ -386,9 +386,9 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.nomelivroComboBox);
             this.Controls.Add(this.emailTextBox);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.ContactoTextBox);
+            this.Controls.Add(this.contactoTextBox);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.NIFTextBox);
+            this.Controls.Add(this.nifTextBox);
             this.Controls.Add(this.nomecompletoTextBox);
             this.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -414,13 +414,13 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox NIFTextBox;
+        private System.Windows.Forms.TextBox nifTextBox;
         private System.Windows.Forms.TextBox nomecompletoTextBox;
-        private System.Windows.Forms.TextBox ContactoTextBox;
-        private System.Windows.Forms.Button Sair;
+        private System.Windows.Forms.TextBox contactoTextBox;
+        private System.Windows.Forms.Button PT;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox ProcUtenteTextBox;
+        private System.Windows.Forms.TextBox procutenteTextBox;
         private System.Windows.Forms.TextBox emailTextBox;
         private System.Windows.Forms.ComboBox nomelivroComboBox;
         private System.Windows.Forms.DateTimePicker datareqDataPicker;

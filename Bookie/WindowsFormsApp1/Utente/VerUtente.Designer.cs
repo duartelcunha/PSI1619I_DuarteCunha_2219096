@@ -49,7 +49,7 @@ namespace WindowsFormsApp1
             this.nomeuserproctextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.PT = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Atualiza = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -294,24 +294,24 @@ namespace WindowsFormsApp1
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
+            // PT
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.SandyBrown;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(583, 37);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(43, 46);
-            this.button1.TabIndex = 25;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.PT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PT.ForeColor = System.Drawing.Color.SandyBrown;
+            this.PT.Image = ((System.Drawing.Image)(resources.GetObject("PT.Image")));
+            this.PT.Location = new System.Drawing.Point(583, 37);
+            this.PT.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.PT.Name = "PT";
+            this.PT.Size = new System.Drawing.Size(43, 46);
+            this.PT.TabIndex = 25;
+            this.PT.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.PT.UseVisualStyleBackColor = true;
+            this.PT.Click += new System.EventHandler(this.PT_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SandyBrown;
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.PT);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Location = new System.Drawing.Point(24, 0);
@@ -359,7 +359,7 @@ namespace WindowsFormsApp1
             this.AutoScroll = true;
             this.AutoScrollMargin = new System.Drawing.Size(0, 14);
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(678, 528);
+            this.ClientSize = new System.Drawing.Size(695, 528);
             this.ControlBox = false;
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel6);
@@ -406,7 +406,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox nomeuserproctextBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button PT;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox sexoComboBox;
         private System.Windows.Forms.Button Atualiza;

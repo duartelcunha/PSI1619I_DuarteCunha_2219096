@@ -45,7 +45,7 @@ namespace WindowsFormsApp1
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.ParaTras = new System.Windows.Forms.Button();
+            this.PT = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -199,7 +199,7 @@ namespace WindowsFormsApp1
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SandyBrown;
-            this.panel1.Controls.Add(this.ParaTras);
+            this.panel1.Controls.Add(this.PT);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(12, 0);
@@ -207,18 +207,18 @@ namespace WindowsFormsApp1
             this.panel1.Size = new System.Drawing.Size(607, 109);
             this.panel1.TabIndex = 16;
             // 
-            // ParaTras
+            // PT
             // 
-            this.ParaTras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ParaTras.ForeColor = System.Drawing.Color.SandyBrown;
-            this.ParaTras.Image = ((System.Drawing.Image)(resources.GetObject("ParaTras.Image")));
-            this.ParaTras.Location = new System.Drawing.Point(551, 39);
-            this.ParaTras.Name = "ParaTras";
-            this.ParaTras.Size = new System.Drawing.Size(42, 39);
-            this.ParaTras.TabIndex = 24;
-            this.ParaTras.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.ParaTras.UseVisualStyleBackColor = true;
-            this.ParaTras.Click += new System.EventHandler(this.ParaTras_Click);
+            this.PT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PT.ForeColor = System.Drawing.Color.SandyBrown;
+            this.PT.Image = ((System.Drawing.Image)(resources.GetObject("PT.Image")));
+            this.PT.Location = new System.Drawing.Point(551, 39);
+            this.PT.Name = "PT";
+            this.PT.Size = new System.Drawing.Size(42, 39);
+            this.PT.TabIndex = 24;
+            this.PT.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.PT.UseVisualStyleBackColor = true;
+            this.PT.Click += new System.EventHandler(this.PT_Click);
             // 
             // panel2
             // 
@@ -298,7 +298,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button ParaTras;
+        private System.Windows.Forms.Button PT;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel3;

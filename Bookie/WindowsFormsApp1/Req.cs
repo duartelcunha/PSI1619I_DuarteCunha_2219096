@@ -26,7 +26,7 @@ namespace WindowsFormsApp1
             cmd.Connection = con;
             con.Open();
 
-            cmd = new SqlCommand("SELECT Livro FROM NovoLivro", con);
+            cmd = new SqlCommand("SELECT Nome FROM Livro", con);
             SqlDataReader sdr = cmd.ExecuteReader();
 
             while(sdr.Read())
@@ -46,22 +46,22 @@ namespace WindowsFormsApp1
         int count;
         private void Procurar_Click(object sender, EventArgs e)
         {
-            if (ProcUtenteTextBox.Text != "")
+            if (procutenteTextBox.Text != "")
             {
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
 
-                cmd.Parameters.AddWithValue("@NIF", ProcUtenteTextBox.Text.ToString());
+                cmd.Parameters.Add("@NIF", SqlDbType.Int).Value = procutenteTextBox.Text;
 
-                cmd.CommandText = "SELECT * FROM NovoUtente WHERE NIF = @NIF";
+                cmd.CommandText = "SELECT * FROM Utente WHERE NIF = @NIF";
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 da.Fill(ds);
 
 
-                cmd.CommandText = "SELECT Count(NIF) FROM Req WHERE NIF = @NIF AND DataReturn is null";
+                cmd.CommandText = "SELECT Count(ID_NIF) FROM Req WHERE ID_NIF = @NIF AND DataReturn is null";
                 SqlDataAdapter da2 = new SqlDataAdapter(cmd);
                 DataSet ds2 = new DataSet();
                 da2.Fill(ds2);
@@ -70,31 +70,31 @@ namespace WindowsFormsApp1
                
                 if (ds.Tables[0].Rows.Count != 0)
                 {
-                    NIFTextBox.Text = ds.Tables[0].Rows[0]["NIF"].ToString();
-                    nomecompletoTextBox.Text = $"{ds.Tables[0].Rows[0]["PrimeiroNome"].ToString()} {ds.Tables[0].Rows[0]["UltimoNome"].ToString()}"; // ds.Tables[0].Rows[0]["PrimeiroNome"].ToString();
-                    ContactoTextBox.Text = ds.Tables[0].Rows[0]["Contacto"].ToString();
+                    nifTextBox.Text = ds.Tables[0].Rows[0]["NIF"].ToString();
+                    nomecompletoTextBox.Text = $"{ds.Tables[0].Rows[0]["Pn"]} {ds.Tables[0].Rows[0]["Un"]}"; // ds.Tables[0].Rows[0]["PrimeiroNome"].ToString();
+                    contactoTextBox.Text = ds.Tables[0].Rows[0]["Contacto"].ToString();
                     emailTextBox.Text = ds.Tables[0].Rows[0]["Email"].ToString();
 
                 }
                 else
                 {
-                    NIFTextBox.Clear();
+                    nifTextBox.Clear();
                     nomecompletoTextBox.Clear();
-                    ContactoTextBox.Clear();
+                    contactoTextBox.Clear();
                     emailTextBox.Clear();
                     MessageBox.Show("Número de Identificação Fiscal Inválido", "Tente Novamente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
 
-        private void Sair_Click_1(object sender, EventArgs e)
+        private void PT_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
         private void Req_Click(object sender, EventArgs e)
         {
-            if(NIFTextBox.Text != "")
+            if(nifTextBox.Text != "")
             {
                 if(nomelivroComboBox.SelectedIndex != -1 && count <=2)
                 {
@@ -103,14 +103,14 @@ namespace WindowsFormsApp1
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = con;
                     con.Open();
-                    cmd.Parameters.Add("@proc", SqlDbType.VarChar).Value = ProcUtenteTextBox.Text;
-                    cmd.Parameters.Add("@NIF", SqlDbType.VarChar).Value = NIFTextBox.Text;
+                    cmd.CommandText = cmd.CommandText = "INSERT INTO Req (ID_NIF,Nome,Email,NomeLivro,Contacto,DataReq) VALUES (@NIF,@nome,@email,@nl,@contacto,@datareq)";
+
+                    cmd.Parameters.Add("@NIF", SqlDbType.Int).Value = nifTextBox.Text;
                     cmd.Parameters.Add("@nome", SqlDbType.VarChar).Value = nomecompletoTextBox.Text;
                     cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = emailTextBox.Text;
                     cmd.Parameters.Add("@nl", SqlDbType.VarChar).Value = nomelivroComboBox.Text;
-                    cmd.Parameters.Add("@contacto", SqlDbType.VarChar).Value = Int64.Parse(ContactoTextBox.Text);
+                    cmd.Parameters.Add("@contacto", SqlDbType.Int).Value = contactoTextBox.Text;
                     cmd.Parameters.Add("@datareq", SqlDbType.VarChar).Value = datareqDataPicker.Text;
-                    cmd.CommandText = cmd.CommandText = "INSERT INTO Req (NIF,NIF,Nome,Email,NomeLivro,Contacto,DataReq) VALUES (@proc,@NIF,@nome,@email,@nl,@contacto,@datareq)";
                     cmd.ExecuteNonQuery();
                     con.Close();
                     MessageBox.Show("Livro Requisitado", "Requisição", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -125,12 +125,12 @@ namespace WindowsFormsApp1
 
 
 
-        private void ProcButton_Click_1(object sender, EventArgs e)
+        private void ProcButton_Click(object sender, EventArgs e)
         {
             var a = new VerUtilizador();
             a.Show();
         }
 
- 
+     
     }
 }

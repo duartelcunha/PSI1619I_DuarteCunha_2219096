@@ -29,10 +29,10 @@ namespace WindowsFormsApp1
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
             con.Open();
-                cmd.CommandText = "INSERT INTO NovoLivro (Livro,Autor,Ano,Aluguer,Quantidade) VALUES (@bLivro,@bAutor,@bAno,@Aluguer,@Quantidade)";
-                cmd.Parameters.Add("@bLivro", SqlDbType.VarChar).Value = nomelivroTextBox.Text;
+                cmd.CommandText = "INSERT INTO Livro (Nome,Autor,Ano,Aluguer,Quantidade) VALUES (@bNome,@bAutor,@bAno,@Aluguer,@Quantidade)";
+                cmd.Parameters.Add("@bNome", SqlDbType.VarChar).Value = nomelivroTextBox.Text;
                 cmd.Parameters.Add("@bAutor", SqlDbType.VarChar).Value = nomeautorTextBox.Text;
-                cmd.Parameters.Add("@bAno", SqlDbType.VarChar).Value = anoTextBox.Text;
+                cmd.Parameters.Add("@bAno", SqlDbType.VarChar).Value = Int64.Parse(anoTextBox.Text);
                 cmd.Parameters.Add("@Aluguer", SqlDbType.VarChar).Value = Int64.Parse(precoTextBox.Text);
                 cmd.Parameters.Add("@Quantidade", SqlDbType.VarChar).Value = Int64.Parse(quantidadeTextBox.Text);
             cmd.ExecuteNonQuery();
@@ -42,7 +42,7 @@ namespace WindowsFormsApp1
             nomelivroTextBox.Clear();
             nomeautorTextBox.Clear();
             nomelivroTextBox.Clear();
-             anoTextBox.Clear();
+            anoTextBox.Clear();
             precoTextBox.Clear();
             quantidadeTextBox.Clear();
             }
@@ -62,7 +62,7 @@ namespace WindowsFormsApp1
         }
 
 
-        private void ParaTras_Click(object sender, EventArgs e)
+        private void PT_Click(object sender, EventArgs e)
         {
             this.Hide();
         }
