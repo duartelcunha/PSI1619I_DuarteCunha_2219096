@@ -63,7 +63,6 @@ namespace WindowsFormsApp1
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
-         
             // 
             // Splash
             // 
@@ -74,6 +73,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Splash";
             this.Opacity = 0.6D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

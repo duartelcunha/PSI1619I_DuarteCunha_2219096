@@ -16,8 +16,6 @@ namespace WindowsFormsApp1
         public VerUtilizador()
         {
             InitializeComponent();
-           
-
         }
        
 
@@ -27,16 +25,15 @@ namespace WindowsFormsApp1
         }
 
 
-        int bid;
-        Int64 rowid;
+        int id;
+        Int64 ID;
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
             if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
-                bid = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
-
+                id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
             }
             panel1.Visible = true;
             SqlConnection con = new SqlConnection();
@@ -44,30 +41,29 @@ namespace WindowsFormsApp1
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
 
-            cmd.CommandText = "SELECT * FROM Utente WHERE NIF = @bid";
-            cmd.Parameters.Add("@bid", SqlDbType.VarChar).Value = bid;
+            cmd.CommandText = "SELECT * FROM Utente WHERE NIF = @id";
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
             SqlDataAdapter dt = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             dt.Fill(ds);
 
-            rowid = Int64.Parse(ds.Tables[0].Rows[0]["NIF"].ToString());
 
-
+            ID = Int64.Parse(ds.Tables[0].Rows[0]["NIF"].ToString());
             pnTextBox.Text = ds.Tables[0].Rows[0]["Pn"].ToString();
             unTextBox.Text = ds.Tables[0].Rows[0]["Un"].ToString();
-            sexoComboBox.Text = ds.Tables[0].Rows[0]["Sexo"].ToString();
+            generoComboBox.Text = ds.Tables[0].Rows[0]["Genero"].ToString();
             contactoTextBox.Text = ds.Tables[0].Rows[0]["Contacto"].ToString();
             emailTextBox.Text = ds.Tables[0].Rows[0]["Email"].ToString();
 
         }
 
-        private void VerUtilizador_Load(object sender, EventArgs e)
+        private void VerUtente_Load(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection();
             con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "SELECT * FROM Utente";
+            cmd.CommandText = "SELECT NIF, Pn AS 'Primeiro Nome', Un AS 'Último Nome', Genero AS 'Género', Contacto, Email FROM Utente";
             SqlDataAdapter dt = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             dt.Fill(ds);
@@ -84,24 +80,19 @@ namespace WindowsFormsApp1
         {
             if (MessageBox.Show("Os campos serão atualizados.", "Confirme", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-                String bPN = pnTextBox.Text;
-                String bUN = unTextBox.Text;
-                String bSexo = sexoComboBox.Text;
-                String bContacto = contactoTextBox.Text;
-                String bEmail = emailTextBox.Text;
 
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
 
-                cmd.CommandText = "UPDATE Utente SET Pn = @bPN, Un = @bUN, Sexo = @bSexo, Contacto = @bContacto, Email = @bEmail WHERE NIF = @rowid";
-                cmd.Parameters.Add("@bPN", SqlDbType.VarChar).Value = pnTextBox.Text;
-                cmd.Parameters.Add("@bUN", SqlDbType.VarChar).Value = unTextBox.Text;
-                cmd.Parameters.Add("@bSexo", SqlDbType.VarChar).Value = sexoComboBox.Text;
-                cmd.Parameters.Add("@bContacto", SqlDbType.VarChar).Value = contactoTextBox.Text;
-                cmd.Parameters.Add("@bEmail", SqlDbType.VarChar).Value = emailTextBox.Text;
-                cmd.Parameters.Add("@rowid", SqlDbType.VarChar).Value = rowid;
+                cmd.CommandText = "UPDATE Utente SET Pn = @PN, Un = @UN, Genero = @Genero, Contacto = @Contacto, Email = @Email WHERE NIF = @ID";
+                cmd.Parameters.Add("@PN", SqlDbType.VarChar).Value = pnTextBox.Text;
+                cmd.Parameters.Add("@UN", SqlDbType.VarChar).Value = unTextBox.Text;
+                cmd.Parameters.Add("@Genero", SqlDbType.VarChar).Value = generoComboBox.Text;
+                cmd.Parameters.Add("@Contacto", SqlDbType.VarChar).Value = contactoTextBox.Text;
+                cmd.Parameters.Add("@Email", SqlDbType.VarChar).Value = emailTextBox.Text;
+                cmd.Parameters.Add("@ID", SqlDbType.Int).Value = ID;
                 SqlDataAdapter dt = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 dt.Fill(ds);
@@ -111,6 +102,7 @@ namespace WindowsFormsApp1
 
         private void Apagar_Click(object sender, EventArgs e)
         {
+           
             if (MessageBox.Show("O utilizador será apagado.", "Confirme", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
             {
                 SqlConnection con = new SqlConnection();
@@ -118,8 +110,8 @@ namespace WindowsFormsApp1
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
 
-                cmd.CommandText = "DELETE FROM Utente WHERE NIF  = @rowid";
-                cmd.Parameters.Add("@rowid", SqlDbType.VarChar).Value = rowid;
+                cmd.CommandText = "DELETE FROM Utente WHERE NIF  = @ID";
+                cmd.Parameters.Add("@ID", SqlDbType.Int).Value = ID;
                 SqlDataAdapter dt = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 dt.Fill(ds);
@@ -138,8 +130,10 @@ namespace WindowsFormsApp1
                 con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = "SELECT * FROM Utente WHERE Pn LIKE '" + nomeuserproctextBox.Text + "%'";
+                cmd.CommandText = "SELECT * FROM Utente WHERE Pn LIKE @Nome";
+                cmd.Parameters.Add("@Nome", SqlDbType.VarChar).Value = $"{nomeuserproctextBox.Text}%";
                 SqlDataAdapter dt = new SqlDataAdapter(cmd);
+
                 DataSet ds = new DataSet();
                 dt.Fill(ds);
 
@@ -172,7 +166,13 @@ namespace WindowsFormsApp1
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 dataGridView1.DataSource = dt;
+
             }
+            pnTextBox.Clear();
+            unTextBox.Clear();
+            
+            contactoTextBox.Clear();
+            emailTextBox.Clear();
         }
     }
 }

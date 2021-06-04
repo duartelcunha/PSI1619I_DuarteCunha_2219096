@@ -19,55 +19,65 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        
         private void Registo_Load(object sender, EventArgs e)
         {
             primeiroNomeTextBox.Select();
         }
 
-     
+
         private void Registar_Click(object sender, EventArgs e)
         {
-            string con = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
-            if (primeiroNomeTextBox.Text == "" || contactoTextBox.Text == "")
+            string connectionString = null;
+            SqlConnection con;
+            connectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
+            con = new SqlConnection(connectionString);
+            con.Open();
+            if (string.IsNullOrEmpty(primeiroNomeTextBox.Text) || string.IsNullOrEmpty(contactoTextBox.Text) || string.IsNullOrEmpty(generoTextBox.Text) || string.IsNullOrEmpty(contactoTextBox.Text) || string.IsNullOrEmpty(contactocomboBox.Text) || string.IsNullOrEmpty(emailTextBox.Text) || string.IsNullOrEmpty(txtContribuinte.Text))
             {
                 MessageBox.Show("Preencha todos os campos");
             }
             else
             {
-
-                using (SqlConnection sqlCon = new SqlConnection(con))
+                string consulta = "SELECT NIF from Utente where NIF = @NIF";
+                SqlCommand cmd = new SqlCommand(consulta, con);
+                cmd.Parameters.AddWithValue("@NIF", txtContribuinte.Text);
+                SqlDataReader read = cmd.ExecuteReader();
+                if (read.Read())
                 {
-                    sqlCon.Open();
-                    SqlCommand sqlCmd = new SqlCommand("UserAdd", sqlCon);
+                    MessageBox.Show("Usuario existe");
+
+
+                }
+
+                else
+                {
+                    MessageBox.Show("Usuario NÃO existe");
+
+                    SqlCommand sqlCmd = new SqlCommand("UserAdd", con);
                     sqlCmd.CommandType = CommandType.StoredProcedure;
                     sqlCmd.Parameters.Add("@Pn", SqlDbType.VarChar).Value = primeiroNomeTextBox.Text.Trim();
                     sqlCmd.Parameters.Add("@Un", SqlDbType.VarChar).Value = ultimoNomeTextBox.Text.Trim();
-                    sqlCmd.Parameters.Add("@Sexo", SqlDbType.VarChar).Value = sexoTextBox.Text.Trim();
-                    sqlCmd.Parameters.Add("@Contacto", SqlDbType.VarChar).Value = contactoTextBox.Text.Trim();
+                    sqlCmd.Parameters.Add("@Genero", SqlDbType.VarChar).Value = generoTextBox.Text.Trim();
+                    sqlCmd.Parameters.Add("@Contacto", SqlDbType.VarChar).Value = contactocomboBox.Text + ' ' + contactoTextBox.Text.Trim();
                     sqlCmd.Parameters.Add("@Email", SqlDbType.VarChar).Value = emailTextBox.Text.Trim();
-                    sqlCmd.Parameters.Add("@NIF", SqlDbType.VarChar).Value = txtContribuinte.Text.Trim();
+                    sqlCmd.Parameters.Add("@NIF", SqlDbType.Int).Value = txtContribuinte.Text.Trim();
                     sqlCmd.ExecuteNonQuery();
-                    
-                    MessageBox.Show("Registro Completo");
+
+                    MessageBox.Show("Registo Completo");
                     primeiroNomeTextBox.Clear();
                     ultimoNomeTextBox.Clear();
                     contactoTextBox.Clear();
                     emailTextBox.Clear();
                     txtContribuinte.Clear();
-                    sexoTextBox.Items.Clear();
+                    generoTextBox.Items.Clear();
+                    contactocomboBox.Items.Clear();
                 }
             }
-            
+
+           
         }
+        
+    
 
         private void Cancelar_Click_1(object sender, EventArgs e)
         {
@@ -75,7 +85,15 @@ namespace WindowsFormsApp1
             this.Close();
             
         }
+       
 
+        private void contactoTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
         private void contactoTextBox_TextChanged(object sender, EventArgs e)
         {
             this.contactoTextBox.MaxLength = 9;
@@ -93,7 +111,7 @@ namespace WindowsFormsApp1
             if (contactoTextBox.Text.Length < 9)
             {
                 e.Cancel = true;
-                MessageBox.Show("Digite 9 caracteres", "Contacto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Digite 9 números", "Contacto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -174,10 +192,10 @@ namespace WindowsFormsApp1
             if (txtContribuinte.Text.Length < 9)
             {
                 e.Cancel = true;
-                MessageBox.Show("Digite 9 caracteres", "Número de Contribuinte", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Digite 9 caracteres", "NIF", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
-     
+
     }
 }

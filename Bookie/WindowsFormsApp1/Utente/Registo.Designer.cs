@@ -36,10 +36,9 @@ namespace WindowsFormsApp1
             this.Registar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.contactoTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.emailTextBox = new System.Windows.Forms.TextBox();
-            this.sexoTextBox = new System.Windows.Forms.ComboBox();
+            this.generoTextBox = new System.Windows.Forms.ComboBox();
             this.Cancelar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -49,6 +48,8 @@ namespace WindowsFormsApp1
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtContribuinte = new System.Windows.Forms.TextBox();
+            this.contactoTextBox = new System.Windows.Forms.TextBox();
+            this.contactocomboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -93,7 +94,7 @@ namespace WindowsFormsApp1
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(62, 313);
+            this.label3.Location = new System.Drawing.Point(27, 313);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 22);
             this.label3.TabIndex = 11;
@@ -109,26 +110,15 @@ namespace WindowsFormsApp1
             this.label4.TabIndex = 12;
             this.label4.Text = "Email";
             // 
-            // contactoTextBox
-            // 
-            this.contactoTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contactoTextBox.Location = new System.Drawing.Point(157, 312);
-            this.contactoTextBox.Name = "contactoTextBox";
-            this.contactoTextBox.Size = new System.Drawing.Size(146, 25);
-            this.contactoTextBox.TabIndex = 14;
-            this.contactoTextBox.TextChanged += new System.EventHandler(this.contactoTextBox_TextChanged);
-            this.contactoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
-            this.contactoTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.contactoTextBox_Validating);
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(102, 259);
+            this.label5.Location = new System.Drawing.Point(83, 259);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 22);
+            this.label5.Size = new System.Drawing.Size(68, 22);
             this.label5.TabIndex = 15;
-            this.label5.Text = "Sexo";
+            this.label5.Text = "Género";
             // 
             // emailTextBox
             // 
@@ -139,18 +129,18 @@ namespace WindowsFormsApp1
             this.emailTextBox.TabIndex = 16;
             this.emailTextBox.Leave += new System.EventHandler(this.emailTextBox_Leave);
             // 
-            // sexoTextBox
+            // generoTextBox
             // 
-            this.sexoTextBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.sexoTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sexoTextBox.FormattingEnabled = true;
-            this.sexoTextBox.Items.AddRange(new object[] {
+            this.generoTextBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.generoTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.generoTextBox.FormattingEnabled = true;
+            this.generoTextBox.Items.AddRange(new object[] {
             "Masculino",
             "Feminino"});
-            this.sexoTextBox.Location = new System.Drawing.Point(157, 258);
-            this.sexoTextBox.Name = "sexoTextBox";
-            this.sexoTextBox.Size = new System.Drawing.Size(146, 27);
-            this.sexoTextBox.TabIndex = 17;
+            this.generoTextBox.Location = new System.Drawing.Point(157, 258);
+            this.generoTextBox.Name = "generoTextBox";
+            this.generoTextBox.Size = new System.Drawing.Size(146, 27);
+            this.generoTextBox.TabIndex = 17;
             // 
             // Cancelar
             // 
@@ -240,6 +230,48 @@ namespace WindowsFormsApp1
             this.txtContribuinte.TextChanged += new System.EventHandler(this.txtContribuinte_TextChanged);
             this.txtContribuinte.Validating += new System.ComponentModel.CancelEventHandler(this.txtContribuinte_Validating);
             // 
+            // contactoTextBox
+            // 
+            this.contactoTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contactoTextBox.Location = new System.Drawing.Point(196, 312);
+            this.contactoTextBox.Name = "contactoTextBox";
+            this.contactoTextBox.Size = new System.Drawing.Size(107, 25);
+            this.contactoTextBox.TabIndex = 14;
+            this.contactoTextBox.TextChanged += new System.EventHandler(this.contactoTextBox_TextChanged);
+            this.contactoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.contactoTextBox_KeyPress);
+            this.contactoTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.contactoTextBox_Validating);
+            // 
+            // contactocomboBox
+            // 
+            this.contactocomboBox.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contactocomboBox.FormattingEnabled = true;
+            this.contactocomboBox.Items.AddRange(new object[] {
+            "+30 ",
+            "+31 ",
+            "+32 ",
+            "+33 ",
+            "+34 ",
+            "+351 ",
+            "+352 ",
+            "+353",
+            "+358 ",
+            "+380 ",
+            "+39 ",
+            "+40 ",
+            "+41 ",
+            "+43",
+            "+44 ",
+            "+45",
+            "+46 ",
+            "+47 ",
+            "+48",
+            "+49"});
+            this.contactocomboBox.Location = new System.Drawing.Point(120, 310);
+            this.contactocomboBox.MaxDropDownItems = 4;
+            this.contactocomboBox.Name = "contactocomboBox";
+            this.contactocomboBox.Size = new System.Drawing.Size(70, 27);
+            this.contactocomboBox.TabIndex = 27;
+            // 
             // Registo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -247,6 +279,7 @@ namespace WindowsFormsApp1
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(333, 548);
             this.ControlBox = false;
+            this.Controls.Add(this.contactocomboBox);
             this.Controls.Add(this.txtContribuinte);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.pictureBox3);
@@ -255,15 +288,15 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.Cancelar);
-            this.Controls.Add(this.sexoTextBox);
+            this.Controls.Add(this.generoTextBox);
             this.Controls.Add(this.emailTextBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.contactoTextBox);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.Registar);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.Name = "Registo";
@@ -286,10 +319,9 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button Registar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox contactoTextBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox emailTextBox;
-        private System.Windows.Forms.ComboBox sexoTextBox;
+        private System.Windows.Forms.ComboBox generoTextBox;
         private System.Windows.Forms.Button Cancelar;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
@@ -299,5 +331,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TextBox txtContribuinte;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox contactoTextBox;
+        private System.Windows.Forms.ComboBox contactocomboBox;
     }
 }

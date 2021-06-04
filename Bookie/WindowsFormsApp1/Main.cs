@@ -17,7 +17,7 @@ namespace WindowsFormsApp1
         {
             Thread a = new Thread(new ThreadStart(StartForm));
             a.Start();
-            Thread.Sleep(4000);
+            Thread.Sleep(1900);
             InitializeComponent();
             menuStrip1.Renderer = new MyRenderer();
             a.Abort();
@@ -48,15 +48,7 @@ namespace WindowsFormsApp1
         }
         public static void StartForm()
         {
-            try
-            {
                 Application.Run(new Splash());
-            }
-            catch
-            { 
-            }
-
-
         }
 
         private void Main_Load(object sender, EventArgs e)

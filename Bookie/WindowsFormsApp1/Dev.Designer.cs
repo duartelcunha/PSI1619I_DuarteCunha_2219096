@@ -39,28 +39,25 @@ namespace WindowsFormsApp1
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Atualizar = new System.Windows.Forms.Button();
+            this.Procurar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.procutenteTextBox = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.datareqDataPicker = new System.Windows.Forms.DateTimePicker();
-            this.nomelivroComboBox = new System.Windows.Forms.ComboBox();
-            this.emailTextBox = new System.Windows.Forms.TextBox();
-            this.ContactoTextBox = new System.Windows.Forms.TextBox();
-            this.NIFTextBox = new System.Windows.Forms.TextBox();
-            this.nomecompletoTextBox = new System.Windows.Forms.TextBox();
+            this.datareturnDataPicker = new System.Windows.Forms.DateTimePicker();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.datareqTextBox = new System.Windows.Forms.TextBox();
+            this.nomelivroTextBox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -75,7 +72,6 @@ namespace WindowsFormsApp1
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(831, 106);
             this.panel1.TabIndex = 1;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // Sair
             // 
@@ -118,12 +114,13 @@ namespace WindowsFormsApp1
             this.Devolver.BackColor = System.Drawing.Color.Chocolate;
             this.Devolver.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Devolver.ForeColor = System.Drawing.Color.White;
-            this.Devolver.Location = new System.Drawing.Point(598, 477);
+            this.Devolver.Location = new System.Drawing.Point(604, 490);
             this.Devolver.Name = "Devolver";
             this.Devolver.Size = new System.Drawing.Size(153, 72);
             this.Devolver.TabIndex = 32;
             this.Devolver.Text = "Devolver";
             this.Devolver.UseVisualStyleBackColor = false;
+            this.Devolver.Click += new System.EventHandler(this.Devolver_Click);
             // 
             // panel4
             // 
@@ -152,50 +149,69 @@ namespace WindowsFormsApp1
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.SandyBrown;
-            this.panel7.Controls.Add(this.button1);
+            this.panel7.Controls.Add(this.Atualizar);
+            this.panel7.Controls.Add(this.Procurar);
             this.panel7.Controls.Add(this.label5);
-            this.panel7.Controls.Add(this.textBox1);
+            this.panel7.Controls.Add(this.procutenteTextBox);
             this.panel7.Controls.Add(this.panel8);
-            this.panel7.Location = new System.Drawing.Point(543, 127);
+            this.panel7.Location = new System.Drawing.Point(35, 126);
             this.panel7.Margin = new System.Windows.Forms.Padding(4);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(263, 315);
             this.panel7.TabIndex = 23;
             // 
-            // button1
+            // Atualizar
             // 
-            this.button1.BackColor = System.Drawing.Color.Chocolate;
-            this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(152, 244);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 52);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Procurar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.Atualizar.BackColor = System.Drawing.Color.Chocolate;
+            this.Atualizar.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Atualizar.ForeColor = System.Drawing.Color.White;
+            this.Atualizar.Location = new System.Drawing.Point(15, 244);
+            this.Atualizar.Margin = new System.Windows.Forms.Padding(4);
+            this.Atualizar.Name = "Atualizar";
+            this.Atualizar.Size = new System.Drawing.Size(96, 52);
+            this.Atualizar.TabIndex = 8;
+            this.Atualizar.Text = "Atualizar";
+            this.Atualizar.UseVisualStyleBackColor = false;
+            this.Atualizar.Click += new System.EventHandler(this.Atualizar_Click);
+            // 
+            // Procurar
+            // 
+            this.Procurar.BackColor = System.Drawing.Color.Chocolate;
+            this.Procurar.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Procurar.ForeColor = System.Drawing.Color.White;
+            this.Procurar.Location = new System.Drawing.Point(152, 244);
+            this.Procurar.Margin = new System.Windows.Forms.Padding(4);
+            this.Procurar.Name = "Procurar";
+            this.Procurar.Size = new System.Drawing.Size(96, 52);
+            this.Procurar.TabIndex = 7;
+            this.Procurar.Text = "Procurar";
+            this.Procurar.UseVisualStyleBackColor = false;
+            this.Procurar.Click += new System.EventHandler(this.Procurar_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(11, 168);
+            this.label5.Location = new System.Drawing.Point(24, 168);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(219, 22);
             this.label5.TabIndex = 2;
             this.label5.Text = "Nº de Identificação Fiscal:";
             // 
-            // textBox1
+            // procutenteTextBox
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(15, 194);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(233, 29);
-            this.textBox1.TabIndex = 0;
+            this.procutenteTextBox.BackColor = System.Drawing.Color.White;
+            this.procutenteTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.procutenteTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.procutenteTextBox.Location = new System.Drawing.Point(84, 194);
+            this.procutenteTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.procutenteTextBox.Name = "procutenteTextBox";
+            this.procutenteTextBox.Size = new System.Drawing.Size(95, 29);
+            this.procutenteTextBox.TabIndex = 0;
+            this.procutenteTextBox.TextChanged += new System.EventHandler(this.procutenteTextBox_TextChanged);
+            this.procutenteTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.procutenteTextBox_KeyPress);
+            this.procutenteTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.procutenteTextBox_Validating);
             // 
             // panel8
             // 
@@ -228,140 +244,81 @@ namespace WindowsFormsApp1
             this.button2.Size = new System.Drawing.Size(120, 107);
             this.button2.TabIndex = 8;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft YaHei", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(42, 525);
+            this.label10.Location = new System.Drawing.Point(59, 553);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(173, 24);
+            this.label10.Size = new System.Drawing.Size(171, 24);
             this.label10.TabIndex = 43;
-            this.label10.Text = "Data da Requisição";
+            this.label10.Text = "Data da Devolução";
             // 
-            // label9
+            // datareturnDataPicker
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft YaHei", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(79, 455);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(136, 24);
-            this.label9.TabIndex = 42;
-            this.label9.Text = "Nome do Livro";
+            this.datareturnDataPicker.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datareturnDataPicker.Location = new System.Drawing.Point(238, 553);
+            this.datareturnDataPicker.Margin = new System.Windows.Forms.Padding(4);
+            this.datareturnDataPicker.Name = "datareturnDataPicker";
+            this.datareturnDataPicker.Size = new System.Drawing.Size(273, 27);
+            this.datareturnDataPicker.TabIndex = 38;
             // 
-            // label8
+            // dataGridView1
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft YaHei", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(158, 382);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(57, 24);
-            this.label8.TabIndex = 41;
-            this.label8.Text = "Email";
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(305, 126);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(518, 316);
+            this.dataGridView1.TabIndex = 8;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // label7
+            // label1
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft YaHei", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(128, 311);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(87, 24);
-            this.label7.TabIndex = 40;
-            this.label7.Text = "Contacto";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(94, 476);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(136, 24);
+            this.label1.TabIndex = 47;
+            this.label1.Text = "Nome do Livro";
             // 
-            // label4
+            // label2
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(65, 240);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(150, 24);
-            this.label4.TabIndex = 39;
-            this.label4.Text = "Nome Completo";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(57, 514);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(173, 24);
+            this.label2.TabIndex = 48;
+            this.label2.Text = "Data de Requisição";
             // 
-            // label3
+            // datareqTextBox
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(176, 169);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 24);
-            this.label3.TabIndex = 32;
-            this.label3.Text = "NIF";
+            this.datareqTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datareqTextBox.Location = new System.Drawing.Point(239, 514);
+            this.datareqTextBox.Name = "datareqTextBox";
+            this.datareqTextBox.ReadOnly = true;
+            this.datareqTextBox.Size = new System.Drawing.Size(272, 27);
+            this.datareqTextBox.TabIndex = 49;
             // 
-            // datareqDataPicker
+            // nomelivroTextBox
             // 
-            this.datareqDataPicker.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datareqDataPicker.Location = new System.Drawing.Point(223, 520);
-            this.datareqDataPicker.Margin = new System.Windows.Forms.Padding(4);
-            this.datareqDataPicker.Name = "datareqDataPicker";
-            this.datareqDataPicker.Size = new System.Drawing.Size(277, 29);
-            this.datareqDataPicker.TabIndex = 38;
-            // 
-            // nomelivroComboBox
-            // 
-            this.nomelivroComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.nomelivroComboBox.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nomelivroComboBox.FormattingEnabled = true;
-            this.nomelivroComboBox.Location = new System.Drawing.Point(223, 453);
-            this.nomelivroComboBox.Margin = new System.Windows.Forms.Padding(4);
-            this.nomelivroComboBox.Name = "nomelivroComboBox";
-            this.nomelivroComboBox.Size = new System.Drawing.Size(277, 29);
-            this.nomelivroComboBox.TabIndex = 37;
-            // 
-            // emailTextBox
-            // 
-            this.emailTextBox.BackColor = System.Drawing.Color.White;
-            this.emailTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.emailTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailTextBox.Location = new System.Drawing.Point(223, 381);
-            this.emailTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.ReadOnly = true;
-            this.emailTextBox.Size = new System.Drawing.Size(275, 29);
-            this.emailTextBox.TabIndex = 36;
-            // 
-            // ContactoTextBox
-            // 
-            this.ContactoTextBox.BackColor = System.Drawing.Color.White;
-            this.ContactoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ContactoTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ContactoTextBox.Location = new System.Drawing.Point(223, 310);
-            this.ContactoTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.ContactoTextBox.Name = "ContactoTextBox";
-            this.ContactoTextBox.ReadOnly = true;
-            this.ContactoTextBox.Size = new System.Drawing.Size(275, 29);
-            this.ContactoTextBox.TabIndex = 35;
-            // 
-            // NIFTextBox
-            // 
-            this.NIFTextBox.BackColor = System.Drawing.Color.White;
-            this.NIFTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.NIFTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NIFTextBox.Location = new System.Drawing.Point(223, 168);
-            this.NIFTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.NIFTextBox.Name = "NIFTextBox";
-            this.NIFTextBox.ReadOnly = true;
-            this.NIFTextBox.Size = new System.Drawing.Size(277, 29);
-            this.NIFTextBox.TabIndex = 33;
-            // 
-            // nomecompletoTextBox
-            // 
-            this.nomecompletoTextBox.BackColor = System.Drawing.Color.White;
-            this.nomecompletoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nomecompletoTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nomecompletoTextBox.Location = new System.Drawing.Point(223, 239);
-            this.nomecompletoTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.nomecompletoTextBox.Name = "nomecompletoTextBox";
-            this.nomecompletoTextBox.ReadOnly = true;
-            this.nomecompletoTextBox.Size = new System.Drawing.Size(277, 29);
-            this.nomecompletoTextBox.TabIndex = 34;
+            this.nomelivroTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nomelivroTextBox.Location = new System.Drawing.Point(238, 476);
+            this.nomelivroTextBox.Name = "nomelivroTextBox";
+            this.nomelivroTextBox.ReadOnly = true;
+            this.nomelivroTextBox.Size = new System.Drawing.Size(273, 27);
+            this.nomelivroTextBox.TabIndex = 50;
             // 
             // Dev
             // 
@@ -370,30 +327,26 @@ namespace WindowsFormsApp1
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(857, 649);
             this.ControlBox = false;
+            this.Controls.Add(this.nomelivroTextBox);
+            this.Controls.Add(this.datareqTextBox);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.panel7);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.panel6);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.panel5);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.Devolver);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.datareqDataPicker);
-            this.Controls.Add(this.NIFTextBox);
-            this.Controls.Add(this.nomelivroComboBox);
-            this.Controls.Add(this.nomecompletoTextBox);
-            this.Controls.Add(this.emailTextBox);
-            this.Controls.Add(this.ContactoTextBox);
+            this.Controls.Add(this.datareturnDataPicker);
             this.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Dev";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "⠀⠀⠀⠀⠀⠀⠀⠀⠀";
+            this.Load += new System.EventHandler(this.Dev_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -401,6 +354,7 @@ namespace WindowsFormsApp1
             this.panel7.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -417,23 +371,19 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Procurar;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox procutenteTextBox;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker datareqDataPicker;
-        private System.Windows.Forms.ComboBox nomelivroComboBox;
-        private System.Windows.Forms.TextBox emailTextBox;
-        private System.Windows.Forms.TextBox ContactoTextBox;
-        private System.Windows.Forms.TextBox NIFTextBox;
-        private System.Windows.Forms.TextBox nomecompletoTextBox;
+        private System.Windows.Forms.DateTimePicker datareturnDataPicker;
+        private System.Windows.Forms.Button Atualizar;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox datareqTextBox;
+        private System.Windows.Forms.TextBox nomelivroTextBox;
     }
 }

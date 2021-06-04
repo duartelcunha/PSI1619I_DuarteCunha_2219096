@@ -38,6 +38,7 @@ namespace WindowsFormsApp1
             this.nomecompletoTextBox = new System.Windows.Forms.TextBox();
             this.contactoTextBox = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Atualizar = new System.Windows.Forms.Button();
             this.Procurar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.procutenteTextBox = new System.Windows.Forms.TextBox();
@@ -81,7 +82,7 @@ namespace WindowsFormsApp1
             this.PT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PT.ForeColor = System.Drawing.Color.SandyBrown;
             this.PT.Image = ((System.Drawing.Image)(resources.GetObject("PT.Image")));
-            this.PT.Location = new System.Drawing.Point(769, 37);
+            this.PT.Location = new System.Drawing.Point(765, 32);
             this.PT.Margin = new System.Windows.Forms.Padding(4);
             this.PT.Name = "PT";
             this.PT.Size = new System.Drawing.Size(46, 41);
@@ -151,6 +152,7 @@ namespace WindowsFormsApp1
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.SandyBrown;
+            this.panel2.Controls.Add(this.Atualizar);
             this.panel2.Controls.Add(this.Procurar);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.procutenteTextBox);
@@ -160,6 +162,20 @@ namespace WindowsFormsApp1
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(263, 315);
             this.panel2.TabIndex = 22;
+            // 
+            // Atualizar
+            // 
+            this.Atualizar.BackColor = System.Drawing.Color.Chocolate;
+            this.Atualizar.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Atualizar.ForeColor = System.Drawing.Color.White;
+            this.Atualizar.Location = new System.Drawing.Point(15, 244);
+            this.Atualizar.Margin = new System.Windows.Forms.Padding(4);
+            this.Atualizar.Name = "Atualizar";
+            this.Atualizar.Size = new System.Drawing.Size(96, 52);
+            this.Atualizar.TabIndex = 8;
+            this.Atualizar.Text = "Atualizar";
+            this.Atualizar.UseVisualStyleBackColor = false;
+            this.Atualizar.Click += new System.EventHandler(this.Atualizar_Click);
             // 
             // Procurar
             // 
@@ -179,7 +195,7 @@ namespace WindowsFormsApp1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(11, 168);
+            this.label1.Location = new System.Drawing.Point(20, 168);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(219, 22);
@@ -191,11 +207,13 @@ namespace WindowsFormsApp1
             this.procutenteTextBox.BackColor = System.Drawing.Color.White;
             this.procutenteTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.procutenteTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.procutenteTextBox.Location = new System.Drawing.Point(15, 194);
+            this.procutenteTextBox.Location = new System.Drawing.Point(84, 194);
             this.procutenteTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.procutenteTextBox.Name = "procutenteTextBox";
-            this.procutenteTextBox.Size = new System.Drawing.Size(233, 29);
+            this.procutenteTextBox.Size = new System.Drawing.Size(95, 29);
             this.procutenteTextBox.TabIndex = 0;
+            this.procutenteTextBox.TextChanged += new System.EventHandler(this.procutenteTextBox_TextChanged);
+            this.procutenteTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.procutenteTextBox_KeyPress);
             // 
             // panel3
             // 
@@ -244,13 +262,13 @@ namespace WindowsFormsApp1
             // 
             // nomelivroComboBox
             // 
-            this.nomelivroComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.nomelivroComboBox.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nomelivroComboBox.FormattingEnabled = true;
             this.nomelivroComboBox.Location = new System.Drawing.Point(223, 451);
             this.nomelivroComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.nomelivroComboBox.Name = "nomelivroComboBox";
             this.nomelivroComboBox.Size = new System.Drawing.Size(277, 29);
+            this.nomelivroComboBox.Sorted = true;
             this.nomelivroComboBox.TabIndex = 24;
             // 
             // datareqDataPicker
@@ -333,7 +351,7 @@ namespace WindowsFormsApp1
             this.Requisitar.BackColor = System.Drawing.Color.Chocolate;
             this.Requisitar.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Requisitar.ForeColor = System.Drawing.Color.White;
-            this.Requisitar.Location = new System.Drawing.Point(599, 475);
+            this.Requisitar.Location = new System.Drawing.Point(599, 489);
             this.Requisitar.Name = "Requisitar";
             this.Requisitar.Size = new System.Drawing.Size(153, 72);
             this.Requisitar.TabIndex = 8;
@@ -438,5 +456,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Button Atualizar;
     }
 }

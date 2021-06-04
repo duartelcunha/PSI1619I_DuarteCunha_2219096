@@ -32,7 +32,7 @@ namespace WindowsFormsApp1
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VerUtilizador));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.sexoComboBox = new System.Windows.Forms.ComboBox();
+            this.generoComboBox = new System.Windows.Forms.ComboBox();
             this.unTextBox = new System.Windows.Forms.TextBox();
             this.contactoTextBox = new System.Windows.Forms.TextBox();
             this.emailTextBox = new System.Windows.Forms.TextBox();
@@ -81,7 +81,7 @@ namespace WindowsFormsApp1
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.SandyBrown;
-            this.panel2.Controls.Add(this.sexoComboBox);
+            this.panel2.Controls.Add(this.generoComboBox);
             this.panel2.Controls.Add(this.unTextBox);
             this.panel2.Controls.Add(this.contactoTextBox);
             this.panel2.Controls.Add(this.emailTextBox);
@@ -100,18 +100,18 @@ namespace WindowsFormsApp1
             this.panel2.Size = new System.Drawing.Size(637, 184);
             this.panel2.TabIndex = 27;
             // 
-            // sexoComboBox
+            // generoComboBox
             // 
-            this.sexoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.sexoComboBox.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sexoComboBox.FormattingEnabled = true;
-            this.sexoComboBox.Items.AddRange(new object[] {
+            this.generoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.generoComboBox.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.generoComboBox.FormattingEnabled = true;
+            this.generoComboBox.Items.AddRange(new object[] {
             "Masculino",
             "Feminino"});
-            this.sexoComboBox.Location = new System.Drawing.Point(151, 132);
-            this.sexoComboBox.Name = "sexoComboBox";
-            this.sexoComboBox.Size = new System.Drawing.Size(121, 29);
-            this.sexoComboBox.TabIndex = 28;
+            this.generoComboBox.Location = new System.Drawing.Point(151, 132);
+            this.generoComboBox.Name = "generoComboBox";
+            this.generoComboBox.Size = new System.Drawing.Size(121, 29);
+            this.generoComboBox.TabIndex = 28;
             // 
             // unTextBox
             // 
@@ -178,12 +178,12 @@ namespace WindowsFormsApp1
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.SandyBrown;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(97, 135);
+            this.label3.Location = new System.Drawing.Point(78, 135);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 22);
+            this.label3.Size = new System.Drawing.Size(68, 22);
             this.label3.TabIndex = 17;
-            this.label3.Text = "Sexo";
+            this.label3.Text = "Género";
             // 
             // label1
             // 
@@ -375,7 +375,7 @@ namespace WindowsFormsApp1
             this.Name = "VerUtilizador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "⠀⠀⠀⠀⠀⠀⠀⠀⠀";
-            this.Load += new System.EventHandler(this.VerUtilizador_Load);
+            this.Load += new System.EventHandler(this.VerUtente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -408,7 +408,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button PT;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox sexoComboBox;
+        private System.Windows.Forms.ComboBox generoComboBox;
         private System.Windows.Forms.Button Atualiza;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel3;
