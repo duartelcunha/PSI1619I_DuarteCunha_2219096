@@ -40,7 +40,6 @@ namespace WindowsFormsApp1
             con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-
             cmd.CommandText = "SELECT * FROM Utente WHERE NIF = @id";
             cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
             SqlDataAdapter dt = new SqlDataAdapter(cmd);
@@ -59,6 +58,7 @@ namespace WindowsFormsApp1
 
         private void VerUtente_Load(object sender, EventArgs e)
         {
+            dataGridView1.ReadOnly = true;
             SqlConnection con = new SqlConnection();
             con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
             SqlCommand cmd = new SqlCommand();
@@ -71,11 +71,6 @@ namespace WindowsFormsApp1
             dataGridView1.DataSource = ds.Tables[0];
         }
 
-        private void Cancelar_Click(object sender, EventArgs e)
-        {
-            panel1.Visible = false;
-        }
-
         private void Atualizar_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Os campos serão atualizados.", "Confirme", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
@@ -85,7 +80,6 @@ namespace WindowsFormsApp1
                 con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
-
                 cmd.CommandText = "UPDATE Utente SET Pn = @PN, Un = @UN, Genero = @Genero, Contacto = @Contacto, Email = @Email WHERE NIF = @ID";
                 cmd.Parameters.Add("@PN", SqlDbType.VarChar).Value = pnTextBox.Text;
                 cmd.Parameters.Add("@UN", SqlDbType.VarChar).Value = unTextBox.Text;
@@ -109,7 +103,6 @@ namespace WindowsFormsApp1
                 con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
-
                 cmd.CommandText = "DELETE FROM Utente WHERE NIF  = @ID";
                 cmd.Parameters.Add("@ID", SqlDbType.Int).Value = ID;
                 SqlDataAdapter dt = new SqlDataAdapter(cmd);
@@ -133,7 +126,6 @@ namespace WindowsFormsApp1
                 cmd.CommandText = "SELECT * FROM Utente WHERE Pn LIKE @Nome";
                 cmd.Parameters.Add("@Nome", SqlDbType.VarChar).Value = $"{nomeuserproctextBox.Text}%";
                 SqlDataAdapter dt = new SqlDataAdapter(cmd);
-
                 DataSet ds = new DataSet();
                 dt.Fill(ds);
 
@@ -170,9 +162,13 @@ namespace WindowsFormsApp1
             }
             pnTextBox.Clear();
             unTextBox.Clear();
-            
             contactoTextBox.Clear();
             emailTextBox.Clear();
+        }
+
+        private void Cancelar_Click_1(object sender, EventArgs e)
+        {
+            panel2.Visible = false;
         }
     }
 }

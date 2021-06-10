@@ -27,32 +27,26 @@ namespace WindowsFormsApp1
 
         private void Registar_Click(object sender, EventArgs e)
         {
-            string connectionString = null;
-            SqlConnection con;
-            connectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
-            con = new SqlConnection(connectionString);
+            SqlConnection con = new SqlConnection(@"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21");
             con.Open();
+            SqlCommand cmd = new SqlCommand("select * from Utente where NIF=@NIF", con);
+            cmd.Parameters.AddWithValue("@NIF", txtContribuinte.Text);
+            SqlDataReader dr = cmd.ExecuteReader();
             if (string.IsNullOrEmpty(primeiroNomeTextBox.Text) || string.IsNullOrEmpty(contactoTextBox.Text) || string.IsNullOrEmpty(generoTextBox.Text) || string.IsNullOrEmpty(contactoTextBox.Text) || string.IsNullOrEmpty(contactocomboBox.Text) || string.IsNullOrEmpty(emailTextBox.Text) || string.IsNullOrEmpty(txtContribuinte.Text))
             {
                 MessageBox.Show("Preencha todos os campos");
             }
             else
             {
-                string consulta = "SELECT NIF from Utente where NIF = @NIF";
-                SqlCommand cmd = new SqlCommand(consulta, con);
-                cmd.Parameters.AddWithValue("@NIF", txtContribuinte.Text);
-                SqlDataReader read = cmd.ExecuteReader();
-                if (read.Read())
+                if (dr.HasRows)
                 {
-                    MessageBox.Show("Usuario existe");
-
-
+                    MessageBox.Show("NIF já existente", "Confirme", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Ref();
                 }
-
                 else
                 {
-                    MessageBox.Show("Usuario NÃO existe");
-
+                    con.Close();
+                    con.Open();
                     SqlCommand sqlCmd = new SqlCommand("UserAdd", con);
                     sqlCmd.CommandType = CommandType.StoredProcedure;
                     sqlCmd.Parameters.Add("@Pn", SqlDbType.VarChar).Value = primeiroNomeTextBox.Text.Trim();
@@ -62,28 +56,27 @@ namespace WindowsFormsApp1
                     sqlCmd.Parameters.Add("@Email", SqlDbType.VarChar).Value = emailTextBox.Text.Trim();
                     sqlCmd.Parameters.Add("@NIF", SqlDbType.Int).Value = txtContribuinte.Text.Trim();
                     sqlCmd.ExecuteNonQuery();
-
+                    con.Close();
                     MessageBox.Show("Registo Completo");
-                    primeiroNomeTextBox.Clear();
-                    ultimoNomeTextBox.Clear();
-                    contactoTextBox.Clear();
-                    emailTextBox.Clear();
-                    txtContribuinte.Clear();
-                    generoTextBox.Items.Clear();
-                    contactocomboBox.Items.Clear();
+                    Ref();
                 }
+              }
             }
 
-           
+        public void Ref()
+        {
+            primeiroNomeTextBox.Clear();
+            ultimoNomeTextBox.Clear();
+            contactoTextBox.Clear();
+            emailTextBox.Clear();
+            txtContribuinte.Clear();
+            generoTextBox.Items.Clear();
+            contactocomboBox.Items.Clear();
         }
-        
-    
 
         private void Cancelar_Click_1(object sender, EventArgs e)
         {
-            
             this.Close();
-            
         }
        
 

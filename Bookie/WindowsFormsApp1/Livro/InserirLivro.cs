@@ -22,7 +22,7 @@ namespace WindowsFormsApp1
 
         private void Inserir_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty(nomelivroTextBox.Text) && string.IsNullOrEmpty(nomeautorTextBox.Text) && string.IsNullOrEmpty(anoTextBox.Text) && string.IsNullOrEmpty(precoTextBox.Text) && string.IsNullOrEmpty(quantidadeTextBox.Text))
+            if(string.IsNullOrEmpty(nomelivroTextBox.Text) && string.IsNullOrEmpty(nomeautorTextBox.Text) && string.IsNullOrEmpty(anoTextBox.Text) && string.IsNullOrEmpty(quantidadeTextBox.Text))
             {
                 MessageBox.Show("Preencha todos os campos", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -33,14 +33,13 @@ namespace WindowsFormsApp1
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
                 con.Open();
-                cmd.CommandText = "INSERT INTO Livro (Nome,Autor,Ano,Aluguer,Quantidade,Categoria,Linguagem) VALUES (@Nome,@Autor,@Ano,@Aluguer,@Quantidade,@Categoria,@Linguagem)";
+                cmd.CommandText = "INSERT INTO Livro (Nome,Autor,Ano,Quantidade,Categoria,Linguagem) VALUES (@Nome,@Autor,@Ano,@Quantidade,@Categoria,@Linguagem)";
                 cmd.Parameters.Add("@Nome", SqlDbType.VarChar).Value = nomelivroTextBox.Text;
                 cmd.Parameters.Add("@Autor", SqlDbType.VarChar).Value = nomeautorTextBox.Text;
-                cmd.Parameters.Add("@Categoria", SqlDbType.VarChar).Value = categoriaTextBox;
-                cmd.Parameters.Add("@Linguagem", SqlDbType.VarChar).Value = linguagemTextBox;
-                cmd.Parameters.Add("@Ano", SqlDbType.VarChar).Value = Int64.Parse(anoTextBox.Text);
-                cmd.Parameters.Add("@Aluguer", SqlDbType.VarChar).Value = Int64.Parse(precoTextBox.Text);
-                cmd.Parameters.Add("@Quantidade", SqlDbType.VarChar).Value = Int64.Parse(quantidadeTextBox.Text);
+                cmd.Parameters.Add("@Ano", SqlDbType.Int).Value = anoTextBox.Text;
+                cmd.Parameters.Add("@Quantidade", SqlDbType.Int).Value = quantidadeTextBox.Text;
+                cmd.Parameters.Add("@Categoria", SqlDbType.VarChar).Value = categoriaTextBox.Text;
+                cmd.Parameters.Add("@Linguagem", SqlDbType.VarChar).Value = linguagemTextBox.Text;
                 cmd.ExecuteNonQuery();
                 con.Close();
 
@@ -49,7 +48,6 @@ namespace WindowsFormsApp1
                 nomeautorTextBox.Clear();
                 nomelivroTextBox.Clear();
                 anoTextBox.Clear();
-                precoTextBox.Clear();
                 categoriaTextBox.Clear();
                 quantidadeTextBox.Clear();
                 linguagemTextBox.Clear();

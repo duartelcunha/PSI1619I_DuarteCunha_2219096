@@ -20,11 +20,12 @@ namespace WindowsFormsApp1
 
         private void VerLivro_Load(object sender, EventArgs e)
         {
+            dataGridView1.ReadOnly = true;
             SqlConnection con = new SqlConnection();
             con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "SELECT LivroID AS 'ID', Nome AS 'Nome do Livro', Autor, Ano, Aluguer, Quantidade, Categoria, Linguagem FROM Livro";
+            cmd.CommandText = "SELECT LivroID AS 'ID', Nome AS 'Título', Categoria, Linguagem, Autor, Ano, Quantidade FROM Livro";
             SqlDataAdapter dt = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             dt.Fill(ds);
@@ -42,6 +43,7 @@ namespace WindowsFormsApp1
                 id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
                
             }
+
             panel1.Visible = true;
             SqlConnection con = new SqlConnection();
             con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
@@ -60,7 +62,6 @@ namespace WindowsFormsApp1
             categoriaTextBox.Text = ds.Tables[0].Rows[0]["Categoria"].ToString();
             linguagemTextBox.Text = ds.Tables[0].Rows[0]["Linguagem"].ToString();
             anotextBox.Text = ds.Tables[0].Rows[0]["Ano"].ToString();
-            precotextBox.Text = ds.Tables[0].Rows[0]["Aluguer"].ToString();
             qtdtextBox.Text = ds.Tables[0].Rows[0]["Quantidade"].ToString();
            
         }
@@ -120,7 +121,6 @@ namespace WindowsFormsApp1
             linguagemTextBox.Clear();
             anotextBox.Clear();
             qtdtextBox.Clear();
-            precotextBox.Clear();
         }
 
         private void Atualizar_Click(object sender, EventArgs e)
@@ -134,14 +134,13 @@ namespace WindowsFormsApp1
                 con.Open();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = "UPDATE Livro SET Nome = @Nome, Autor = @Autor, Categoria = @Categoria, Linguagem = @Linguagem, Ano = @Ano, Aluguer = @Aluguer, Quantidade = @Quantidade WHERE LivroID = @ID";
+                cmd.CommandText = "UPDATE Livro SET Nome = @Nome, Autor = @Autor, Categoria = @Categoria, Linguagem = @Linguagem, Ano = @Ano, Quantidade = @Quantidade WHERE LivroID = @ID";
                 cmd.Parameters.Add("@Nome", SqlDbType.VarChar).Value = nomelivrotextBox.Text;
                 cmd.Parameters.Add("@Autor", SqlDbType.VarChar).Value = nomeautortextBox.Text;
                 cmd.Parameters.Add("@Categoria", SqlDbType.VarChar).Value = categoriaTextBox.Text;
                 cmd.Parameters.Add("@Linguagem", SqlDbType.VarChar).Value = linguagemTextBox.Text;
-                cmd.Parameters.Add("@Ano", SqlDbType.VarChar).Value = Int64.Parse(anotextBox.Text);
-                cmd.Parameters.Add("@Aluguer", SqlDbType.VarChar).Value = Int64.Parse(precotextBox.Text);
-                cmd.Parameters.Add("@Quantidade", SqlDbType.VarChar).Value = Int64.Parse(qtdtextBox.Text);
+                cmd.Parameters.Add("@Ano", SqlDbType.Int).Value = anotextBox.Text;
+                cmd.Parameters.Add("@Quantidade", SqlDbType.Int).Value = qtdtextBox.Text;
                 cmd.Parameters.Add("@ID", SqlDbType.Int).Value = ID;
                 cmd.ExecuteNonQuery();
                 con.Close();

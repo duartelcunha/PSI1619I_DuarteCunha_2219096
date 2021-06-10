@@ -249,6 +249,7 @@ namespace WindowsFormsApp1
             this.Cancelar.TabIndex = 22;
             this.Cancelar.Text = "Cancelar";
             this.Cancelar.UseVisualStyleBackColor = false;
+            this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click_1);
             // 
             // label7
             // 
