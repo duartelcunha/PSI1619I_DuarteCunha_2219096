@@ -94,7 +94,7 @@ namespace WindowsFormsApp1
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(27, 313);
+            this.label3.Location = new System.Drawing.Point(30, 312);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 22);
             this.label3.TabIndex = 11;
@@ -243,7 +243,8 @@ namespace WindowsFormsApp1
             // 
             // contactocomboBox
             // 
-            this.contactocomboBox.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contactocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.contactocomboBox.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contactocomboBox.FormattingEnabled = true;
             this.contactocomboBox.Items.AddRange(new object[] {
             "+30 ",
@@ -266,10 +267,10 @@ namespace WindowsFormsApp1
             "+47 ",
             "+48",
             "+49"});
-            this.contactocomboBox.Location = new System.Drawing.Point(120, 310);
+            this.contactocomboBox.Location = new System.Drawing.Point(120, 312);
             this.contactocomboBox.MaxDropDownItems = 4;
             this.contactocomboBox.Name = "contactocomboBox";
-            this.contactocomboBox.Size = new System.Drawing.Size(70, 27);
+            this.contactocomboBox.Size = new System.Drawing.Size(70, 25);
             this.contactocomboBox.TabIndex = 27;
             // 
             // Registo

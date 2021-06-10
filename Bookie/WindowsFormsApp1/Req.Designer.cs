@@ -279,6 +279,7 @@ namespace WindowsFormsApp1
             this.datareqDataPicker.Name = "datareqDataPicker";
             this.datareqDataPicker.Size = new System.Drawing.Size(277, 29);
             this.datareqDataPicker.TabIndex = 25;
+            this.datareqDataPicker.Value = new System.DateTime(2021, 6, 7, 4, 56, 34, 0);
             // 
             // label3
             // 

@@ -27,23 +27,30 @@ namespace WindowsFormsApp1
 
         private void Procurar_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = con;
-            cmd.CommandText = "SELECT ReqID AS 'ID',ID_NIF AS 'NIF', DataReq AS 'Data de Requisição', DataReturn AS 'Data de Devolução', NomeLivro AS 'Nome do Livro', Nome, Contacto, Email FROM Req WHERE ID_NIF = @NIF AND DataReturn IS NULL";
-            cmd.Parameters.Add("@NIF", SqlDbType.Int).Value = procutenteTextBox.Text;
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-
-            if(ds.Tables[0].Rows.Count != 0)
+            if (procutenteTextBox.Text != "")
             {
-                dataGridView1.DataSource = ds.Tables[0];
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "SELECT ReqID AS 'ID',ID_NIF AS 'NIF', DataReq AS 'Data de Requisição', DataReturn AS 'Data de Devolução', NomeLivro AS 'Nome do Livro', Nome, Contacto, Email FROM Req WHERE ID_NIF = @NIF AND DataReturn IS NULL";
+                cmd.Parameters.Add("@NIF", SqlDbType.VarChar).Value = procutenteTextBox.Text;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+
+                if (ds.Tables[0].Rows.Count != 0)
+                {
+                    dataGridView1.DataSource = ds.Tables[0];
+                }
+                else
+                {
+                    MessageBox.Show("NIF Inválido ou Nenhum Livro Requisitado", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                MessageBox.Show("NIF Inválido ou Nenhum Livro Requisitado", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Nenhum NIF foi indicado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -69,25 +76,33 @@ namespace WindowsFormsApp1
 
         private void Devolver_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = con;
-            con.Open();
-            cmd.CommandText = "UPDATE Req SET DataReturn = @DataReturn WHERE ID_NIF = @NIF AND ReqID = @ReqID";
-            cmd.Parameters.Add("@DataReturn", SqlDbType.VarChar).Value = datareturnDataPicker.Text;
-            cmd.Parameters.Add("@NIF", SqlDbType.Int).Value = procutenteTextBox.Text;
-            cmd.Parameters.Add("@ReqID", SqlDbType.Int).Value = ID;
-            cmd.ExecuteNonQuery();
-            con.Close();
+            if (procutenteTextBox.Text != "")
+            {
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                con.Open();
+                cmd.CommandText = "UPDATE Req SET DataReturn = @DataReturn WHERE ID_NIF = @NIF AND ReqID = @ReqID";
+                cmd.Parameters.Add("@DataReturn", SqlDbType.VarChar).Value = datareturnDataPicker.Text;
+                cmd.Parameters.Add("@NIF", SqlDbType.VarChar).Value = procutenteTextBox.Text;
+                cmd.Parameters.Add("@ReqID", SqlDbType.Int).Value = ID;
+                cmd.ExecuteNonQuery();
+                con.Close();
 
-            MessageBox.Show("Livro Devolvido", "Devolução", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            Dev_Load(this, null);
+                MessageBox.Show("Livro Devolvido", "Devolução", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Dev_Load(this, null);
+            }
+            else
+            {
+                MessageBox.Show("Nenhum NIF foi indicado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void Dev_Load(object sender, EventArgs e)
         {
             procutenteTextBox.Clear();
+            dataGridView1.ReadOnly = true;
         }
 
         private void procutenteTextBox_TextChanged(object sender, EventArgs e)

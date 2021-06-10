@@ -46,6 +46,8 @@ namespace WindowsFormsApp1
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Tempo = new System.Windows.Forms.Label();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -204,6 +206,22 @@ namespace WindowsFormsApp1
             this.panel1.Size = new System.Drawing.Size(8, 553);
             this.panel1.TabIndex = 3;
             // 
+            // Tempo
+            // 
+            this.Tempo.AutoSize = true;
+            this.Tempo.BackColor = System.Drawing.Color.White;
+            this.Tempo.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tempo.Location = new System.Drawing.Point(1024, 9);
+            this.Tempo.Name = "Tempo";
+            this.Tempo.Size = new System.Drawing.Size(53, 20);
+            this.Tempo.TabIndex = 5;
+            this.Tempo.Text = "label1";
+            // 
+            // timer2
+            // 
+            this.timer2.Enabled = true;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -211,6 +229,7 @@ namespace WindowsFormsApp1
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1098, 549);
             this.ControlBox = false;
+            this.Controls.Add(this.Tempo);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
@@ -247,5 +266,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ToolStripMenuItem feitoPorDuarteCunhaTGPSITurmaIToolStripMenuItem;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label Tempo;
+        private System.Windows.Forms.Timer timer2;
     }
 }

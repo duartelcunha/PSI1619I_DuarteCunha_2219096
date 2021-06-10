@@ -15,12 +15,14 @@ namespace WindowsFormsApp1
     {
         public Main()
         {
+            /*
             Thread a = new Thread(new ThreadStart(StartForm));
             a.Start();
-            Thread.Sleep(1900);
+            Thread.Sleep(1950);
+            */
             InitializeComponent();
             menuStrip1.Renderer = new MyRenderer();
-            a.Abort();
+            //a.Abort();
         }
         private class MyRenderer : ToolStripProfessionalRenderer
         {
@@ -46,13 +48,15 @@ namespace WindowsFormsApp1
                 get { return Color.White; }
             }
         }
-        public static void StartForm()
+       /* public static void StartForm()
         {
                 Application.Run(new Splash());
-        }
+        }*/
 
         private void Main_Load(object sender, EventArgs e)
         {
+            Tempo.Text = DateTime.Now.ToLongTimeString();
+            timer2.Start();
             MdiClient ctlMDI;
 
             foreach (Control ctl in this.Controls)
@@ -125,6 +129,12 @@ namespace WindowsFormsApp1
         {
             var a = new Info();
             a.Show();
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            Tempo.Text = DateTime.Now.ToLongTimeString();
+            timer2.Start();
         }
     }
 

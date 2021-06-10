@@ -8,6 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using iTextSharp;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
+
 
 namespace WindowsFormsApp1
 {
@@ -24,8 +29,6 @@ namespace WindowsFormsApp1
             nomelivroComboBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             nomelivroComboBox.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
-
-
 
 
         int count;
@@ -88,7 +91,8 @@ namespace WindowsFormsApp1
 
         private void Req_Click(object sender, EventArgs e)
         {
-           
+            DateTime date = DateTime.Now;
+            string dateString = date.ToString("dd/MM/yyyy");
             if (nifTextBox.Text != "")
             {
                 if (nomelivroComboBox.SelectedIndex != -1 && count <= 2)
@@ -98,8 +102,9 @@ namespace WindowsFormsApp1
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = con;
                     con.Open();
-                    cmd.CommandText = cmd.CommandText = "INSERT INTO Req (ID_NIF,Nome,Email,NomeLivro,Contacto,DataReq) VALUES (@NIF,@nome,@email,@nl,@contacto,@datareq)";
+                    cmd.CommandText = cmd.CommandText = "INSERT INTO Req (ID_NIF,Nome,Email,NomeLivro,Contacto,DataReq,DataEntrega) VALUES (@NIF,@nome,@email,@nl,@contacto,@datareq,@dataentrega)";
 
+                    cmd.Parameters.Add("@dataentrega", SqlDbType.VarChar).Value = datareqDataPicker.Value.AddDays(7);
                     cmd.Parameters.Add("@NIF", SqlDbType.Int).Value = nifTextBox.Text;
                     cmd.Parameters.Add("@nome", SqlDbType.VarChar).Value = nomecompletoTextBox.Text;
                     cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = emailTextBox.Text;
@@ -108,8 +113,40 @@ namespace WindowsFormsApp1
                     cmd.Parameters.Add("@datareq", SqlDbType.VarChar).Value = datareqDataPicker.Text;
                     cmd.ExecuteNonQuery();
                     con.Close();
+
+                    using (SaveFileDialog sfd = new SaveFileDialog() { Filter="PDF file|*.pdf", ValidateNames = true})
+                    {
+                        if(sfd.ShowDialog() == DialogResult.OK)
+                        {
+                            iTextSharp.text.Document doc = new iTextSharp.text.Document(PageSize.A5);
+                            try
+                            {
+                                PdfWriter.GetInstance(doc, new FileStream(sfd.FileName, FileMode.Create));
+                                doc.Open();
+                                doc.Add(new iTextSharp.text.Paragraph("BOOKIE"));
+                                doc.Add(new iTextSharp.text.Paragraph($"NIF: {this.nifTextBox.Text.Trim()}"));
+                                doc.Add(new iTextSharp.text.Paragraph($"Nome: {this.nomecompletoTextBox.Text.Trim()}"));
+                                doc.Add(new iTextSharp.text.Paragraph($"Livro: {this.nomelivroComboBox.Text.Trim()}"));
+                                doc.Add(new iTextSharp.text.Paragraph($"Data de Requisição: {this.datareqDataPicker.Text.Trim()}"));
+                                doc.Add(new iTextSharp.text.Paragraph($"Data de Entrega: {this.datareqDataPicker.Value.AddDays(7)}"));
+                            }
+                            catch(Exception ex)
+                            {
+                                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                doc.Close();
+                            }
+                        }
+                    }
+
+
                     MessageBox.Show("Livro Requisitado", "Requisição", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("PDF com informações criado", "Requisição", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Ref();
+                    
+
                 }
                 else
                 {
@@ -141,15 +178,15 @@ namespace WindowsFormsApp1
             }
             if (nifTextBox.Text == "")
             {
-                Ref();
+                
             }
         }
 
         public void Ref()
         {
+            procutenteTextBox.Clear();
             nifTextBox.Clear();
             nomecompletoTextBox.Clear();
-            nomelivroComboBox.Items.Clear();
             contactoTextBox.Clear();
             emailTextBox.Clear();
             nomelivroComboBox.Items.Clear();
@@ -157,13 +194,7 @@ namespace WindowsFormsApp1
 
         private void Atualizar_Click(object sender, EventArgs e)
         {
-            procutenteTextBox.Clear();
-            nifTextBox.Clear();
-            nomecompletoTextBox.Clear();
-            nomelivroComboBox.Items.Clear();
-            contactoTextBox.Clear();
-            emailTextBox.Clear();
-
+            Ref();
         }
 
         private void procutenteTextBox_KeyPress(object sender, KeyPressEventArgs e)
