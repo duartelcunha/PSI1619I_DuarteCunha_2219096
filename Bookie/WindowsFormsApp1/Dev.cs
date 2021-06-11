@@ -13,15 +13,10 @@ namespace WindowsFormsApp1
 {
     public partial class Dev : Form
     {
+        Int32 ID;
         public Dev()
         {
             InitializeComponent();
-        }
-
-
-        private void Sair_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
 
@@ -31,10 +26,13 @@ namespace WindowsFormsApp1
             {
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
+
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
+
                 cmd.CommandText = "SELECT ReqID AS 'ID',ID_NIF AS 'NIF', DataReq AS 'Data de Requisição', DataReturn AS 'Data de Devolução', NomeLivro AS 'Nome do Livro', Nome, Contacto, Email FROM Req WHERE ID_NIF = @NIF AND DataReturn IS NULL";
                 cmd.Parameters.Add("@NIF", SqlDbType.VarChar).Value = procutenteTextBox.Text;
+
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 da.Fill(ds);
@@ -50,7 +48,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                MessageBox.Show("Nenhum NIF foi indicado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Nenhum NIF digitado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -59,12 +57,11 @@ namespace WindowsFormsApp1
             var a = new VerUtilizador();
             a.Show();
         }
-
-        Int32 ID;
        
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             dataGridView1.ReadOnly = true;
+
             if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
                 ID = Int32.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
@@ -80,8 +77,10 @@ namespace WindowsFormsApp1
             {
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
+
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
+
                 con.Open();
                 cmd.CommandText = "UPDATE Req SET DataReturn = @DataReturn WHERE ID_NIF = @NIF AND ReqID = @ReqID";
                 cmd.Parameters.Add("@DataReturn", SqlDbType.VarChar).Value = datareturnDataPicker.Text;
@@ -118,6 +117,7 @@ namespace WindowsFormsApp1
             {
                 dataGridView1.DataSource = null;
             }
+
             nomelivroTextBox.Clear();
             datareqTextBox.Clear();
         }
@@ -136,6 +136,11 @@ namespace WindowsFormsApp1
             {
                 e.Handled = true;
             }
+        }
+
+        private void Sair_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void procutenteTextBox_Validating(object sender, CancelEventArgs e)

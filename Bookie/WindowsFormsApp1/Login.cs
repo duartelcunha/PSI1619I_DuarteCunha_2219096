@@ -33,11 +33,14 @@ namespace WindowsFormsApp1
             try
             {
                 con = new SqlConnection(@"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21");
-                cmd = new SqlCommand("SELECT * FROM Login WHERE Username=@uid and Password=@password", con);
+
+                cmd = new SqlCommand("SELECT * FROM Login WHERE Username COLLATE Latin1_general_CS_AS = @uid and Password COLLATE Latin1_general_CS_AS = @password", con);
+
                 con.Open();
                 cmd.Parameters.Add("@uid", SqlDbType.VarChar).Value = usernameTextBox.Text;
                 cmd.Parameters.Add("@password", SqlDbType.VarChar).Value = passwordTextBox.Text;
                 reader = cmd.ExecuteReader();
+
                 if (reader.Read())
                 {
                     if (reader["Password"].ToString().Equals(passwordTextBox.Text.ToString(), StringComparison.InvariantCulture))
@@ -47,27 +50,31 @@ namespace WindowsFormsApp1
                         login = true;
                     }
                     else
+                    {
                         result = "Credênciais Inválidas";
+                    }
                 }
                 else
-                    MessageBox.Show(" Nome de Utilizador ou Password inválido", " Erro ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                usernameTextBox.Clear();
-                passwordTextBox.Clear();
-                reader.Close();
-                cmd.Dispose();
-                con.Close();
+                {
+                    MessageBox.Show(" Nome de Utilizador ou Password Inválido", " Erro ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    usernameTextBox.Clear();
+                    passwordTextBox.Clear();
+
+                    reader.Close();
+                    cmd.Dispose();
+                    con.Close();
+                }
 
             }
             catch (Exception)
-            {
-
-            }
+            { }
 
             if (result == "1")
             {
                this.Hide();
                var main = new Main();
-                main.Show();
+               main.Show();
 
             }
             

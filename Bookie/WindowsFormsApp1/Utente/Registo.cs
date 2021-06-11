@@ -28,10 +28,12 @@ namespace WindowsFormsApp1
         private void Registar_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(@"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21");
+
             con.Open();
-            SqlCommand cmd = new SqlCommand("select * from Utente where NIF=@NIF", con);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Utente WHERE NIF=@NIF", con);
             cmd.Parameters.AddWithValue("@NIF", txtContribuinte.Text);
             SqlDataReader dr = cmd.ExecuteReader();
+
             if (string.IsNullOrEmpty(primeiroNomeTextBox.Text) || string.IsNullOrEmpty(contactoTextBox.Text) || string.IsNullOrEmpty(generoTextBox.Text) || string.IsNullOrEmpty(contactoTextBox.Text) || string.IsNullOrEmpty(contactocomboBox.Text) || string.IsNullOrEmpty(emailTextBox.Text) || string.IsNullOrEmpty(txtContribuinte.Text))
             {
                 MessageBox.Show("Preencha todos os campos");
@@ -46,8 +48,10 @@ namespace WindowsFormsApp1
                 else
                 {
                     con.Close();
+
                     con.Open();
                     SqlCommand sqlCmd = new SqlCommand("UserAdd", con);
+
                     sqlCmd.CommandType = CommandType.StoredProcedure;
                     sqlCmd.Parameters.Add("@Pn", SqlDbType.VarChar).Value = primeiroNomeTextBox.Text.Trim();
                     sqlCmd.Parameters.Add("@Un", SqlDbType.VarChar).Value = ultimoNomeTextBox.Text.Trim();
@@ -57,7 +61,9 @@ namespace WindowsFormsApp1
                     sqlCmd.Parameters.Add("@NIF", SqlDbType.Int).Value = txtContribuinte.Text.Trim();
                     sqlCmd.ExecuteNonQuery();
                     con.Close();
+
                     MessageBox.Show("Registo Completo");
+
                     Ref();
                 }
               }
@@ -115,7 +121,7 @@ namespace WindowsFormsApp1
                (e.KeyChar != '.'))
             {
                 e.Handled = true;
-                MessageBox.Show("Digite letras do alfabeto", "Nome", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Digite letras do alfabeto", "Último Nome", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -126,7 +132,7 @@ namespace WindowsFormsApp1
             if (ultimoNomeTextBox.Text.Length < 2 || ultimoNomeTextBox.Text.Length > 20)
             {
                 e.Cancel = true;
-                MessageBox.Show("Digite entre 2 a 20 caracteres", "Nome", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Digite entre 2 a 20 caracteres", "Último Nome", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -137,7 +143,7 @@ namespace WindowsFormsApp1
             if (primeiroNomeTextBox.Text.Length < 2 || primeiroNomeTextBox.Text.Length > 20)
             {
                 e.Cancel = true;
-                MessageBox.Show("Digite entre 2 a 20 caracteres", "Nome", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Digite entre 2 a 20 caracteres", "Primeiro Nome", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -147,7 +153,7 @@ namespace WindowsFormsApp1
                (e.KeyChar != '.'))
             {
                 e.Handled = true;
-                MessageBox.Show("Digite letras do alfabeto", "Nome", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Digite letras do alfabeto", "Primeiro Nome", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

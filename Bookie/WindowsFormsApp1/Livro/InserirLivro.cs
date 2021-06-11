@@ -30,8 +30,10 @@ namespace WindowsFormsApp1
             {
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
+
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
+
                 con.Open();
                 cmd.CommandText = "INSERT INTO Livro (Nome,Autor,Ano,Quantidade,Categoria,Linguagem) VALUES (@Nome,@Autor,@Ano,@Quantidade,@Categoria,@Linguagem)";
                 cmd.Parameters.Add("@Nome", SqlDbType.VarChar).Value = nomelivroTextBox.Text;
@@ -44,6 +46,7 @@ namespace WindowsFormsApp1
                 con.Close();
 
                 MessageBox.Show("Livro Inserido", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 nomelivroTextBox.Clear();
                 nomeautorTextBox.Clear();
                 nomelivroTextBox.Clear();
@@ -57,7 +60,7 @@ namespace WindowsFormsApp1
 
         private void Cancelar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Todos os campos serão apagados", "Tem a certeza?",MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+            if (MessageBox.Show("Todos os campos serão apagados", "Confirmação",MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
             {
                 this.Close();
             }
@@ -79,7 +82,7 @@ namespace WindowsFormsApp1
         }
         private void anoTextBox_TextChanged(object sender, EventArgs e)
         {
-            this.anoTextBox.MaxLength = 9;
+            this.anoTextBox.MaxLength = 4;
 
             if (System.Text.RegularExpressions.Regex.IsMatch(anoTextBox.Text, "  ^ [0-9]"))
             {
@@ -91,13 +94,40 @@ namespace WindowsFormsApp1
         {
             if (anoTextBox.Text.Length == 0) return;
 
-            if (anoTextBox.Text.Length < 9)
+            if (anoTextBox.Text.Length < 4)
             {
                 e.Cancel = true;
                 MessageBox.Show("Digite 4 números", "Ano", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
- 
+        private void quantidadeTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        private void quantidadeTextBox_TextChanged(object sender, EventArgs e)
+        {
+            this.quantidadeTextBox.MaxLength = 5;
+
+            if (System.Text.RegularExpressions.Regex.IsMatch(quantidadeTextBox.Text, "  ^ [0-9]"))
+            {
+                quantidadeTextBox.Text = "";
+            }
+        }
+
+        private void quantidadeTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            if (quantidadeTextBox.Text.Length == 0) return;
+
+            if (quantidadeTextBox.Text.Length < 0)
+            {
+                e.Cancel = true;
+                MessageBox.Show("Digite pelo menos 1 número", "Quantidade", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
     }
 }

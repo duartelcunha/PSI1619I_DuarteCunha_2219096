@@ -381,7 +381,7 @@ namespace WindowsFormsApp1
             this.AutoScroll = true;
             this.AutoScrollMargin = new System.Drawing.Size(0, 14);
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(789, 675);
+            this.ClientSize = new System.Drawing.Size(773, 675);
             this.ControlBox = false;
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel6);

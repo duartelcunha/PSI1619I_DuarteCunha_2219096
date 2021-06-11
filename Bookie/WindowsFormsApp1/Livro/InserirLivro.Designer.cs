@@ -78,6 +78,9 @@ namespace WindowsFormsApp1
             this.quantidadeTextBox.Name = "quantidadeTextBox";
             this.quantidadeTextBox.Size = new System.Drawing.Size(111, 29);
             this.quantidadeTextBox.TabIndex = 2;
+            this.quantidadeTextBox.TextChanged += new System.EventHandler(this.quantidadeTextBox_TextChanged);
+            this.quantidadeTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.quantidadeTextBox_KeyPress);
+            this.quantidadeTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.quantidadeTextBox_Validating);
             // 
             // Cancelar
             // 
@@ -159,6 +162,8 @@ namespace WindowsFormsApp1
             this.anoTextBox.Size = new System.Drawing.Size(111, 29);
             this.anoTextBox.TabIndex = 12;
             this.anoTextBox.TextChanged += new System.EventHandler(this.anoTextBox_TextChanged);
+            this.anoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.anoTextBox_KeyPress);
+            this.anoTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.anoTextBox_Validating);
             // 
             // pictureBox1
             // 

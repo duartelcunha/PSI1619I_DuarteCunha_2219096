@@ -7,40 +7,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Runtime.InteropServices;
 namespace WindowsFormsApp1
 {
     public partial class Splash : Form
     {
         public Splash()
         {
+    
             InitializeComponent();
+            PB.Value = 0;
         }
 
        
 
-        private void Splash_Load(object sender, EventArgs e)
+        private void timer_Tick(object sender, EventArgs e)
         {
-            timer1.Interval = 100;
-            timer1.Tick += new EventHandler(this.Tick);
-            timer1.Enabled = true;
-            this.Opacity = 0;
+            PB.Value = 99;
+
+            if (PB.Value == 100)
+            {
+                timer1.Enabled = false;
+                Main f3 = new Main();
+                f3.Show();
+                this.Hide();
+            }
         }
 
-        private bool aumenta = true;
-        private void Tick(object sender, EventArgs e)
-        {
-            if (aumenta)
-                this.Opacity += 0.07D;
-          
-
-            if (this.Opacity == 1)
-                aumenta = false;
-
-            if (this.Opacity == 0)
-                this.Close();
-        }
-
-        
     }
 }

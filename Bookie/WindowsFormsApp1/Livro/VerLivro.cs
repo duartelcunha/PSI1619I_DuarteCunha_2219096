@@ -13,6 +13,10 @@ namespace WindowsFormsApp1
 {
     public partial class VerLivro : Form
     {
+
+        int id;
+        Int64 ID;
+
         public VerLivro()
         {
             InitializeComponent();
@@ -23,9 +27,11 @@ namespace WindowsFormsApp1
             dataGridView1.ReadOnly = true;
             SqlConnection con = new SqlConnection();
             con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
+
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
             cmd.CommandText = "SELECT LivroID AS 'ID', Nome AS 'Título', Categoria, Linguagem, Autor, Ano, Quantidade FROM Livro";
+
             SqlDataAdapter dt = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             dt.Fill(ds);
@@ -33,12 +39,10 @@ namespace WindowsFormsApp1
             dataGridView1.DataSource = ds.Tables[0];
         }
 
-        int id;
-        Int64 ID;
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value!=null)
+            if(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
                 id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
                
@@ -47,17 +51,19 @@ namespace WindowsFormsApp1
             panel1.Visible = true;
             SqlConnection con = new SqlConnection();
             con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
+
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "SELECT * FROM Livro WHERE LivroID = @id";
+            cmd.CommandText = "SELECT LivroID AS 'ID', Nome AS 'Título', Categoria, Linguagem, Autor, Ano, Quantidade FROM Livro WHERE LivroID = @id";
             cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+
             SqlDataAdapter dt = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             dt.Fill(ds);
 
             ID = Int64.Parse(ds.Tables[0].Rows[0][0].ToString());
 
-            nomelivrotextBox.Text = ds.Tables[0].Rows[0]["Nome"].ToString();
+            nomelivrotextBox.Text = ds.Tables[0].Rows[0]["Título"].ToString();
             nomeautortextBox.Text = ds.Tables[0].Rows[0]["Autor"].ToString();
             categoriaTextBox.Text = ds.Tables[0].Rows[0]["Categoria"].ToString();
             linguagemTextBox.Text = ds.Tables[0].Rows[0]["Linguagem"].ToString();
@@ -77,10 +83,12 @@ namespace WindowsFormsApp1
             {
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
+
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = "SELECT * FROM Livro WHERE Nome LIKE @Nome";
+                cmd.CommandText = "SELECT LivroID AS 'ID', Nome AS 'Título', Categoria, Linguagem, Autor, Ano, Quantidade FROM Livro WHERE Nome LIKE @Nome";
                 cmd.Parameters.Add("@Nome", SqlDbType.VarChar).Value = $"{nomelivroproctextBox.Text}%";
+
                 SqlDataAdapter dt = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 dt.Fill(ds);
@@ -91,9 +99,11 @@ namespace WindowsFormsApp1
             {
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
+
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = "SELECT * FROM Livro";
+                cmd.CommandText = "SELECT LivroID AS 'ID', Nome AS 'Título', Categoria, Linguagem, Autor, Ano, Quantidade FROM Livro";
+
                 SqlDataAdapter dt = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 dt.Fill(ds);
@@ -105,35 +115,42 @@ namespace WindowsFormsApp1
         private void Atualiza_Click(object sender, EventArgs e)
         {
             string con = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
+
             using (SqlConnection sqlCon = new SqlConnection(con))
             {
 
-                string query = "SELECT * FROM Livro";
+                string query = "SELECT LivroID AS 'ID', Nome AS 'Título', Categoria, Linguagem, Autor, Ano, Quantidade FROM Livro";
+
                 SqlCommand cmd = new SqlCommand(query, sqlCon);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
+                dataGridView1.DataSource = dt;
             }
+
             nomelivrotextBox.Clear();
             nomeautortextBox.Clear();
             categoriaTextBox.Clear();
             linguagemTextBox.Clear();
             anotextBox.Clear();
             qtdtextBox.Clear();
+
         }
 
         private void Atualizar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Os campos serão atualizados.", "Confirme", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            if (MessageBox.Show("Os campos serão atualizados.", "Confirmação", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
             {
 
                 
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
+
                 con.Open();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
+
                 cmd.CommandText = "UPDATE Livro SET Nome = @Nome, Autor = @Autor, Categoria = @Categoria, Linguagem = @Linguagem, Ano = @Ano, Quantidade = @Quantidade WHERE LivroID = @ID";
                 cmd.Parameters.Add("@Nome", SqlDbType.VarChar).Value = nomelivrotextBox.Text;
                 cmd.Parameters.Add("@Autor", SqlDbType.VarChar).Value = nomeautortextBox.Text;
@@ -155,9 +172,11 @@ namespace WindowsFormsApp1
 
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
+
                 con.Open();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
+
                 cmd.CommandText = "DELETE FROM Livro WHERE LivroID  = @ID";
                 cmd.Parameters.Add("@ID", SqlDbType.VarChar).Value = ID;
                 cmd.ExecuteNonQuery();
@@ -170,5 +189,5 @@ namespace WindowsFormsApp1
             this.Close();
         }
     }
-    }
+ }
 

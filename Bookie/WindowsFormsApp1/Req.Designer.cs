@@ -433,13 +433,13 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox nifTextBox;
+        public System.Windows.Forms.TextBox nifTextBox;
         private System.Windows.Forms.TextBox nomecompletoTextBox;
         private System.Windows.Forms.TextBox contactoTextBox;
         private System.Windows.Forms.Button PT;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox procutenteTextBox;
+        public System.Windows.Forms.TextBox procutenteTextBox;
         private System.Windows.Forms.TextBox emailTextBox;
         private System.Windows.Forms.ComboBox nomelivroComboBox;
         private System.Windows.Forms.DateTimePicker datareqDataPicker;

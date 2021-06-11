@@ -13,17 +13,24 @@ namespace WindowsFormsApp1
 {
     public partial class Main : Form
     {
-        public Main()
+        public string arg { get; set; }
+        public Main() 
         {
-            /*
+            
             Thread a = new Thread(new ThreadStart(StartForm));
             a.Start();
-            Thread.Sleep(1950);
-            */
+            Thread.Sleep(1200);
+            
             InitializeComponent();
             menuStrip1.Renderer = new MyRenderer();
-            //a.Abort();
+
+            a.Abort();
         }
+        public static void StartForm()
+        {
+            Application.Run(new Splash());
+        }
+
         private class MyRenderer : ToolStripProfessionalRenderer
         {
             public MyRenderer() : base(new MyColors()) { }
@@ -48,10 +55,6 @@ namespace WindowsFormsApp1
                 get { return Color.White; }
             }
         }
-       /* public static void StartForm()
-        {
-                Application.Run(new Splash());
-        }*/
 
         private void Main_Load(object sender, EventArgs e)
         {
@@ -106,8 +109,9 @@ namespace WindowsFormsApp1
 
         private void requisitarLivroToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var a = new Req();
-            a.Show();
+
+            Req req = new Req(arg);
+            req.Show();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
