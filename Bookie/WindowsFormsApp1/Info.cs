@@ -54,7 +54,7 @@ namespace WindowsFormsApp1
             SqlConnection con = new SqlConnection();
             con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
 
-            string query = "SELECT ReqID AS 'ID', DataReq AS 'Data de Requisição', DataReturn AS 'Data de Devolução', NomeLivro AS 'Nome do Livro', Nome, Contacto, Email, ID_NIF AS 'NIF' FROM Req WHERE DataReturn IS NULL";
+            string query = "SELECT ReqID AS 'ID', DataReq AS 'Data de Requisição', DataEntrega AS 'Data de Entrega', DataReturn AS 'Data de Devolução', NomeLivro AS 'Nome do Livro', Nome, Contacto, Email, ID_NIF AS 'NIF' FROM Req WHERE DataReturn IS NULL";
 
             SqlCommand cmd = new SqlCommand(query, con);
             cmd.Connection = con;
@@ -65,7 +65,7 @@ namespace WindowsFormsApp1
 
             dataGridView1.DataSource = dt;
 
-            string query1 = "SELECT ReqID AS 'ID', DataReq AS 'Data de Requisição', DataReturn AS 'Data de Devolução', NomeLivro AS 'Nome do Livro', Nome, Contacto, Email, ID_NIF AS 'NIF' FROM Req WHERE DataReturn IS NOT NULL";
+            string query1 = "SELECT ReqID AS 'ID', DataReq AS 'Data de Requisição', DataEntrega AS 'Data de Entrega', DataReturn AS 'Data de Devolução', NomeLivro AS 'Nome do Livro', Nome, Contacto, Email, ID_NIF AS 'NIF' FROM Req WHERE DataReturn IS NOT NULL";
 
             SqlCommand cmd1 = new SqlCommand(query1, con);
             cmd1.Connection = con;
@@ -174,6 +174,17 @@ namespace WindowsFormsApp1
         {
             var a = new VerUtilizador();
             a.Show();
+        }
+
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Dev frm2 = new Dev();
+
+            frm2.datareqTextBox.Text = dataGridView1.CurrentRow.Cells["Data de Requisição"].Value.ToString();
+            frm2.nomelivroTextBox.Text = dataGridView1.CurrentRow.Cells["Nome do Livro"].Value.ToString();
+            frm2.nifTextBox.Text = dataGridView1.CurrentRow.Cells["NIF"].Value.ToString();
+            frm2.idTextBox.Text = dataGridView1.CurrentRow.Cells["ID"].Value.ToString();
+            frm2.Show();
         }
     }
 }

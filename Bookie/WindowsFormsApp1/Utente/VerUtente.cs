@@ -17,13 +17,14 @@ namespace WindowsFormsApp1
 
         int id;
         Int64 ID;
+        static public int a;
 
         public VerUtilizador()
         {
             InitializeComponent();
         }
 
-        
+
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
@@ -55,24 +56,26 @@ namespace WindowsFormsApp1
             contactoTextBox.Text = ds.Tables[0].Rows[0]["Contacto"].ToString();
             emailTextBox.Text = ds.Tables[0].Rows[0]["Email"].ToString();
 
+   
 
         }
 
         private void VerUtente_Load(object sender, EventArgs e)
         {
             dataGridView1.ReadOnly = true;
+
             SqlConnection con = new SqlConnection();
             con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "SELECT NIF, Pn AS 'Primeiro Nome', Un AS 'Último Nome', Genero AS 'Género', Contacto, Email FROM Utente";
-
+            cmd.CommandText = "SELECT NIF, [Pn] + ' ' + [Un] AS [Nome], Genero AS 'Género', Contacto, Email FROM Utente";
             SqlDataAdapter dt = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             dt.Fill(ds);
 
             dataGridView1.DataSource = ds.Tables[0];
+
         }
 
         private void Atualizar_Click(object sender, EventArgs e)
@@ -86,9 +89,9 @@ namespace WindowsFormsApp1
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
 
-                cmd.CommandText = "UPDATE Utente SET Pn = @PN, Un = @UN, Genero = @Genero, Contacto = @Contacto, Email = @Email WHERE NIF = @NIF";
-                cmd.Parameters.Add("@PN", SqlDbType.VarChar).Value = pnTextBox.Text;
-                cmd.Parameters.Add("@UN", SqlDbType.VarChar).Value = unTextBox.Text;
+                cmd.CommandText = "UPDATE Utente SET Pn = @Pn, Un = @Un, Genero = @Genero, Contacto = @Contacto, Email = @Email WHERE NIF = @NIF";
+                cmd.Parameters.Add("@Pn", SqlDbType.VarChar).Value = pnTextBox.Text;
+                cmd.Parameters.Add("@Un", SqlDbType.VarChar).Value = unTextBox.Text;
                 cmd.Parameters.Add("@Genero", SqlDbType.VarChar).Value = generoComboBox.Text;
                 cmd.Parameters.Add("@Contacto", SqlDbType.VarChar).Value = contactoTextBox.Text;
                 cmd.Parameters.Add("@Email", SqlDbType.VarChar).Value = emailTextBox.Text;
@@ -103,7 +106,7 @@ namespace WindowsFormsApp1
 
         private void Apagar_Click(object sender, EventArgs e)
         {
-           
+
             if (MessageBox.Show("O utilizador será apagado.", "Confirme", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
             {
                 SqlConnection con = new SqlConnection();
@@ -121,9 +124,9 @@ namespace WindowsFormsApp1
             }
         }
 
-        
-   
-        
+
+
+
 
         private void nomeuserproctextBox_TextChanged(object sender, EventArgs e)
         {
@@ -198,14 +201,47 @@ namespace WindowsFormsApp1
 
         private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-         
-            string arg = dataGridView1.Rows[e.RowIndex].Cells["NIF"].Value.ToString();
+            if (a == 1)
+            {
 
-            Req req = new Req(arg);
-            req.Show();
-            this.Close();
-            Req obj = (Req)Application.OpenForms["Req"];
-            obj.Close();
+                Req frm = new Req();
+                frm.nifTextBox.Text = dataGridView1.CurrentRow.Cells["NIF"].Value.ToString();
+                frm.nomecompletoTextBox.Text = dataGridView1.CurrentRow.Cells["Nome"].Value.ToString();
+                frm.contactoTextBox.Text = dataGridView1.CurrentRow.Cells["Contacto"].Value.ToString();
+                frm.emailTextBox.Text = dataGridView1.CurrentRow.Cells["Email"].Value.ToString();
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+
+                con.Open();
+                cmd = new SqlCommand("SELECT Nome FROM Livro", con);
+                SqlDataReader sdr = cmd.ExecuteReader();
+
+                while (sdr.Read())
+                {
+                    for (int i = 0; i < sdr.FieldCount; i++)
+                    {
+                        frm.nomelivroComboBox.Items.Add(sdr.GetString(i));
+                    }
+                }
+
+                sdr.Close();
+           
+                frm.Show();
+            }
+            else if (a == 0)
+            {
+             
+                Dev frm2 = new Dev();
+              
+                frm2.datareqTextBox.Text = dataGridView1.CurrentRow.Cells["DataReq"].Value.ToString();
+                frm2.nomelivroTextBox.Text = dataGridView1.CurrentRow.Cells["NomeLivro"].Value.ToString();
+                frm2.Show();
+                }
+
+            }
         }
+
     }
-}

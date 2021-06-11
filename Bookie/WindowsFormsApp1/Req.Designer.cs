@@ -39,9 +39,6 @@ namespace WindowsFormsApp1
             this.contactoTextBox = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Atualizar = new System.Windows.Forms.Button();
-            this.Procurar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.procutenteTextBox = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.ProcButton = new System.Windows.Forms.Button();
@@ -153,9 +150,6 @@ namespace WindowsFormsApp1
             // 
             this.panel2.BackColor = System.Drawing.Color.SandyBrown;
             this.panel2.Controls.Add(this.Atualizar);
-            this.panel2.Controls.Add(this.Procurar);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.procutenteTextBox);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Location = new System.Drawing.Point(544, 127);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
@@ -168,52 +162,14 @@ namespace WindowsFormsApp1
             this.Atualizar.BackColor = System.Drawing.Color.Chocolate;
             this.Atualizar.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Atualizar.ForeColor = System.Drawing.Color.White;
-            this.Atualizar.Location = new System.Drawing.Point(15, 244);
+            this.Atualizar.Location = new System.Drawing.Point(76, 236);
             this.Atualizar.Margin = new System.Windows.Forms.Padding(4);
             this.Atualizar.Name = "Atualizar";
-            this.Atualizar.Size = new System.Drawing.Size(96, 52);
+            this.Atualizar.Size = new System.Drawing.Size(102, 59);
             this.Atualizar.TabIndex = 8;
             this.Atualizar.Text = "Atualizar";
             this.Atualizar.UseVisualStyleBackColor = false;
             this.Atualizar.Click += new System.EventHandler(this.Atualizar_Click);
-            // 
-            // Procurar
-            // 
-            this.Procurar.BackColor = System.Drawing.Color.Chocolate;
-            this.Procurar.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Procurar.ForeColor = System.Drawing.Color.White;
-            this.Procurar.Location = new System.Drawing.Point(152, 244);
-            this.Procurar.Margin = new System.Windows.Forms.Padding(4);
-            this.Procurar.Name = "Procurar";
-            this.Procurar.Size = new System.Drawing.Size(96, 52);
-            this.Procurar.TabIndex = 7;
-            this.Procurar.Text = "Procurar";
-            this.Procurar.UseVisualStyleBackColor = false;
-            this.Procurar.Click += new System.EventHandler(this.Procurar_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(20, 168);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(219, 22);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Nº de Identificação Fiscal:";
-            // 
-            // procutenteTextBox
-            // 
-            this.procutenteTextBox.BackColor = System.Drawing.Color.White;
-            this.procutenteTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.procutenteTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.procutenteTextBox.Location = new System.Drawing.Point(84, 194);
-            this.procutenteTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.procutenteTextBox.Name = "procutenteTextBox";
-            this.procutenteTextBox.Size = new System.Drawing.Size(95, 29);
-            this.procutenteTextBox.TabIndex = 0;
-            this.procutenteTextBox.TextChanged += new System.EventHandler(this.procutenteTextBox_TextChanged);
-            this.procutenteTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.procutenteTextBox_KeyPress);
             // 
             // panel3
             // 
@@ -222,14 +178,14 @@ namespace WindowsFormsApp1
             this.panel3.Controls.Add(this.ProcButton);
             this.panel3.Location = new System.Drawing.Point(15, 10);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(233, 137);
+            this.panel3.Size = new System.Drawing.Size(233, 209);
             this.panel3.TabIndex = 6;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(45, 107);
+            this.label2.Location = new System.Drawing.Point(45, 140);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(139, 22);
@@ -241,12 +197,12 @@ namespace WindowsFormsApp1
             this.ProcButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ProcButton.ForeColor = System.Drawing.Color.White;
             this.ProcButton.Image = ((System.Drawing.Image)(resources.GetObject("ProcButton.Image")));
-            this.ProcButton.Location = new System.Drawing.Point(49, 3);
+            this.ProcButton.Location = new System.Drawing.Point(49, 29);
             this.ProcButton.Name = "ProcButton";
-            this.ProcButton.Size = new System.Drawing.Size(120, 107);
+            this.ProcButton.Size = new System.Drawing.Size(135, 107);
             this.ProcButton.TabIndex = 8;
             this.ProcButton.UseVisualStyleBackColor = true;
-            this.ProcButton.Click += new System.EventHandler(this.ProcButton_Click);
+            this.ProcButton.Click += new System.EventHandler(this.ProcButton_Click_1);
             // 
             // emailTextBox
             // 
@@ -264,8 +220,10 @@ namespace WindowsFormsApp1
             // 
             this.nomelivroComboBox.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nomelivroComboBox.FormattingEnabled = true;
+            this.nomelivroComboBox.ItemHeight = 21;
             this.nomelivroComboBox.Location = new System.Drawing.Point(223, 451);
             this.nomelivroComboBox.Margin = new System.Windows.Forms.Padding(4);
+            this.nomelivroComboBox.MaxDropDownItems = 6;
             this.nomelivroComboBox.Name = "nomelivroComboBox";
             this.nomelivroComboBox.Size = new System.Drawing.Size(277, 29);
             this.nomelivroComboBox.Sorted = true;
@@ -420,7 +378,6 @@ namespace WindowsFormsApp1
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
@@ -434,20 +391,17 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label6;
         public System.Windows.Forms.TextBox nifTextBox;
-        private System.Windows.Forms.TextBox nomecompletoTextBox;
-        private System.Windows.Forms.TextBox contactoTextBox;
+        public System.Windows.Forms.TextBox nomecompletoTextBox;
+        public System.Windows.Forms.TextBox contactoTextBox;
         private System.Windows.Forms.Button PT;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.TextBox procutenteTextBox;
-        private System.Windows.Forms.TextBox emailTextBox;
-        private System.Windows.Forms.ComboBox nomelivroComboBox;
+        public System.Windows.Forms.TextBox emailTextBox;
+        public System.Windows.Forms.ComboBox nomelivroComboBox;
         private System.Windows.Forms.DateTimePicker datareqDataPicker;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button Procurar;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;

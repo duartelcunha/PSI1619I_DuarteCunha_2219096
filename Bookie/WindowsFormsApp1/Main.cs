@@ -13,7 +13,8 @@ namespace WindowsFormsApp1
 {
     public partial class Main : Form
     {
-        public string arg { get; set; }
+   
+
         public Main() 
         {
             
@@ -109,9 +110,9 @@ namespace WindowsFormsApp1
 
         private void requisitarLivroToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-            Req req = new Req(arg);
-            req.Show();
+            VerUtilizador.a = 1;
+            var a = new Req();
+            a.Show();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -125,6 +126,7 @@ namespace WindowsFormsApp1
 
         private void retornarLivroToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            VerUtilizador.a = 0;
             var a = new Dev();
             a.Show();
         }

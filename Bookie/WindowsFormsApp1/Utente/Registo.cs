@@ -30,7 +30,7 @@ namespace WindowsFormsApp1
             SqlConnection con = new SqlConnection(@"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21");
 
             con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Utente WHERE NIF=@NIF", con);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Utente WHERE NIF = @NIF", con);
             cmd.Parameters.AddWithValue("@NIF", txtContribuinte.Text);
             SqlDataReader dr = cmd.ExecuteReader();
 
