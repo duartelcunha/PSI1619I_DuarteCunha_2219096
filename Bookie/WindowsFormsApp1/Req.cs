@@ -18,28 +18,55 @@ namespace WindowsFormsApp1
 {
     public partial class Req : Form
     {
+       
 
         public Req()
         {
             InitializeComponent();
+          
         }
 
+        int count;
         private void Requisitar_Load(object sender, EventArgs e)
         {
+
             nomelivroComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             nomelivroComboBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             nomelivroComboBox.AutoCompleteSource = AutoCompleteSource.ListItems;
+
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+
+            con.Open();
+            cmd = new SqlCommand("SELECT Nome FROM Livro", con);
+
+            cmd.CommandText = "SELECT * FROM Utente WHERE NIF = @NIF";
+            cmd.Parameters.Add("@NIF", SqlDbType.VarChar).Value = nifTextBox.Text;
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            cmd.CommandText = "SELECT COUNT(ID_NIF) FROM Req WHERE ID_NIF = @NIF AND DataReturn IS NULL";
+
+            SqlDataAdapter da2 = new SqlDataAdapter(cmd);
+            DataSet ds2 = new DataSet();
+            da2.Fill(ds2);
+
+            count = int.Parse(ds2.Tables[0].Rows[0][0].ToString());
+
+            con.Close();
         }
-
-
-        int count;
+       
         private void Req_Click(object sender, EventArgs e)
         {
-
+           
             if (nifTextBox.Text != "")
             {
                
-            if (nomelivroComboBox.SelectedIndex != -1 && count <= 2)
+              if (nomelivroComboBox.SelectedIndex != -1 && count <= 2)
                 {
                     SqlConnection con = new SqlConnection();
                     con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
@@ -60,38 +87,48 @@ namespace WindowsFormsApp1
                     cmd.ExecuteNonQuery();
                     con.Close();
 
-                    using (SaveFileDialog sfd = new SaveFileDialog() { Filter="PDF file|*.pdf", ValidateNames = true})
+                    if (MessageBox.Show("Deseja criar um recibo?", "Requisição", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                     {
-                        if(sfd.ShowDialog() == DialogResult.OK)
+                        using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "PDF file|*.pdf", ValidateNames = true })
                         {
-                            iTextSharp.text.Document doc = new iTextSharp.text.Document(PageSize.A6);
-                            try
+                            if (sfd.ShowDialog() == DialogResult.OK)
                             {
-                                PdfWriter.GetInstance(doc, new FileStream(sfd.FileName, FileMode.Create));
-                                doc.Open();
-                                doc.Add(new iTextSharp.text.Paragraph("BOOKIE"));
-                                doc.Add(new iTextSharp.text.Paragraph($"NIF: {this.nifTextBox.Text.Trim()}"));
-                                doc.Add(new iTextSharp.text.Paragraph($"Nome: {this.nomecompletoTextBox.Text.Trim()}"));
-                                doc.Add(new iTextSharp.text.Paragraph($"Livro: {this.nomelivroComboBox.Text.Trim()}"));
-                                doc.Add(new iTextSharp.text.Paragraph($"Data de Requisição: {this.datareqDataPicker.Text.Trim()}"));
-                                doc.Add(new iTextSharp.text.Paragraph($"Data de Entrega: {this.datareqDataPicker.Value.AddDays(7).ToString("dd/MM/yyyy")}"));
-                            }
-                            catch(Exception ex)
-                            {
-                                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                            finally
-                            {
-                                doc.Close();
+                                iTextSharp.text.Document doc = new iTextSharp.text.Document(PageSize.A6);
+                                try
+                                {
+                                    PdfWriter.GetInstance(doc, new FileStream(sfd.FileName, FileMode.Create));
+                                    doc.Open();
+                                    doc.Add(new iTextSharp.text.Paragraph("BOOKIE"));
+                                    doc.Add(new iTextSharp.text.Paragraph($"NIF: {this.nifTextBox.Text.Trim()}"));
+                                    doc.Add(new iTextSharp.text.Paragraph($"Nome: {this.nomecompletoTextBox.Text.Trim()}"));
+                                    doc.Add(new iTextSharp.text.Paragraph($"Livro: {this.nomelivroComboBox.Text.Trim()}"));
+                                    doc.Add(new iTextSharp.text.Paragraph($"Data de Requisição: {this.datareqDataPicker.Text.Trim()}"));
+                                    doc.Add(new iTextSharp.text.Paragraph($"Data de Entrega: {this.datareqDataPicker.Value.AddDays(7).ToString("dd/MM/yyyy")}"));
+                                }
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                                finally
+                                {
+                                    doc.Close();
+                                }
                             }
                         }
+
+
+                        MessageBox.Show("PDF com informações criado", "Requisição", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        MessageBox.Show("Livro Requisitado", "Requisição", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        Ref();
                     }
-                    MessageBox.Show("PDF com informações criado", "Requisição", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    else
+                    {
+                        MessageBox.Show("Livro Requisitado", "Requisição", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    MessageBox.Show("Livro Requisitado", "Requisição", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    Ref();
-                    nomelivroComboBox.Items.Clear();
+                        Ref();
+                    }
                 }
                 else
                 {
@@ -115,7 +152,7 @@ namespace WindowsFormsApp1
             nomecompletoTextBox.Clear();
             contactoTextBox.Clear();
             emailTextBox.Clear();
-            nomelivroComboBox.Items.Clear();
+            nomelivroComboBox.SelectedIndex = -1;
         }
 
         private void Atualizar_Click(object sender, EventArgs e)

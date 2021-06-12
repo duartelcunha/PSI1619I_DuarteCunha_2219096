@@ -40,7 +40,7 @@ namespace WindowsFormsApp1
             this.usernameTextBox = new System.Windows.Forms.TextBox();
             this.loginButton = new System.Windows.Forms.Button();
             this.MPCheckBox = new System.Windows.Forms.CheckBox();
-            this.cancelButton = new System.Windows.Forms.Button();
+            this.sairButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -149,19 +149,19 @@ namespace WindowsFormsApp1
             this.MPCheckBox.UseVisualStyleBackColor = true;
             this.MPCheckBox.CheckedChanged += new System.EventHandler(this.MPCheckBox_CheckedChanged);
             // 
-            // cancelButton
+            // sairButton
             // 
-            this.cancelButton.BackColor = System.Drawing.Color.Chocolate;
-            this.cancelButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.cancelButton.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelButton.ForeColor = System.Drawing.Color.White;
-            this.cancelButton.Location = new System.Drawing.Point(23, 344);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(111, 54);
-            this.cancelButton.TabIndex = 12;
-            this.cancelButton.Text = "Cancelar";
-            this.cancelButton.UseVisualStyleBackColor = false;
-            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            this.sairButton.BackColor = System.Drawing.Color.Chocolate;
+            this.sairButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.sairButton.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sairButton.ForeColor = System.Drawing.Color.White;
+            this.sairButton.Location = new System.Drawing.Point(23, 344);
+            this.sairButton.Name = "sairButton";
+            this.sairButton.Size = new System.Drawing.Size(111, 54);
+            this.sairButton.TabIndex = 12;
+            this.sairButton.Text = "Sair";
+            this.sairButton.UseVisualStyleBackColor = false;
+            this.sairButton.Click += new System.EventHandler(this.sairButton_Click);
             // 
             // Login
             // 
@@ -170,7 +170,7 @@ namespace WindowsFormsApp1
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(296, 441);
             this.ControlBox = false;
-            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.sairButton);
             this.Controls.Add(this.MPCheckBox);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.usernameTextBox);
@@ -209,6 +209,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox usernameTextBox;
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.CheckBox MPCheckBox;
-        private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.Button sairButton;
     }
 }

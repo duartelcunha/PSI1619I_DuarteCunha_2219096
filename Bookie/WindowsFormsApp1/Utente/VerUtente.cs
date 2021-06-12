@@ -41,8 +41,8 @@ namespace WindowsFormsApp1
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "SELECT * FROM Utente WHERE NIF = @id";
-            cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+            cmd.CommandText = "SELECT * FROM Utente WHERE NIF = @NIF";
+            cmd.Parameters.Add("@NIF", SqlDbType.Int).Value = id;
 
             SqlDataAdapter dt = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
@@ -125,20 +125,17 @@ namespace WindowsFormsApp1
         }
 
 
-
-
-
-        private void nomeuserproctextBox_TextChanged(object sender, EventArgs e)
+        private void procnifTextBox_TextChanged_1(object sender, EventArgs e)
         {
-            if (nomeuserproctextBox.Text != "")
+            if (procnifTextBox.Text != "")
             {
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = "SELECT NIF, Pn AS 'Primeiro Nome', Un AS 'Último Nome', Genero AS 'Género', Contacto, Email FROM Utente WHERE Pn LIKE @Nome";
-                cmd.Parameters.Add("@Nome", SqlDbType.VarChar).Value = $"{nomeuserproctextBox.Text}%";
+                cmd.CommandText = "SELECT NIF, [Pn] + ' ' + [Un] AS [Nome], Genero AS 'Género', Contacto, Email FROM Utente WHERE NIF LIKE @NIF";
+                cmd.Parameters.Add("@NIF", SqlDbType.VarChar).Value = $"{procnifTextBox.Text}%";
 
                 SqlDataAdapter dt = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
@@ -154,7 +151,7 @@ namespace WindowsFormsApp1
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = "SELECT NIF, Pn AS 'Primeiro Nome', Un AS 'Último Nome', Genero AS 'Género', Contacto, Email FROM Utente";
+                cmd.CommandText = "SELECT NIF, [Pn] + ' ' + [Un] AS [Nome], Genero AS 'Género', Contacto, Email FROM Utente";
 
                 SqlDataAdapter dt = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
@@ -165,28 +162,29 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void Atualiza_Click_1(object sender, EventArgs e)
+
+
+
+        private void Atualiza_Click(object sender, EventArgs e)
         {
-            string con = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
 
-            using (SqlConnection sqlCon = new SqlConnection(con))
-            {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "SELECT NIF, [Pn] + ' ' + [Un] AS [Nome], Genero AS 'Género', Contacto, Email FROM Utente";
 
-                string query = "SELECT NIF, Pn AS 'Primeiro Nome', Un AS 'Último Nome', Genero AS 'Género', Contacto, Email FROM Utente";
+            SqlDataAdapter dt = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            dt.Fill(ds);
 
-                SqlCommand cmd = new SqlCommand(query, sqlCon);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-
-                dataGridView1.DataSource = dt;
-
-            }
+            dataGridView1.DataSource = ds.Tables[0];
 
             pnTextBox.Clear();
             unTextBox.Clear();
             contactoTextBox.Clear();
             emailTextBox.Clear();
+            generoComboBox.Items.Clear();
         }
 
         private void PT_Click(object sender, EventArgs e)
@@ -201,21 +199,23 @@ namespace WindowsFormsApp1
 
         private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+
             if (a == 1)
             {
-
-                Req frm = new Req();
-                frm.nifTextBox.Text = dataGridView1.CurrentRow.Cells["NIF"].Value.ToString();
-                frm.nomecompletoTextBox.Text = dataGridView1.CurrentRow.Cells["Nome"].Value.ToString();
-                frm.contactoTextBox.Text = dataGridView1.CurrentRow.Cells["Contacto"].Value.ToString();
-                frm.emailTextBox.Text = dataGridView1.CurrentRow.Cells["Email"].Value.ToString();
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
-
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = con;
-
                 con.Open();
+
+                Req req = new Req();
+
+                req.nifTextBox.Text = dataGridView1.CurrentRow.Cells["NIF"].Value.ToString();
+                req.nomecompletoTextBox.Text = dataGridView1.CurrentRow.Cells["Nome"].Value.ToString();
+                req.contactoTextBox.Text = dataGridView1.CurrentRow.Cells["Contacto"].Value.ToString();
+                req.emailTextBox.Text = dataGridView1.CurrentRow.Cells["Email"].Value.ToString();
+
                 cmd = new SqlCommand("SELECT Nome FROM Livro", con);
                 SqlDataReader sdr = cmd.ExecuteReader();
 
@@ -223,25 +223,37 @@ namespace WindowsFormsApp1
                 {
                     for (int i = 0; i < sdr.FieldCount; i++)
                     {
-                        frm.nomelivroComboBox.Items.Add(sdr.GetString(i));
+                        req.nomelivroComboBox.Items.Add(sdr.GetString(i));
                     }
                 }
 
                 sdr.Close();
-           
-                frm.Show();
+                con.Close();
+                this.Close();
+                req.Show();
             }
             else if (a == 0)
             {
-             
-                Dev frm2 = new Dev();
-              
-                frm2.datareqTextBox.Text = dataGridView1.CurrentRow.Cells["DataReq"].Value.ToString();
-                frm2.nomelivroTextBox.Text = dataGridView1.CurrentRow.Cells["NomeLivro"].Value.ToString();
-                frm2.Show();
-                }
+                Info info = new Info();
+
+                info.procutenteTextBox.Text = dataGridView1.CurrentRow.Cells["NIF"].Value.ToString();
+
+                this.Close();
+                
+                info.Show();
+            }
+            else if(a == 2)
+            {
+                Dev dev = new Dev();
+
+                dev.nifTextBox.Text = dataGridView1.CurrentRow.Cells["NIF"].Value.ToString();
+                this.Close();
+                dev.Show();
+            }
 
             }
-        }
+
+      
+    }
 
     }

@@ -71,7 +71,7 @@ namespace WindowsFormsApp1
             this.panel1.Location = new System.Drawing.Point(13, 13);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(831, 106);
+            this.panel1.Size = new System.Drawing.Size(800, 106);
             this.panel1.TabIndex = 0;
             // 
             // PT
@@ -79,7 +79,7 @@ namespace WindowsFormsApp1
             this.PT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PT.ForeColor = System.Drawing.Color.SandyBrown;
             this.PT.Image = ((System.Drawing.Image)(resources.GetObject("PT.Image")));
-            this.PT.Location = new System.Drawing.Point(765, 32);
+            this.PT.Location = new System.Drawing.Point(740, 32);
             this.PT.Margin = new System.Windows.Forms.Padding(4);
             this.PT.Name = "PT";
             this.PT.Size = new System.Drawing.Size(46, 41);
@@ -151,10 +151,10 @@ namespace WindowsFormsApp1
             this.panel2.BackColor = System.Drawing.Color.SandyBrown;
             this.panel2.Controls.Add(this.Atualizar);
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Location = new System.Drawing.Point(544, 127);
+            this.panel2.Location = new System.Drawing.Point(546, 150);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(263, 315);
+            this.panel2.Size = new System.Drawing.Size(217, 261);
             this.panel2.TabIndex = 22;
             // 
             // Atualizar
@@ -162,10 +162,10 @@ namespace WindowsFormsApp1
             this.Atualizar.BackColor = System.Drawing.Color.Chocolate;
             this.Atualizar.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Atualizar.ForeColor = System.Drawing.Color.White;
-            this.Atualizar.Location = new System.Drawing.Point(76, 236);
+            this.Atualizar.Location = new System.Drawing.Point(36, 188);
             this.Atualizar.Margin = new System.Windows.Forms.Padding(4);
             this.Atualizar.Name = "Atualizar";
-            this.Atualizar.Size = new System.Drawing.Size(102, 59);
+            this.Atualizar.Size = new System.Drawing.Size(142, 53);
             this.Atualizar.TabIndex = 8;
             this.Atualizar.Text = "Atualizar";
             this.Atualizar.UseVisualStyleBackColor = false;
@@ -178,14 +178,14 @@ namespace WindowsFormsApp1
             this.panel3.Controls.Add(this.ProcButton);
             this.panel3.Location = new System.Drawing.Point(15, 10);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(233, 209);
+            this.panel3.Size = new System.Drawing.Size(184, 171);
             this.panel3.TabIndex = 6;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(45, 140);
+            this.label2.Location = new System.Drawing.Point(24, 132);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(139, 22);
@@ -197,9 +197,9 @@ namespace WindowsFormsApp1
             this.ProcButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ProcButton.ForeColor = System.Drawing.Color.White;
             this.ProcButton.Image = ((System.Drawing.Image)(resources.GetObject("ProcButton.Image")));
-            this.ProcButton.Location = new System.Drawing.Point(49, 29);
+            this.ProcButton.Location = new System.Drawing.Point(0, 0);
             this.ProcButton.Name = "ProcButton";
-            this.ProcButton.Size = new System.Drawing.Size(135, 107);
+            this.ProcButton.Size = new System.Drawing.Size(184, 129);
             this.ProcButton.TabIndex = 8;
             this.ProcButton.UseVisualStyleBackColor = true;
             this.ProcButton.Click += new System.EventHandler(this.ProcButton_Click_1);
@@ -310,9 +310,9 @@ namespace WindowsFormsApp1
             this.Requisitar.BackColor = System.Drawing.Color.Chocolate;
             this.Requisitar.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Requisitar.ForeColor = System.Drawing.Color.White;
-            this.Requisitar.Location = new System.Drawing.Point(599, 489);
+            this.Requisitar.Location = new System.Drawing.Point(582, 462);
             this.Requisitar.Name = "Requisitar";
-            this.Requisitar.Size = new System.Drawing.Size(153, 72);
+            this.Requisitar.Size = new System.Drawing.Size(142, 67);
             this.Requisitar.TabIndex = 8;
             this.Requisitar.Text = "Requisitar";
             this.Requisitar.UseVisualStyleBackColor = false;
@@ -321,7 +321,7 @@ namespace WindowsFormsApp1
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.SandyBrown;
-            this.panel4.Location = new System.Drawing.Point(13, 597);
+            this.panel4.Location = new System.Drawing.Point(13, 587);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(831, 40);
             this.panel4.TabIndex = 47;
@@ -331,15 +331,15 @@ namespace WindowsFormsApp1
             this.panel5.BackColor = System.Drawing.Color.SandyBrown;
             this.panel5.Location = new System.Drawing.Point(13, 126);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(15, 465);
+            this.panel5.Size = new System.Drawing.Size(15, 455);
             this.panel5.TabIndex = 48;
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.SandyBrown;
-            this.panel6.Location = new System.Drawing.Point(829, 126);
+            this.panel6.Location = new System.Drawing.Point(798, 126);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(15, 465);
+            this.panel6.Size = new System.Drawing.Size(15, 455);
             this.panel6.TabIndex = 9;
             // 
             // Req
@@ -347,12 +347,12 @@ namespace WindowsFormsApp1
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(857, 649);
+            this.ClientSize = new System.Drawing.Size(825, 640);
             this.ControlBox = false;
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.Requisitar);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);

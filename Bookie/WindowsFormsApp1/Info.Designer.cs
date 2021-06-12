@@ -45,9 +45,8 @@ namespace WindowsFormsApp1
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.Apagar = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Procurar = new System.Windows.Forms.Button();
+            this.Utente = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -60,9 +59,9 @@ namespace WindowsFormsApp1
             this.panel1.Controls.Add(this.Sair);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(12, 6);
+            this.panel1.Location = new System.Drawing.Point(12, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1185, 86);
+            this.panel1.Size = new System.Drawing.Size(1185, 93);
             this.panel1.TabIndex = 0;
             // 
             // Sair
@@ -84,7 +83,7 @@ namespace WindowsFormsApp1
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(91, 20);
+            this.label6.Location = new System.Drawing.Point(91, 26);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(199, 39);
@@ -94,7 +93,7 @@ namespace WindowsFormsApp1
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(20, 7);
+            this.pictureBox1.Location = new System.Drawing.Point(20, 14);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(63, 63);
@@ -117,22 +116,26 @@ namespace WindowsFormsApp1
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(36, 167);
+            this.dataGridView1.Location = new System.Drawing.Point(36, 179);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(533, 438);
+            this.dataGridView1.Size = new System.Drawing.Size(533, 426);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
             // 
             // procutenteTextBox
             // 
+            this.procutenteTextBox.AllowDrop = true;
+            this.procutenteTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.procutenteTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.procutenteTextBox.Location = new System.Drawing.Point(81, 107);
+            this.procutenteTextBox.Location = new System.Drawing.Point(81, 108);
             this.procutenteTextBox.Name = "procutenteTextBox";
-            this.procutenteTextBox.Size = new System.Drawing.Size(130, 29);
+            this.procutenteTextBox.Size = new System.Drawing.Size(101, 29);
             this.procutenteTextBox.TabIndex = 2;
             this.procutenteTextBox.TextChanged += new System.EventHandler(this.procutenteTextBox_TextChanged);
+            this.procutenteTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.procutenteTextBox_KeyPress);
+            this.procutenteTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.procutenteTextBox_Validating);
             // 
             // label1
             // 
@@ -155,7 +158,7 @@ namespace WindowsFormsApp1
             this.Atualiza.Location = new System.Drawing.Point(576, 315);
             this.Atualiza.Margin = new System.Windows.Forms.Padding(4);
             this.Atualiza.Name = "Atualiza";
-            this.Atualiza.Size = new System.Drawing.Size(43, 40);
+            this.Atualiza.Size = new System.Drawing.Size(43, 51);
             this.Atualiza.TabIndex = 20;
             this.Atualiza.UseVisualStyleBackColor = false;
             this.Atualiza.Click += new System.EventHandler(this.Atualiza_Click);
@@ -184,10 +187,10 @@ namespace WindowsFormsApp1
             this.dataGridView2.AllowUserToResizeRows = false;
             this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(626, 167);
+            this.dataGridView2.Location = new System.Drawing.Point(626, 179);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(551, 438);
+            this.dataGridView2.Size = new System.Drawing.Size(551, 426);
             this.dataGridView2.TabIndex = 34;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
@@ -195,7 +198,7 @@ namespace WindowsFormsApp1
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(32, 142);
+            this.label2.Location = new System.Drawing.Point(32, 154);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(174, 22);
             this.label2.TabIndex = 35;
@@ -205,7 +208,7 @@ namespace WindowsFormsApp1
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(622, 142);
+            this.label3.Location = new System.Drawing.Point(622, 154);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(160, 22);
             this.label3.TabIndex = 36;
@@ -217,50 +220,49 @@ namespace WindowsFormsApp1
             this.Apagar.BackColor = System.Drawing.Color.White;
             this.Apagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Apagar.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Apagar.ForeColor = System.Drawing.Color.White;
+            this.Apagar.ForeColor = System.Drawing.Color.Transparent;
             this.Apagar.Image = ((System.Drawing.Image)(resources.GetObject("Apagar.Image")));
-            this.Apagar.Location = new System.Drawing.Point(576, 372);
+            this.Apagar.Location = new System.Drawing.Point(576, 374);
             this.Apagar.Margin = new System.Windows.Forms.Padding(4);
             this.Apagar.Name = "Apagar";
-            this.Apagar.Size = new System.Drawing.Size(40, 40);
+            this.Apagar.Size = new System.Drawing.Size(43, 48);
             this.Apagar.TabIndex = 37;
             this.Apagar.UseVisualStyleBackColor = false;
             this.Apagar.Click += new System.EventHandler(this.Apagar_Click);
             // 
-            // label4
+            // Procurar
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(622, 110);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 22);
-            this.label4.TabIndex = 39;
-            this.label4.Text = "NIF:";
+            this.Procurar.AutoSize = true;
+            this.Procurar.BackColor = System.Drawing.Color.White;
+            this.Procurar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Procurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Procurar.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Procurar.ForeColor = System.Drawing.Color.White;
+            this.Procurar.Image = ((System.Drawing.Image)(resources.GetObject("Procurar.Image")));
+            this.Procurar.Location = new System.Drawing.Point(189, 101);
+            this.Procurar.Margin = new System.Windows.Forms.Padding(4);
+            this.Procurar.Name = "Procurar";
+            this.Procurar.Size = new System.Drawing.Size(40, 40);
+            this.Procurar.TabIndex = 41;
+            this.Procurar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.Procurar.UseVisualStyleBackColor = false;
+            this.Procurar.Click += new System.EventHandler(this.Procurar_Click);
             // 
-            // textBox1
+            // Utente
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(671, 107);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(130, 29);
-            this.textBox1.TabIndex = 38;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // button1
-            // 
-            this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(574, 263);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(45, 44);
-            this.button1.TabIndex = 40;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Utente.AutoSize = true;
+            this.Utente.BackColor = System.Drawing.Color.White;
+            this.Utente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Utente.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Utente.ForeColor = System.Drawing.Color.White;
+            this.Utente.Image = ((System.Drawing.Image)(resources.GetObject("Utente.Image")));
+            this.Utente.Location = new System.Drawing.Point(576, 263);
+            this.Utente.Margin = new System.Windows.Forms.Padding(4);
+            this.Utente.Name = "Utente";
+            this.Utente.Size = new System.Drawing.Size(43, 40);
+            this.Utente.TabIndex = 40;
+            this.Utente.UseVisualStyleBackColor = false;
+            this.Utente.Click += new System.EventHandler(this.Utente_Click);
             // 
             // Info
             // 
@@ -269,8 +271,7 @@ namespace WindowsFormsApp1
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1209, 641);
             this.ControlBox = false;
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Procurar);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -283,7 +284,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Apagar);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Utente);
             this.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -308,18 +309,17 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button Sair;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox procutenteTextBox;
+        public System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.TextBox procutenteTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Atualiza;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        public System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button Apagar;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Procurar;
+        private System.Windows.Forms.Button Utente;
     }
 }

@@ -45,10 +45,10 @@ namespace WindowsFormsApp1
             if(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
                 id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
-               
             }
 
             panel1.Visible = true;
+
             SqlConnection con = new SqlConnection();
             con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
 
@@ -62,7 +62,6 @@ namespace WindowsFormsApp1
             dt.Fill(ds);
 
             ID = Int64.Parse(ds.Tables[0].Rows[0][0].ToString());
-
             nomelivrotextBox.Text = ds.Tables[0].Rows[0]["Título"].ToString();
             nomeautortextBox.Text = ds.Tables[0].Rows[0]["Autor"].ToString();
             categoriaTextBox.Text = ds.Tables[0].Rows[0]["Categoria"].ToString();
@@ -116,12 +115,12 @@ namespace WindowsFormsApp1
         {
             string con = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
 
-            using (SqlConnection sqlCon = new SqlConnection(con))
+            using (SqlConnection sqlcon = new SqlConnection(con))
             {
 
-                string query = "SELECT LivroID AS 'ID', Nome AS 'Título', Categoria, Linguagem, Autor, Ano, Quantidade FROM Livro";
+                string Query = "SELECT LivroID AS 'ID', Nome AS 'Título', Categoria, Linguagem, Autor, Ano, Quantidade FROM Livro";
 
-                SqlCommand cmd = new SqlCommand(query, sqlCon);
+                SqlCommand cmd = new SqlCommand(Query, sqlcon);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -178,7 +177,7 @@ namespace WindowsFormsApp1
                 cmd.Connection = con;
 
                 cmd.CommandText = "DELETE FROM Livro WHERE LivroID  = @ID";
-                cmd.Parameters.Add("@ID", SqlDbType.VarChar).Value = ID;
+                cmd.Parameters.Add("@ID", SqlDbType.Int).Value = ID;
                 cmd.ExecuteNonQuery();
                 con.Close();
             }

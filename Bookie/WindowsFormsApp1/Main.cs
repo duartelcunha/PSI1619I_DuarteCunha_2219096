@@ -13,8 +13,8 @@ namespace WindowsFormsApp1
 {
     public partial class Main : Form
     {
-   
 
+       
         public Main() 
         {
             
@@ -111,32 +111,34 @@ namespace WindowsFormsApp1
         private void requisitarLivroToolStripMenuItem_Click(object sender, EventArgs e)
         {
             VerUtilizador.a = 1;
+
             var a = new Req();
             a.Show();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            if(Opacity == 1)
-            {
-                timer1.Stop();
-            }
-            Opacity += .2;
-        }
-
         private void retornarLivroToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            VerUtilizador.a = 0;
+            VerUtilizador.a = 2;
+
             var a = new Dev();
             a.Show();
         }
 
         private void detalhesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            VerUtilizador.a = 0;
+
             var a = new Info();
             a.Show();
         }
-
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (Opacity == 1)
+            {
+                timer1.Stop();
+            }
+            Opacity += .2;
+        }
         private void timer2_Tick(object sender, EventArgs e)
         {
             Tempo.Text = DateTime.Now.ToLongTimeString();

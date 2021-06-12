@@ -46,7 +46,7 @@ namespace WindowsFormsApp1
             this.Apagar = new System.Windows.Forms.Button();
             this.Cancelar = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.nomeuserproctextBox = new System.Windows.Forms.TextBox();
+            this.procnifTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PT = new System.Windows.Forms.Button();
@@ -69,12 +69,12 @@ namespace WindowsFormsApp1
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.GridColor = System.Drawing.Color.White;
-            this.dataGridView1.Location = new System.Drawing.Point(44, 161);
+            this.dataGridView1.Location = new System.Drawing.Point(66, 161);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridView1.Size = new System.Drawing.Size(597, 342);
+            this.dataGridView1.Size = new System.Drawing.Size(549, 342);
             this.dataGridView1.TabIndex = 26;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
@@ -256,22 +256,22 @@ namespace WindowsFormsApp1
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(117, 123);
+            this.label7.Location = new System.Drawing.Point(131, 123);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(151, 22);
+            this.label7.Size = new System.Drawing.Size(129, 22);
             this.label7.TabIndex = 29;
-            this.label7.Text = "Nome do Utente:";
+            this.label7.Text = "NIF do Utente:";
             // 
-            // nomeuserproctextBox
+            // procnifTextBox
             // 
-            this.nomeuserproctextBox.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nomeuserproctextBox.Location = new System.Drawing.Point(275, 121);
-            this.nomeuserproctextBox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.nomeuserproctextBox.Name = "nomeuserproctextBox";
-            this.nomeuserproctextBox.Size = new System.Drawing.Size(174, 27);
-            this.nomeuserproctextBox.TabIndex = 28;
-            this.nomeuserproctextBox.TextChanged += new System.EventHandler(this.nomeuserproctextBox_TextChanged);
+            this.procnifTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.procnifTextBox.Location = new System.Drawing.Point(264, 121);
+            this.procnifTextBox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.procnifTextBox.Name = "procnifTextBox";
+            this.procnifTextBox.Size = new System.Drawing.Size(193, 27);
+            this.procnifTextBox.TabIndex = 28;
+            this.procnifTextBox.TextChanged += new System.EventHandler(this.procnifTextBox_TextChanged_1);
             // 
             // label6
             // 
@@ -330,13 +330,13 @@ namespace WindowsFormsApp1
             this.Atualiza.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Atualiza.ForeColor = System.Drawing.Color.White;
             this.Atualiza.Image = ((System.Drawing.Image)(resources.GetObject("Atualiza.Image")));
-            this.Atualiza.Location = new System.Drawing.Point(476, 114);
+            this.Atualiza.Location = new System.Drawing.Point(463, 113);
             this.Atualiza.Margin = new System.Windows.Forms.Padding(4);
             this.Atualiza.Name = "Atualiza";
             this.Atualiza.Size = new System.Drawing.Size(40, 40);
             this.Atualiza.TabIndex = 29;
             this.Atualiza.UseVisualStyleBackColor = false;
-            this.Atualiza.Click += new System.EventHandler(this.Atualiza_Click_1);
+            this.Atualiza.Click += new System.EventHandler(this.Atualiza_Click);
             // 
             // panel6
             // 
@@ -361,7 +361,7 @@ namespace WindowsFormsApp1
             this.AutoScroll = true;
             this.AutoScrollMargin = new System.Drawing.Size(0, 14);
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(702, 528);
+            this.ClientSize = new System.Drawing.Size(693, 528);
             this.ControlBox = false;
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel6);
@@ -369,7 +369,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.nomeuserproctextBox);
+            this.Controls.Add(this.procnifTextBox);
             this.Controls.Add(this.dataGridView1);
             this.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -405,7 +405,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button Apagar;
         private System.Windows.Forms.Button Cancelar;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox nomeuserproctextBox;
+        private System.Windows.Forms.TextBox procnifTextBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button PT;

@@ -80,7 +80,7 @@ namespace WindowsFormsApp1
             
         }
 
-        private void cancelButton_Click(object sender, EventArgs e)
+        private void sairButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }

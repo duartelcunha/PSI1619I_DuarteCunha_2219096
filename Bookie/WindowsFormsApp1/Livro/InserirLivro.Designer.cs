@@ -33,7 +33,6 @@ namespace WindowsFormsApp1
             this.nomelivroTextBox = new System.Windows.Forms.TextBox();
             this.nomeautorTextBox = new System.Windows.Forms.TextBox();
             this.quantidadeTextBox = new System.Windows.Forms.TextBox();
-            this.Cancelar = new System.Windows.Forms.Button();
             this.Inserir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -82,29 +81,15 @@ namespace WindowsFormsApp1
             this.quantidadeTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.quantidadeTextBox_KeyPress);
             this.quantidadeTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.quantidadeTextBox_Validating);
             // 
-            // Cancelar
-            // 
-            this.Cancelar.BackColor = System.Drawing.Color.Chocolate;
-            this.Cancelar.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cancelar.ForeColor = System.Drawing.Color.White;
-            this.Cancelar.Location = new System.Drawing.Point(322, 438);
-            this.Cancelar.Margin = new System.Windows.Forms.Padding(5);
-            this.Cancelar.Name = "Cancelar";
-            this.Cancelar.Size = new System.Drawing.Size(125, 61);
-            this.Cancelar.TabIndex = 3;
-            this.Cancelar.Text = "Cancelar";
-            this.Cancelar.UseVisualStyleBackColor = false;
-            this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
-            // 
             // Inserir
             // 
             this.Inserir.BackColor = System.Drawing.Color.Chocolate;
             this.Inserir.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Inserir.ForeColor = System.Drawing.Color.White;
-            this.Inserir.Location = new System.Drawing.Point(457, 438);
+            this.Inserir.Location = new System.Drawing.Point(404, 344);
             this.Inserir.Margin = new System.Windows.Forms.Padding(5);
             this.Inserir.Name = "Inserir";
-            this.Inserir.Size = new System.Drawing.Size(125, 61);
+            this.Inserir.Size = new System.Drawing.Size(125, 69);
             this.Inserir.TabIndex = 4;
             this.Inserir.Text = "Inserir";
             this.Inserir.UseVisualStyleBackColor = false;
@@ -167,10 +152,11 @@ namespace WindowsFormsApp1
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(11, 25);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 67);
+            this.pictureBox1.Size = new System.Drawing.Size(86, 76);
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             // 
@@ -179,7 +165,7 @@ namespace WindowsFormsApp1
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(81, 39);
+            this.label6.Location = new System.Drawing.Point(104, 34);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(206, 39);
             this.label6.TabIndex = 15;
@@ -189,8 +175,8 @@ namespace WindowsFormsApp1
             // 
             this.panel1.BackColor = System.Drawing.Color.SandyBrown;
             this.panel1.Controls.Add(this.PT);
-            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.label6);
             this.panel1.Location = new System.Drawing.Point(12, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(607, 109);
@@ -212,7 +198,7 @@ namespace WindowsFormsApp1
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.SandyBrown;
-            this.panel2.Location = new System.Drawing.Point(12, 523);
+            this.panel2.Location = new System.Drawing.Point(12, 470);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(607, 31);
             this.panel2.TabIndex = 17;
@@ -222,7 +208,7 @@ namespace WindowsFormsApp1
             this.panel6.BackColor = System.Drawing.Color.SandyBrown;
             this.panel6.Location = new System.Drawing.Point(604, 115);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(15, 402);
+            this.panel6.Size = new System.Drawing.Size(15, 349);
             this.panel6.TabIndex = 18;
             // 
             // panel3
@@ -230,7 +216,7 @@ namespace WindowsFormsApp1
             this.panel3.BackColor = System.Drawing.Color.SandyBrown;
             this.panel3.Location = new System.Drawing.Point(12, 115);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(15, 402);
+            this.panel3.Size = new System.Drawing.Size(15, 349);
             this.panel3.TabIndex = 19;
             // 
             // categoriaTextBox
@@ -276,7 +262,7 @@ namespace WindowsFormsApp1
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(631, 566);
+            this.ClientSize = new System.Drawing.Size(631, 509);
             this.ControlBox = false;
             this.Controls.Add(this.linguagemTextBox);
             this.Controls.Add(this.label8);
@@ -291,7 +277,6 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Inserir);
-            this.Controls.Add(this.Cancelar);
             this.Controls.Add(this.quantidadeTextBox);
             this.Controls.Add(this.nomeautorTextBox);
             this.Controls.Add(this.nomelivroTextBox);
@@ -315,7 +300,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox nomelivroTextBox;
         private System.Windows.Forms.TextBox nomeautorTextBox;
         private System.Windows.Forms.TextBox quantidadeTextBox;
-        private System.Windows.Forms.Button Cancelar;
         private System.Windows.Forms.Button Inserir;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

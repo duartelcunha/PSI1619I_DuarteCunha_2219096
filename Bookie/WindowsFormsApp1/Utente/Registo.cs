@@ -30,8 +30,10 @@ namespace WindowsFormsApp1
             SqlConnection con = new SqlConnection(@"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21");
 
             con.Open();
+
             SqlCommand cmd = new SqlCommand("SELECT * FROM Utente WHERE NIF = @NIF", con);
             cmd.Parameters.AddWithValue("@NIF", txtContribuinte.Text);
+
             SqlDataReader dr = cmd.ExecuteReader();
 
             if (string.IsNullOrEmpty(primeiroNomeTextBox.Text) || string.IsNullOrEmpty(contactoTextBox.Text) || string.IsNullOrEmpty(generoTextBox.Text) || string.IsNullOrEmpty(contactoTextBox.Text) || string.IsNullOrEmpty(contactocomboBox.Text) || string.IsNullOrEmpty(emailTextBox.Text) || string.IsNullOrEmpty(txtContribuinte.Text))
@@ -42,7 +44,7 @@ namespace WindowsFormsApp1
             {
                 if (dr.HasRows)
                 {
-                    MessageBox.Show("NIF já existente", "Confirme", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("NIF já existente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     Ref();
                 }
                 else
@@ -50,8 +52,8 @@ namespace WindowsFormsApp1
                     con.Close();
 
                     con.Open();
-                    SqlCommand sqlCmd = new SqlCommand("UserAdd", con);
 
+                    SqlCommand sqlCmd = new SqlCommand("AddUtente", con);
                     sqlCmd.CommandType = CommandType.StoredProcedure;
                     sqlCmd.Parameters.Add("@Pn", SqlDbType.VarChar).Value = primeiroNomeTextBox.Text.Trim();
                     sqlCmd.Parameters.Add("@Un", SqlDbType.VarChar).Value = ultimoNomeTextBox.Text.Trim();
@@ -60,10 +62,10 @@ namespace WindowsFormsApp1
                     sqlCmd.Parameters.Add("@Email", SqlDbType.VarChar).Value = emailTextBox.Text.Trim();
                     sqlCmd.Parameters.Add("@NIF", SqlDbType.Int).Value = txtContribuinte.Text.Trim();
                     sqlCmd.ExecuteNonQuery();
+
                     con.Close();
 
                     MessageBox.Show("Registo Completo");
-
                     Ref();
                 }
               }

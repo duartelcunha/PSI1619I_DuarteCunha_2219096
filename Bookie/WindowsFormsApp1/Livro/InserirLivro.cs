@@ -24,7 +24,7 @@ namespace WindowsFormsApp1
         {
             if(string.IsNullOrEmpty(nomelivroTextBox.Text) && string.IsNullOrEmpty(nomeautorTextBox.Text) && string.IsNullOrEmpty(anoTextBox.Text) && string.IsNullOrEmpty(quantidadeTextBox.Text))
             {
-                MessageBox.Show("Preencha todos os campos", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Preencha todos os campos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -35,6 +35,7 @@ namespace WindowsFormsApp1
                 cmd.Connection = con;
 
                 con.Open();
+
                 cmd.CommandText = "INSERT INTO Livro (Nome,Autor,Ano,Quantidade,Categoria,Linguagem) VALUES (@Nome,@Autor,@Ano,@Quantidade,@Categoria,@Linguagem)";
                 cmd.Parameters.Add("@Nome", SqlDbType.VarChar).Value = nomelivroTextBox.Text;
                 cmd.Parameters.Add("@Autor", SqlDbType.VarChar).Value = nomeautorTextBox.Text;
@@ -43,6 +44,7 @@ namespace WindowsFormsApp1
                 cmd.Parameters.Add("@Categoria", SqlDbType.VarChar).Value = categoriaTextBox.Text;
                 cmd.Parameters.Add("@Linguagem", SqlDbType.VarChar).Value = linguagemTextBox.Text;
                 cmd.ExecuteNonQuery();
+
                 con.Close();
 
                 MessageBox.Show("Livro Inserido", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -80,6 +82,7 @@ namespace WindowsFormsApp1
                 e.Handled = true;
             }
         }
+
         private void anoTextBox_TextChanged(object sender, EventArgs e)
         {
             this.anoTextBox.MaxLength = 4;
@@ -108,6 +111,7 @@ namespace WindowsFormsApp1
                 e.Handled = true;
             }
         }
+
         private void quantidadeTextBox_TextChanged(object sender, EventArgs e)
         {
             this.quantidadeTextBox.MaxLength = 5;

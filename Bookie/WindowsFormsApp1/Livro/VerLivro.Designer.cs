@@ -91,7 +91,7 @@ namespace WindowsFormsApp1
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.SandyBrown;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(494, 28);
+            this.label3.Location = new System.Drawing.Point(508, 28);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 22);
@@ -103,7 +103,7 @@ namespace WindowsFormsApp1
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.SandyBrown;
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(433, 67);
+            this.label5.Location = new System.Drawing.Point(447, 67);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(104, 22);
@@ -115,7 +115,7 @@ namespace WindowsFormsApp1
             this.Atualizar.BackColor = System.Drawing.Color.Chocolate;
             this.Atualizar.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Atualizar.ForeColor = System.Drawing.Color.White;
-            this.Atualizar.Location = new System.Drawing.Point(481, 122);
+            this.Atualizar.Location = new System.Drawing.Point(478, 126);
             this.Atualizar.Margin = new System.Windows.Forms.Padding(4);
             this.Atualizar.Name = "Atualizar";
             this.Atualizar.Size = new System.Drawing.Size(105, 45);
@@ -129,7 +129,7 @@ namespace WindowsFormsApp1
             this.Apagar.BackColor = System.Drawing.Color.Chocolate;
             this.Apagar.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Apagar.ForeColor = System.Drawing.Color.White;
-            this.Apagar.Location = new System.Drawing.Point(594, 122);
+            this.Apagar.Location = new System.Drawing.Point(591, 126);
             this.Apagar.Margin = new System.Windows.Forms.Padding(4);
             this.Apagar.Name = "Apagar";
             this.Apagar.Size = new System.Drawing.Size(105, 45);
@@ -143,7 +143,7 @@ namespace WindowsFormsApp1
             this.Cancelar.BackColor = System.Drawing.Color.Chocolate;
             this.Cancelar.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cancelar.ForeColor = System.Drawing.Color.White;
-            this.Cancelar.Location = new System.Drawing.Point(368, 122);
+            this.Cancelar.Location = new System.Drawing.Point(365, 126);
             this.Cancelar.Margin = new System.Windows.Forms.Padding(4);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(105, 45);
@@ -166,7 +166,7 @@ namespace WindowsFormsApp1
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridView1.Size = new System.Drawing.Size(670, 468);
+            this.dataGridView1.Size = new System.Drawing.Size(670, 469);
             this.dataGridView1.TabIndex = 9;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -191,7 +191,7 @@ namespace WindowsFormsApp1
             // anotextBox
             // 
             this.anotextBox.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.anotextBox.Location = new System.Drawing.Point(545, 25);
+            this.anotextBox.Location = new System.Drawing.Point(559, 25);
             this.anotextBox.Margin = new System.Windows.Forms.Padding(4);
             this.anotextBox.Name = "anotextBox";
             this.anotextBox.Size = new System.Drawing.Size(137, 29);
@@ -200,7 +200,7 @@ namespace WindowsFormsApp1
             // qtdtextBox
             // 
             this.qtdtextBox.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.qtdtextBox.Location = new System.Drawing.Point(545, 64);
+            this.qtdtextBox.Location = new System.Drawing.Point(559, 64);
             this.qtdtextBox.Margin = new System.Windows.Forms.Padding(4);
             this.qtdtextBox.Name = "qtdtextBox";
             this.qtdtextBox.Size = new System.Drawing.Size(137, 29);
@@ -381,7 +381,7 @@ namespace WindowsFormsApp1
             this.AutoScroll = true;
             this.AutoScrollMargin = new System.Drawing.Size(0, 14);
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(773, 675);
+            this.ClientSize = new System.Drawing.Size(763, 675);
             this.ControlBox = false;
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel6);
