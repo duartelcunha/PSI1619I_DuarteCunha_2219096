@@ -7,14 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Runtime.InteropServices;
+
+
 namespace WindowsFormsApp1
 {
     public partial class Splash : Form
     {
         public Splash()
         {
-    
             InitializeComponent();
             PB.Value = 0;
         }

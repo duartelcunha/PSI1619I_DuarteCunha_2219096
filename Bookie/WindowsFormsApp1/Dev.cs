@@ -34,19 +34,26 @@ namespace WindowsFormsApp1
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
+            try
+            {
+                con.Open();
+                cmd.CommandText = "UPDATE Req SET DataReturn = @DataReturn WHERE ReqID = @ReqID AND ID_NIF = @NIF";
+                cmd.Parameters.Add("@DataReturn", SqlDbType.VarChar).Value = datareturnDataPicker.Text;
+                cmd.Parameters.Add("@NIF", SqlDbType.Int).Value = nifTextBox.Text;
+                cmd.Parameters.Add("@ReqID", SqlDbType.Int).Value = idTextBox.Text;
+                cmd.ExecuteNonQuery();
 
-            con.Open();
-
-            cmd.CommandText = "UPDATE Req SET DataReturn = @DataReturn WHERE ReqID = @ReqID AND ID_NIF = @NIF";
-            cmd.Parameters.Add("@DataReturn", SqlDbType.VarChar).Value = datareturnDataPicker.Text;
-            cmd.Parameters.Add("@NIF", SqlDbType.Int).Value = nifTextBox.Text;
-            cmd.Parameters.Add("@ReqID", SqlDbType.Int).Value = idTextBox.Text;
-            cmd.ExecuteNonQuery();
-
-            con.Close();
-
-            MessageBox.Show("Livro Devolvido", "Devolução", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            Ref();
+                MessageBox.Show("Livro Devolvido", "Devolução", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Ref();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro no Botão de Devolver", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                con.Close();
+            }
         }
 
       
@@ -80,6 +87,7 @@ namespace WindowsFormsApp1
 
             con.Open();
             cmd.CommandText = "SELECT * FROM Req";
+            con.Close();
         }
 
        

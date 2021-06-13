@@ -239,6 +239,7 @@ namespace WindowsFormsApp1
             this.Procurar.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Procurar.ForeColor = System.Drawing.Color.White;
             this.Procurar.Image = ((System.Drawing.Image)(resources.GetObject("Procurar.Image")));
+            this.Procurar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Procurar.Location = new System.Drawing.Point(189, 101);
             this.Procurar.Margin = new System.Windows.Forms.Padding(4);
             this.Procurar.Name = "Procurar";

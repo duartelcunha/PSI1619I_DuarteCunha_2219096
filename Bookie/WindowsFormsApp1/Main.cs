@@ -84,52 +84,58 @@ namespace WindowsFormsApp1
 
         private void verUtilizadoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var veruser = new VerUtilizador();
-            veruser.Show();
+            VerUtilizador.a = 0;
+            var verutente = new VerUtilizador();
+            verutente.Show();
         }
 
        
 
         private void inserirUtilizadoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var a = new Registo();
-            a.Show();
+            var reg = new Registo();
+            reg.Show();
         }
 
         private void inserirLivrosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var a = new InserirLivro();
-            a.Show();
+            var insert = new InserirLivro();
+            insert.Show();
         }
 
         private void verLivrosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var a = new VerLivro();
-            a.Show();
+            var verlivro = new VerLivro();
+            verlivro.Show();
         }
 
         private void requisitarLivroToolStripMenuItem_Click(object sender, EventArgs e)
         {
             VerUtilizador.a = 1;
 
-            var a = new Req();
-            a.Show();
+            var req = new Req();
+            req.Show();
+
+
         }
 
         private void retornarLivroToolStripMenuItem_Click(object sender, EventArgs e)
         {
             VerUtilizador.a = 2;
 
-            var a = new Dev();
-            a.Show();
+            var dev = new Dev();
+            dev.Show();
+           
+          
         }
 
         private void detalhesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             VerUtilizador.a = 0;
 
-            var a = new Info();
-            a.Show();
+            var info = new Info();
+            info.Show();
+            
         }
         private void timer1_Tick(object sender, EventArgs e)
         {

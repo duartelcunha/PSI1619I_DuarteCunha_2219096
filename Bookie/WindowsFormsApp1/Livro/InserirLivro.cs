@@ -22,7 +22,7 @@ namespace WindowsFormsApp1
 
         private void Inserir_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty(nomelivroTextBox.Text) && string.IsNullOrEmpty(nomeautorTextBox.Text) && string.IsNullOrEmpty(anoTextBox.Text) && string.IsNullOrEmpty(quantidadeTextBox.Text))
+            if(string.IsNullOrEmpty(nomelivroTextBox.Text) && string.IsNullOrEmpty(nomeautorTextBox.Text) && string.IsNullOrEmpty(anoTextBox.Text) && string.IsNullOrEmpty(quantidadeTextBox.Text) && string.IsNullOrEmpty(categoriaTextBox.Text) && string.IsNullOrEmpty(linguagemTextBox.Text))
             {
                 MessageBox.Show("Preencha todos os campos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -71,7 +71,7 @@ namespace WindowsFormsApp1
 
         private void PT_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
         }
 
 

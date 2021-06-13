@@ -139,46 +139,64 @@ namespace WindowsFormsApp1
 
         private void Atualizar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Os campos serão atualizados.", "Confirmação", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
+            try
             {
+                if (MessageBox.Show("Os campos serão atualizados.", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = con;
 
-                
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
+                    cmd.CommandText = "UPDATE Livro SET Nome = @Nome, Autor = @Autor, Categoria = @Categoria, Linguagem = @Linguagem, Ano = @Ano, Quantidade = @Quantidade WHERE LivroID = @ID";
+                    cmd.Parameters.Add("@Nome", SqlDbType.VarChar).Value = nomelivrotextBox.Text;
+                    cmd.Parameters.Add("@Autor", SqlDbType.VarChar).Value = nomeautortextBox.Text;
+                    cmd.Parameters.Add("@Categoria", SqlDbType.VarChar).Value = categoriaTextBox.Text;
+                    cmd.Parameters.Add("@Linguagem", SqlDbType.VarChar).Value = linguagemTextBox.Text;
+                    cmd.Parameters.Add("@Ano", SqlDbType.Int).Value = anotextBox.Text;
+                    cmd.Parameters.Add("@Quantidade", SqlDbType.Int).Value = qtdtextBox.Text;
+                    cmd.Parameters.Add("@ID", SqlDbType.Int).Value = ID;
+                    cmd.ExecuteNonQuery();
 
-                con.Open();
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = con;
-
-                cmd.CommandText = "UPDATE Livro SET Nome = @Nome, Autor = @Autor, Categoria = @Categoria, Linguagem = @Linguagem, Ano = @Ano, Quantidade = @Quantidade WHERE LivroID = @ID";
-                cmd.Parameters.Add("@Nome", SqlDbType.VarChar).Value = nomelivrotextBox.Text;
-                cmd.Parameters.Add("@Autor", SqlDbType.VarChar).Value = nomeautortextBox.Text;
-                cmd.Parameters.Add("@Categoria", SqlDbType.VarChar).Value = categoriaTextBox.Text;
-                cmd.Parameters.Add("@Linguagem", SqlDbType.VarChar).Value = linguagemTextBox.Text;
-                cmd.Parameters.Add("@Ano", SqlDbType.Int).Value = anotextBox.Text;
-                cmd.Parameters.Add("@Quantidade", SqlDbType.Int).Value = qtdtextBox.Text;
-                cmd.Parameters.Add("@ID", SqlDbType.Int).Value = ID;
-                cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro no Botão de Atualizar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
                 con.Close();
-       
             }
         }
 
         private void Apagar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Os campos serão apagados.", "Confirme", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
+            try
             {
+                if (MessageBox.Show("Os campos serão apagados.", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+                {
 
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = con;
 
-                con.Open();
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = con;
-
-                cmd.CommandText = "DELETE FROM Livro WHERE LivroID  = @ID";
-                cmd.Parameters.Add("@ID", SqlDbType.Int).Value = ID;
-                cmd.ExecuteNonQuery();
+                    cmd.CommandText = "DELETE FROM Livro WHERE LivroID  = @ID";
+                    cmd.Parameters.Add("@ID", SqlDbType.Int).Value = ID;
+                    cmd.ExecuteNonQuery();
+                    
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro no Botão de Apagar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
                 con.Close();
             }
         }

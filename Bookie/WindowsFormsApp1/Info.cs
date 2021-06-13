@@ -93,6 +93,8 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show(ex.Message, "Erro no Botão de Atualizar", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            procutenteTextBox.Clear();
+
 
         }
 
@@ -109,7 +111,8 @@ namespace WindowsFormsApp1
 
         private void Apagar_Click(object sender, EventArgs e)
         {
-
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
             try
             {
                 if (MessageBox.Show("Tem a certeza que deseja eliminar", "Confirmação", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
@@ -117,9 +120,6 @@ namespace WindowsFormsApp1
                     foreach (DataGridViewRow item in this.dataGridView2.SelectedRows)
                     {
 
-                        using (SqlConnection con = new SqlConnection())
-                        {
-                            con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
 
                             SqlCommand cmd = con.CreateCommand();
                             int id = Convert.ToInt32(dataGridView2.SelectedRows[0].Cells[0].Value);
@@ -129,8 +129,7 @@ namespace WindowsFormsApp1
 
                             dataGridView2.Rows.RemoveAt(this.dataGridView2.SelectedRows[0].Index);
                             cmd.ExecuteNonQuery();
-                            con.Close();
-                        }
+
 
                     }
                 }
@@ -138,6 +137,10 @@ namespace WindowsFormsApp1
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Erro no Botão de Apagar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                con.Close();
             }
 
         }
@@ -209,7 +212,7 @@ namespace WindowsFormsApp1
         private void Utente_Click(object sender, EventArgs e)
         {
             var a = new VerUtilizador();
-            this.Hide();
+            this.Close();
             a.Show();
         }
 
@@ -235,9 +238,6 @@ namespace WindowsFormsApp1
             }
 
         }
-
-
-
 
         private void procutenteTextBox_Validating(object sender, CancelEventArgs e)
         {
