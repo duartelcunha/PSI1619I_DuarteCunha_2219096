@@ -84,7 +84,7 @@ namespace WindowsFormsApp1
 
         private void verUtilizadoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            VerUtilizador.a = 0;
+            VerUtilizador.a = 3;
             var verutente = new VerUtilizador();
             verutente.Show();
         }
