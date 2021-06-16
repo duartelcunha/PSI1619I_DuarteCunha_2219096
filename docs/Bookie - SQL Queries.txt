@@ -1,0 +1,72 @@
+Table Livro:
+CREATE TABLE [dbo].[Livro](
+	[LivroID] [int] IDENTITY(1,1) NOT NULL,
+	[Nome] [varchar](50) NULL,
+	[Autor] [varchar](50) NULL,
+	[Ano] [int] NULL,
+	[Quantidade] [int] NULL,
+	[Categoria] [varchar](50) NULL,
+	[Linguagem] [varchar](50) NULL,
+ CONSTRAINT [PK_Livro] PRIMARY KEY CLUSTERED 
+(
+	[LivroID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+Table Login:
+CREATE TABLE [dbo].[Login](
+	[LoginID] [int] IDENTITY(1,1) NOT NULL,
+	[Username] [varchar](50) NULL,
+	[Password] [varchar](50) NULL,
+ CONSTRAINT [PK_Login] PRIMARY KEY CLUSTERED 
+(
+	[LoginID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+Table Req:
+CREATE TABLE [dbo].[Req](
+	[ReqID] [int] IDENTITY(1,1) NOT NULL,
+	[DataReq] [varchar](50) NULL,
+	[NomeLivro] [varchar](50) NULL,
+	[Nome] [varchar](50) NULL,
+	[Contacto] [varchar](50) NULL,
+	[Email] [varchar](50) NULL,
+	[ID_NIF] [int] NULL,
+	[DataReturn] [varchar](50) NULL,
+	[DataEntrega] [varchar](50) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[ReqID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[Req]  WITH CHECK ADD FOREIGN KEY([ID_NIF])
+REFERENCES [dbo].[Utente] ([NIF])
+GO
+
+ALTER TABLE [dbo].[Req]  WITH CHECK ADD  CONSTRAINT [ID_NIF] FOREIGN KEY([ID_NIF])
+REFERENCES [dbo].[Utente] ([NIF])
+ON DELETE CASCADE
+GO
+
+ALTER TABLE [dbo].[Req] CHECK CONSTRAINT [ID_NIF]
+GO
+
+Table Utente:
+CREATE TABLE [dbo].[Utente](
+	[NIF] [int] NOT NULL,
+	[Pn] [varchar](50) NULL,
+	[Un] [varchar](50) NULL,
+	[Genero] [varchar](50) NULL,
+	[Contacto] [varchar](50) NULL,
+	[Email] [varchar](50) NULL,
+ CONSTRAINT [PK_Utente] PRIMARY KEY CLUSTERED 
+(
+	[NIF] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
