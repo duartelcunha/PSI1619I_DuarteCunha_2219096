@@ -129,7 +129,7 @@ namespace WindowsFormsApp1
 
                             dataGridView2.Rows.RemoveAt(this.dataGridView2.SelectedRows[0].Index);
                             cmd.ExecuteNonQuery();
-
+                            con.Close();
 
                     }
                 }
@@ -138,10 +138,7 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show(ex.Message, "Erro no Botão de Apagar", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally
-            {
-                con.Close();
-            }
+           
 
         }
 

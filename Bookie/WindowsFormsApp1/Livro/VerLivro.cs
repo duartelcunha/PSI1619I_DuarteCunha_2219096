@@ -24,7 +24,9 @@ namespace WindowsFormsApp1
 
         private void VerLivro_Load(object sender, EventArgs e)
         {
+            panel1.Visible = false;
             dataGridView1.ReadOnly = true;
+           
             SqlConnection con = new SqlConnection();
             con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
 
@@ -48,7 +50,8 @@ namespace WindowsFormsApp1
             }
 
             panel1.Visible = true;
-
+          
+            
             SqlConnection con = new SqlConnection();
             con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
 

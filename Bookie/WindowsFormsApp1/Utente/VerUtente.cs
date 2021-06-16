@@ -34,8 +34,9 @@ namespace WindowsFormsApp1
                 id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
             }
 
-            panel1.Visible = true;
-
+            panel2.Visible = true;
+          
+         
             SqlConnection con = new SqlConnection();
             con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
 
@@ -63,7 +64,7 @@ namespace WindowsFormsApp1
         private void VerUtente_Load(object sender, EventArgs e)
         {
             dataGridView1.ReadOnly = true;
-
+            panel2.Visible = false;
             SqlConnection con = new SqlConnection();
             con.ConnectionString = @"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21";
 

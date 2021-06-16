@@ -44,7 +44,6 @@ namespace WindowsFormsApp1
             this.label4 = new System.Windows.Forms.Label();
             this.Atualizar = new System.Windows.Forms.Button();
             this.Apagar = new System.Windows.Forms.Button();
-            this.Cancelar = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.procnifTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -66,15 +65,17 @@ namespace WindowsFormsApp1
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.ColumnHeadersHeight = 35;
             this.dataGridView1.GridColor = System.Drawing.Color.White;
-            this.dataGridView1.Location = new System.Drawing.Point(66, 161);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.dataGridView1.Location = new System.Drawing.Point(38, 161);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 3, 4, 3);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridView1.Size = new System.Drawing.Size(549, 342);
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.dataGridView1.Size = new System.Drawing.Size(612, 342);
             this.dataGridView1.TabIndex = 26;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
@@ -94,7 +95,6 @@ namespace WindowsFormsApp1
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.Atualizar);
             this.panel2.Controls.Add(this.Apagar);
-            this.panel2.Controls.Add(this.Cancelar);
             this.panel2.Location = new System.Drawing.Point(24, 509);
             this.panel2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel2.Name = "panel2";
@@ -109,7 +109,7 @@ namespace WindowsFormsApp1
             this.generoComboBox.Items.AddRange(new object[] {
             "Masculino",
             "Feminino"});
-            this.generoComboBox.Location = new System.Drawing.Point(151, 132);
+            this.generoComboBox.Location = new System.Drawing.Point(152, 124);
             this.generoComboBox.Name = "generoComboBox";
             this.generoComboBox.Size = new System.Drawing.Size(121, 29);
             this.generoComboBox.TabIndex = 28;
@@ -117,7 +117,7 @@ namespace WindowsFormsApp1
             // unTextBox
             // 
             this.unTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unTextBox.Location = new System.Drawing.Point(150, 82);
+            this.unTextBox.Location = new System.Drawing.Point(151, 72);
             this.unTextBox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.unTextBox.Name = "unTextBox";
             this.unTextBox.Size = new System.Drawing.Size(181, 29);
@@ -126,7 +126,7 @@ namespace WindowsFormsApp1
             // contactoTextBox
             // 
             this.contactoTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contactoTextBox.Location = new System.Drawing.Point(439, 79);
+            this.contactoTextBox.Location = new System.Drawing.Point(439, 72);
             this.contactoTextBox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.contactoTextBox.Name = "contactoTextBox";
             this.contactoTextBox.Size = new System.Drawing.Size(187, 29);
@@ -135,7 +135,7 @@ namespace WindowsFormsApp1
             // emailTextBox
             // 
             this.emailTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailTextBox.Location = new System.Drawing.Point(439, 33);
+            this.emailTextBox.Location = new System.Drawing.Point(439, 21);
             this.emailTextBox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(187, 29);
@@ -144,7 +144,7 @@ namespace WindowsFormsApp1
             // pnTextBox
             // 
             this.pnTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnTextBox.Location = new System.Drawing.Point(150, 33);
+            this.pnTextBox.Location = new System.Drawing.Point(151, 21);
             this.pnTextBox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pnTextBox.Name = "pnTextBox";
             this.pnTextBox.Size = new System.Drawing.Size(181, 29);
@@ -155,7 +155,7 @@ namespace WindowsFormsApp1
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.SandyBrown;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(25, 86);
+            this.label2.Location = new System.Drawing.Point(26, 76);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(121, 22);
@@ -167,7 +167,7 @@ namespace WindowsFormsApp1
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.SandyBrown;
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(351, 82);
+            this.label5.Location = new System.Drawing.Point(351, 76);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(84, 22);
@@ -179,7 +179,7 @@ namespace WindowsFormsApp1
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.SandyBrown;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(78, 135);
+            this.label3.Location = new System.Drawing.Point(79, 127);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 22);
@@ -191,7 +191,7 @@ namespace WindowsFormsApp1
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.SandyBrown;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(10, 36);
+            this.label1.Location = new System.Drawing.Point(10, 24);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(136, 22);
@@ -203,7 +203,7 @@ namespace WindowsFormsApp1
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.SandyBrown;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(381, 36);
+            this.label4.Location = new System.Drawing.Point(381, 24);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 22);
@@ -215,7 +215,7 @@ namespace WindowsFormsApp1
             this.Atualizar.BackColor = System.Drawing.Color.Chocolate;
             this.Atualizar.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Atualizar.ForeColor = System.Drawing.Color.White;
-            this.Atualizar.Location = new System.Drawing.Point(427, 126);
+            this.Atualizar.Location = new System.Drawing.Point(527, 124);
             this.Atualizar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Atualizar.Name = "Atualizar";
             this.Atualizar.Size = new System.Drawing.Size(99, 46);
@@ -229,7 +229,7 @@ namespace WindowsFormsApp1
             this.Apagar.BackColor = System.Drawing.Color.Chocolate;
             this.Apagar.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Apagar.ForeColor = System.Drawing.Color.White;
-            this.Apagar.Location = new System.Drawing.Point(530, 126);
+            this.Apagar.Location = new System.Drawing.Point(427, 124);
             this.Apagar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Apagar.Name = "Apagar";
             this.Apagar.Size = new System.Drawing.Size(96, 46);
@@ -237,20 +237,6 @@ namespace WindowsFormsApp1
             this.Apagar.Text = "Apagar";
             this.Apagar.UseVisualStyleBackColor = false;
             this.Apagar.Click += new System.EventHandler(this.Apagar_Click);
-            // 
-            // Cancelar
-            // 
-            this.Cancelar.BackColor = System.Drawing.Color.Chocolate;
-            this.Cancelar.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cancelar.ForeColor = System.Drawing.Color.White;
-            this.Cancelar.Location = new System.Drawing.Point(325, 126);
-            this.Cancelar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.Cancelar.Name = "Cancelar";
-            this.Cancelar.Size = new System.Drawing.Size(98, 46);
-            this.Cancelar.TabIndex = 22;
-            this.Cancelar.Text = "Cancelar";
-            this.Cancelar.UseVisualStyleBackColor = false;
-            this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click_1);
             // 
             // label7
             // 
@@ -361,7 +347,7 @@ namespace WindowsFormsApp1
             this.AutoScroll = true;
             this.AutoScrollMargin = new System.Drawing.Size(0, 14);
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(693, 528);
+            this.ClientSize = new System.Drawing.Size(693, 526);
             this.ControlBox = false;
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel6);
@@ -403,7 +389,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button Atualizar;
         private System.Windows.Forms.Button Apagar;
-        private System.Windows.Forms.Button Cancelar;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox procnifTextBox;
         private System.Windows.Forms.Label label6;

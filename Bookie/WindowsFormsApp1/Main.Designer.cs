@@ -48,6 +48,7 @@ namespace WindowsFormsApp1
             this.panel1 = new System.Windows.Forms.Panel();
             this.Tempo = new System.Windows.Forms.Label();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.panel2 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -209,9 +210,10 @@ namespace WindowsFormsApp1
             // Tempo
             // 
             this.Tempo.AutoSize = true;
-            this.Tempo.BackColor = System.Drawing.Color.White;
+            this.Tempo.BackColor = System.Drawing.Color.SandyBrown;
             this.Tempo.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tempo.Location = new System.Drawing.Point(1024, 9);
+            this.Tempo.ForeColor = System.Drawing.Color.White;
+            this.Tempo.Location = new System.Drawing.Point(1023, 9);
             this.Tempo.Name = "Tempo";
             this.Tempo.Size = new System.Drawing.Size(53, 20);
             this.Tempo.TabIndex = 5;
@@ -222,6 +224,14 @@ namespace WindowsFormsApp1
             this.timer2.Enabled = true;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.SandyBrown;
+            this.panel2.Location = new System.Drawing.Point(1092, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(8, 553);
+            this.panel2.TabIndex = 4;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -229,6 +239,7 @@ namespace WindowsFormsApp1
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1098, 549);
             this.ControlBox = false;
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.Tempo);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
@@ -268,5 +279,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label Tempo;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Panel panel2;
     }
 }

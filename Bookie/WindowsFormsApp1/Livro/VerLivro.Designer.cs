@@ -36,7 +36,6 @@ namespace WindowsFormsApp1
             this.label5 = new System.Windows.Forms.Label();
             this.Atualizar = new System.Windows.Forms.Button();
             this.Apagar = new System.Windows.Forms.Button();
-            this.Cancelar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.nomelivrotextBox = new System.Windows.Forms.TextBox();
             this.nomeautortextBox = new System.Windows.Forms.TextBox();
@@ -91,7 +90,7 @@ namespace WindowsFormsApp1
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.SandyBrown;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(508, 28);
+            this.label3.Location = new System.Drawing.Point(528, 28);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 22);
@@ -103,7 +102,7 @@ namespace WindowsFormsApp1
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.SandyBrown;
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(447, 67);
+            this.label5.Location = new System.Drawing.Point(467, 67);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(104, 22);
@@ -115,7 +114,7 @@ namespace WindowsFormsApp1
             this.Atualizar.BackColor = System.Drawing.Color.Chocolate;
             this.Atualizar.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Atualizar.ForeColor = System.Drawing.Color.White;
-            this.Atualizar.Location = new System.Drawing.Point(478, 126);
+            this.Atualizar.Location = new System.Drawing.Point(591, 134);
             this.Atualizar.Margin = new System.Windows.Forms.Padding(4);
             this.Atualizar.Name = "Atualizar";
             this.Atualizar.Size = new System.Drawing.Size(105, 45);
@@ -129,7 +128,7 @@ namespace WindowsFormsApp1
             this.Apagar.BackColor = System.Drawing.Color.Chocolate;
             this.Apagar.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Apagar.ForeColor = System.Drawing.Color.White;
-            this.Apagar.Location = new System.Drawing.Point(591, 126);
+            this.Apagar.Location = new System.Drawing.Point(478, 134);
             this.Apagar.Margin = new System.Windows.Forms.Padding(4);
             this.Apagar.Name = "Apagar";
             this.Apagar.Size = new System.Drawing.Size(105, 45);
@@ -138,35 +137,22 @@ namespace WindowsFormsApp1
             this.Apagar.UseVisualStyleBackColor = false;
             this.Apagar.Click += new System.EventHandler(this.Apagar_Click);
             // 
-            // Cancelar
-            // 
-            this.Cancelar.BackColor = System.Drawing.Color.Chocolate;
-            this.Cancelar.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cancelar.ForeColor = System.Drawing.Color.White;
-            this.Cancelar.Location = new System.Drawing.Point(365, 126);
-            this.Cancelar.Margin = new System.Windows.Forms.Padding(4);
-            this.Cancelar.Name = "Cancelar";
-            this.Cancelar.Size = new System.Drawing.Size(105, 45);
-            this.Cancelar.TabIndex = 8;
-            this.Cancelar.Text = "Cancelar";
-            this.Cancelar.UseVisualStyleBackColor = false;
-            this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.GridColor = System.Drawing.Color.White;
-            this.dataGridView1.Location = new System.Drawing.Point(45, 167);
+            this.dataGridView1.Location = new System.Drawing.Point(35, 167);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridView1.Size = new System.Drawing.Size(670, 469);
+            this.dataGridView1.Size = new System.Drawing.Size(688, 469);
             this.dataGridView1.TabIndex = 9;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -191,19 +177,19 @@ namespace WindowsFormsApp1
             // anotextBox
             // 
             this.anotextBox.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.anotextBox.Location = new System.Drawing.Point(559, 25);
+            this.anotextBox.Location = new System.Drawing.Point(579, 25);
             this.anotextBox.Margin = new System.Windows.Forms.Padding(4);
             this.anotextBox.Name = "anotextBox";
-            this.anotextBox.Size = new System.Drawing.Size(137, 29);
+            this.anotextBox.Size = new System.Drawing.Size(117, 29);
             this.anotextBox.TabIndex = 12;
             // 
             // qtdtextBox
             // 
             this.qtdtextBox.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.qtdtextBox.Location = new System.Drawing.Point(559, 64);
+            this.qtdtextBox.Location = new System.Drawing.Point(579, 64);
             this.qtdtextBox.Margin = new System.Windows.Forms.Padding(4);
             this.qtdtextBox.Name = "qtdtextBox";
-            this.qtdtextBox.Size = new System.Drawing.Size(137, 29);
+            this.qtdtextBox.Size = new System.Drawing.Size(117, 29);
             this.qtdtextBox.TabIndex = 13;
             // 
             // panel1
@@ -221,7 +207,6 @@ namespace WindowsFormsApp1
             this.panel1.Controls.Add(this.anotextBox);
             this.panel1.Controls.Add(this.nomelivrotextBox);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.Cancelar);
             this.panel1.Controls.Add(this.Apagar);
             this.panel1.Controls.Add(this.Atualizar);
             this.panel1.Location = new System.Drawing.Point(22, 643);
@@ -236,7 +221,7 @@ namespace WindowsFormsApp1
             this.linguagemTextBox.Location = new System.Drawing.Point(155, 142);
             this.linguagemTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.linguagemTextBox.Name = "linguagemTextBox";
-            this.linguagemTextBox.Size = new System.Drawing.Size(192, 29);
+            this.linguagemTextBox.Size = new System.Drawing.Size(261, 29);
             this.linguagemTextBox.TabIndex = 18;
             // 
             // label9
@@ -257,7 +242,7 @@ namespace WindowsFormsApp1
             this.categoriaTextBox.Location = new System.Drawing.Point(155, 104);
             this.categoriaTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.categoriaTextBox.Name = "categoriaTextBox";
-            this.categoriaTextBox.Size = new System.Drawing.Size(192, 29);
+            this.categoriaTextBox.Size = new System.Drawing.Size(261, 29);
             this.categoriaTextBox.TabIndex = 16;
             // 
             // label8
@@ -381,7 +366,7 @@ namespace WindowsFormsApp1
             this.AutoScroll = true;
             this.AutoScrollMargin = new System.Drawing.Size(0, 14);
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(763, 675);
+            this.ClientSize = new System.Drawing.Size(763, 660);
             this.ControlBox = false;
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel6);
@@ -417,7 +402,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button Atualizar;
         private System.Windows.Forms.Button Apagar;
-        private System.Windows.Forms.Button Cancelar;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox nomelivrotextBox;
         private System.Windows.Forms.TextBox nomeautortextBox;

@@ -55,6 +55,7 @@ namespace WindowsFormsApp1
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.qtdTextBox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -342,6 +343,13 @@ namespace WindowsFormsApp1
             this.panel6.Size = new System.Drawing.Size(15, 455);
             this.panel6.TabIndex = 9;
             // 
+            // qtdTextBox
+            // 
+            this.qtdTextBox.Location = new System.Drawing.Point(607, 483);
+            this.qtdTextBox.Name = "qtdTextBox";
+            this.qtdTextBox.Size = new System.Drawing.Size(100, 25);
+            this.qtdTextBox.TabIndex = 49;
+            // 
             // Req
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -367,6 +375,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.nifTextBox);
             this.Controls.Add(this.nomecompletoTextBox);
+            this.Controls.Add(this.qtdTextBox);
             this.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -412,5 +421,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button Atualizar;
+        private System.Windows.Forms.TextBox qtdTextBox;
     }
 }
