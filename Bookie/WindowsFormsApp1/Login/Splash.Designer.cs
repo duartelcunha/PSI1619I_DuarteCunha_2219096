@@ -35,6 +35,7 @@ namespace WindowsFormsApp1
             this.PB = new CircularProgressBar.CircularProgressBar();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +55,7 @@ namespace WindowsFormsApp1
             this.PB.InnerColor = System.Drawing.Color.White;
             this.PB.InnerMargin = 2;
             this.PB.InnerWidth = -1;
-            this.PB.Location = new System.Drawing.Point(187, 134);
+            this.PB.Location = new System.Drawing.Point(169, 114);
             this.PB.MarqueeAnimationSpeed = 200;
             this.PB.Name = "PB";
             this.PB.OuterColor = System.Drawing.Color.White;
@@ -63,7 +64,7 @@ namespace WindowsFormsApp1
             this.PB.ProgressColor = System.Drawing.Color.Chocolate;
             this.PB.ProgressWidth = 15;
             this.PB.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
-            this.PB.Size = new System.Drawing.Size(196, 188);
+            this.PB.Size = new System.Drawing.Size(234, 225);
             this.PB.StartAngle = 270;
             this.PB.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.PB.SubscriptColor = System.Drawing.Color.White;
@@ -79,7 +80,7 @@ namespace WindowsFormsApp1
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(242, 183);
+            this.pictureBox1.Location = new System.Drawing.Point(243, 176);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(90, 93);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -91,12 +92,24 @@ namespace WindowsFormsApp1
             this.timer2.Enabled = true;
             this.timer2.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(216, 272);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(142, 19);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Bem-Vindo ao Bookie";
+            // 
             // Splash
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(571, 468);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.PB);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -105,6 +118,7 @@ namespace WindowsFormsApp1
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -113,5 +127,6 @@ namespace WindowsFormsApp1
         private CircularProgressBar.CircularProgressBar PB;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -60,7 +60,7 @@ namespace WindowsFormsApp1
             this.nomelivroTextBox.Margin = new System.Windows.Forms.Padding(5);
             this.nomelivroTextBox.Name = "nomelivroTextBox";
             this.nomelivroTextBox.Size = new System.Drawing.Size(400, 29);
-            this.nomelivroTextBox.TabIndex = 0;
+            this.nomelivroTextBox.TabIndex = 1;
             // 
             // nomeautorTextBox
             // 
@@ -68,7 +68,7 @@ namespace WindowsFormsApp1
             this.nomeautorTextBox.Margin = new System.Windows.Forms.Padding(5);
             this.nomeautorTextBox.Name = "nomeautorTextBox";
             this.nomeautorTextBox.Size = new System.Drawing.Size(400, 29);
-            this.nomeautorTextBox.TabIndex = 1;
+            this.nomeautorTextBox.TabIndex = 2;
             // 
             // quantidadeTextBox
             // 
@@ -76,7 +76,7 @@ namespace WindowsFormsApp1
             this.quantidadeTextBox.Margin = new System.Windows.Forms.Padding(5);
             this.quantidadeTextBox.Name = "quantidadeTextBox";
             this.quantidadeTextBox.Size = new System.Drawing.Size(111, 29);
-            this.quantidadeTextBox.TabIndex = 2;
+            this.quantidadeTextBox.TabIndex = 6;
             this.quantidadeTextBox.TextChanged += new System.EventHandler(this.quantidadeTextBox_TextChanged);
             this.quantidadeTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.quantidadeTextBox_KeyPress);
             this.quantidadeTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.quantidadeTextBox_Validating);
@@ -145,7 +145,7 @@ namespace WindowsFormsApp1
             this.anoTextBox.Margin = new System.Windows.Forms.Padding(5);
             this.anoTextBox.Name = "anoTextBox";
             this.anoTextBox.Size = new System.Drawing.Size(111, 29);
-            this.anoTextBox.TabIndex = 12;
+            this.anoTextBox.TabIndex = 5;
             this.anoTextBox.TextChanged += new System.EventHandler(this.anoTextBox_TextChanged);
             this.anoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.anoTextBox_KeyPress);
             this.anoTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.anoTextBox_Validating);
@@ -225,7 +225,7 @@ namespace WindowsFormsApp1
             this.categoriaTextBox.Margin = new System.Windows.Forms.Padding(5);
             this.categoriaTextBox.Name = "categoriaTextBox";
             this.categoriaTextBox.Size = new System.Drawing.Size(400, 29);
-            this.categoriaTextBox.TabIndex = 20;
+            this.categoriaTextBox.TabIndex = 3;
             // 
             // label7
             // 
@@ -255,7 +255,7 @@ namespace WindowsFormsApp1
             this.linguagemTextBox.Margin = new System.Windows.Forms.Padding(5);
             this.linguagemTextBox.Name = "linguagemTextBox";
             this.linguagemTextBox.Size = new System.Drawing.Size(400, 29);
-            this.linguagemTextBox.TabIndex = 23;
+            this.linguagemTextBox.TabIndex = 4;
             // 
             // InserirLivro
             // 

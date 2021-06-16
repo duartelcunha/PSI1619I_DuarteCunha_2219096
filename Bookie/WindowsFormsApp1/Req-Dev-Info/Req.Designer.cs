@@ -69,7 +69,7 @@ namespace WindowsFormsApp1
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.ForeColor = System.Drawing.Color.SandyBrown;
-            this.panel1.Location = new System.Drawing.Point(13, 13);
+            this.panel1.Location = new System.Drawing.Point(13, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 106);
@@ -330,17 +330,17 @@ namespace WindowsFormsApp1
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.SandyBrown;
-            this.panel5.Location = new System.Drawing.Point(13, 126);
+            this.panel5.Location = new System.Drawing.Point(13, 113);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(15, 455);
+            this.panel5.Size = new System.Drawing.Size(15, 468);
             this.panel5.TabIndex = 48;
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.SandyBrown;
-            this.panel6.Location = new System.Drawing.Point(798, 126);
+            this.panel6.Location = new System.Drawing.Point(798, 113);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(15, 455);
+            this.panel6.Size = new System.Drawing.Size(15, 468);
             this.panel6.TabIndex = 9;
             // 
             // qtdTextBox
