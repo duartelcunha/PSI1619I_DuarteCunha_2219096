@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
@@ -27,49 +24,56 @@ namespace WindowsFormsApp1
 
         private void Registar_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21");
-
-            con.Open();
-
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Utente WHERE NIF = @NIF", con);
-            cmd.Parameters.AddWithValue("@NIF", txtContribuinte.Text);
-
-            SqlDataReader dr = cmd.ExecuteReader();
-
-            if (string.IsNullOrEmpty(primeiroNomeTextBox.Text) || string.IsNullOrEmpty(contactoTextBox.Text) || string.IsNullOrEmpty(generoTextBox.Text) || string.IsNullOrEmpty(contactoTextBox.Text) || string.IsNullOrEmpty(contactocomboBox.Text) || string.IsNullOrEmpty(emailTextBox.Text) || string.IsNullOrEmpty(txtContribuinte.Text))
+            try
             {
-                MessageBox.Show("Preencha todos os campos");
-            }
-            else
-            {
-                if (dr.HasRows)
+                SqlConnection con = new SqlConnection(@"Server=tcp:devlabpm.westeurope.cloudapp.azure.com;Database=PSIM1619I_DuarteCunha_2219096;User Id=PSIM1619I_DuarteCunha_2219096;Password=4rRBFA21");
+
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Utente WHERE NIF = @NIF", con);
+                cmd.Parameters.AddWithValue("@NIF", txtContribuinte.Text);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (string.IsNullOrEmpty(primeiroNomeTextBox.Text) || string.IsNullOrEmpty(contactoTextBox.Text) || string.IsNullOrEmpty(generoTextBox.Text) || string.IsNullOrEmpty(contactoTextBox.Text) || string.IsNullOrEmpty(contactocomboBox.Text) || string.IsNullOrEmpty(emailTextBox.Text) || string.IsNullOrEmpty(txtContribuinte.Text))
                 {
-                    MessageBox.Show("NIF já existente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    Ref();
+                    MessageBox.Show("Preencha todos os campos");
                 }
                 else
                 {
-                    con.Close();
+                    if (dr.HasRows)
+                    {
+                        MessageBox.Show("NIF já existente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        Ref();
+                    }
+                    else
+                    {
+                        con.Close();
 
-                    con.Open();
+                        con.Open();
 
-                    SqlCommand sqlCmd = new SqlCommand("AddUtente", con);
-                    sqlCmd.CommandType = CommandType.StoredProcedure;
-                    sqlCmd.Parameters.Add("@Pn", SqlDbType.VarChar).Value = primeiroNomeTextBox.Text.Trim();
-                    sqlCmd.Parameters.Add("@Un", SqlDbType.VarChar).Value = ultimoNomeTextBox.Text.Trim();
-                    sqlCmd.Parameters.Add("@Genero", SqlDbType.VarChar).Value = generoTextBox.Text.Trim();
-                    sqlCmd.Parameters.Add("@Contacto", SqlDbType.VarChar).Value = contactocomboBox.Text + ' ' + contactoTextBox.Text.Trim();
-                    sqlCmd.Parameters.Add("@Email", SqlDbType.VarChar).Value = emailTextBox.Text.Trim();
-                    sqlCmd.Parameters.Add("@NIF", SqlDbType.Int).Value = txtContribuinte.Text.Trim();
-                    sqlCmd.ExecuteNonQuery();
+                        SqlCommand sqlCmd = new SqlCommand("AddUtente", con);
+                        sqlCmd.CommandType = CommandType.StoredProcedure;
+                        sqlCmd.Parameters.Add("@Pn", SqlDbType.VarChar).Value = primeiroNomeTextBox.Text.Trim();
+                        sqlCmd.Parameters.Add("@Un", SqlDbType.VarChar).Value = ultimoNomeTextBox.Text.Trim();
+                        sqlCmd.Parameters.Add("@Genero", SqlDbType.VarChar).Value = generoTextBox.Text.Trim();
+                        sqlCmd.Parameters.Add("@Contacto", SqlDbType.VarChar).Value = contactocomboBox.Text + ' ' + contactoTextBox.Text.Trim();
+                        sqlCmd.Parameters.Add("@Email", SqlDbType.VarChar).Value = emailTextBox.Text.Trim();
+                        sqlCmd.Parameters.Add("@NIF", SqlDbType.Int).Value = txtContribuinte.Text.Trim();
+                        sqlCmd.ExecuteNonQuery();
 
-                    con.Close();
+                        con.Close();
 
-                    MessageBox.Show("Registo Completo");
-                    Ref();
+                        MessageBox.Show("Registo Completo");
+                        Ref();
+                    }
                 }
-              }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro no Evento: Registar_Click", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         public void Ref()
         {
@@ -78,8 +82,8 @@ namespace WindowsFormsApp1
             contactoTextBox.Clear();
             emailTextBox.Clear();
             txtContribuinte.Clear();
-            generoTextBox.Items.Clear();
-            contactocomboBox.Items.Clear();
+            generoTextBox.SelectedIndex = -1;
+            contactocomboBox.SelectedIndex = -1;
         }
 
         private void Cancelar_Click_1(object sender, EventArgs e)

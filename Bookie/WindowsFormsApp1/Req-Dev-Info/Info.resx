@@ -133,7 +133,7 @@
         sBrUCS9WbcCXMeGsU0JlhOQPfs/nxRdBggDx77WR0wAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="Logo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAA0BJREFUeF7t
         ms9rE0EUxxdR0X9B/yG96L/gScQkatSDQpU92Jo0m22x6aFas7smzULEpqYiSCUaqBVai79Ai0URSbx4
@@ -153,7 +153,7 @@
         RK5CYII=
 </value>
   </data>
-  <data name="Atualiza.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="RefreshBD.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
         7QAAAO0Bq2+TWQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAALbSURBVFhHvZfP
@@ -214,7 +214,7 @@
         MGJi/gXjdO/L8uhBKQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="Utente.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="VerUtente.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABoAAAAgCAYAAAAMq2gFAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAAzhJREFUSEullslrU1EUxjM1Q6e0GWrIQBcWCtkouCkuLG50IzhARQuKqPUvMAiK

@@ -39,8 +39,8 @@ namespace WindowsFormsApp1
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.anoTextBox = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.Logo = new System.Windows.Forms.PictureBox();
+            this.Header = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.PT = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -50,7 +50,7 @@ namespace WindowsFormsApp1
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.linguagemTextBox = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,7 +60,7 @@ namespace WindowsFormsApp1
             this.nomelivroTextBox.Margin = new System.Windows.Forms.Padding(5);
             this.nomelivroTextBox.Name = "nomelivroTextBox";
             this.nomelivroTextBox.Size = new System.Drawing.Size(400, 29);
-            this.nomelivroTextBox.TabIndex = 1;
+            this.nomelivroTextBox.TabIndex = 4;
             // 
             // nomeautorTextBox
             // 
@@ -68,7 +68,7 @@ namespace WindowsFormsApp1
             this.nomeautorTextBox.Margin = new System.Windows.Forms.Padding(5);
             this.nomeautorTextBox.Name = "nomeautorTextBox";
             this.nomeautorTextBox.Size = new System.Drawing.Size(400, 29);
-            this.nomeautorTextBox.TabIndex = 2;
+            this.nomeautorTextBox.TabIndex = 6;
             // 
             // quantidadeTextBox
             // 
@@ -76,7 +76,7 @@ namespace WindowsFormsApp1
             this.quantidadeTextBox.Margin = new System.Windows.Forms.Padding(5);
             this.quantidadeTextBox.Name = "quantidadeTextBox";
             this.quantidadeTextBox.Size = new System.Drawing.Size(111, 29);
-            this.quantidadeTextBox.TabIndex = 6;
+            this.quantidadeTextBox.TabIndex = 14;
             this.quantidadeTextBox.TextChanged += new System.EventHandler(this.quantidadeTextBox_TextChanged);
             this.quantidadeTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.quantidadeTextBox_KeyPress);
             this.quantidadeTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.quantidadeTextBox_Validating);
@@ -86,11 +86,11 @@ namespace WindowsFormsApp1
             this.Inserir.BackColor = System.Drawing.Color.Chocolate;
             this.Inserir.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Inserir.ForeColor = System.Drawing.Color.White;
-            this.Inserir.Location = new System.Drawing.Point(404, 344);
+            this.Inserir.Location = new System.Drawing.Point(457, 370);
             this.Inserir.Margin = new System.Windows.Forms.Padding(5);
             this.Inserir.Name = "Inserir";
-            this.Inserir.Size = new System.Drawing.Size(125, 69);
-            this.Inserir.TabIndex = 4;
+            this.Inserir.Size = new System.Drawing.Size(125, 65);
+            this.Inserir.TabIndex = 15;
             this.Inserir.Text = "Inserir";
             this.Inserir.UseVisualStyleBackColor = false;
             this.Inserir.Click += new System.EventHandler(this.Inserir_Click);
@@ -103,7 +103,7 @@ namespace WindowsFormsApp1
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(133, 22);
-            this.label1.TabIndex = 7;
+            this.label1.TabIndex = 3;
             this.label1.Text = "Nome do Livro";
             // 
             // label2
@@ -114,7 +114,7 @@ namespace WindowsFormsApp1
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(139, 22);
-            this.label2.TabIndex = 8;
+            this.label2.TabIndex = 5;
             this.label2.Text = "Nome do Autor";
             // 
             // label3
@@ -125,7 +125,7 @@ namespace WindowsFormsApp1
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 22);
-            this.label3.TabIndex = 9;
+            this.label3.TabIndex = 11;
             this.label3.Text = "Ano";
             // 
             // label5
@@ -136,7 +136,7 @@ namespace WindowsFormsApp1
             this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(104, 22);
-            this.label5.TabIndex = 11;
+            this.label5.TabIndex = 13;
             this.label5.Text = "Quantidade";
             // 
             // anoTextBox
@@ -145,38 +145,38 @@ namespace WindowsFormsApp1
             this.anoTextBox.Margin = new System.Windows.Forms.Padding(5);
             this.anoTextBox.Name = "anoTextBox";
             this.anoTextBox.Size = new System.Drawing.Size(111, 29);
-            this.anoTextBox.TabIndex = 5;
+            this.anoTextBox.TabIndex = 12;
             this.anoTextBox.TextChanged += new System.EventHandler(this.anoTextBox_TextChanged);
             this.anoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.anoTextBox_KeyPress);
             this.anoTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.anoTextBox_Validating);
             // 
-            // pictureBox1
+            // Logo
             // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(86, 76);
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
+            this.Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Logo.Image = ((System.Drawing.Image)(resources.GetObject("Logo.Image")));
+            this.Logo.Location = new System.Drawing.Point(12, 12);
+            this.Logo.Name = "Logo";
+            this.Logo.Size = new System.Drawing.Size(86, 76);
+            this.Logo.TabIndex = 14;
+            this.Logo.TabStop = false;
             // 
-            // label6
+            // Header
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(104, 34);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(206, 39);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "Inserir Livros";
+            this.Header.AutoSize = true;
+            this.Header.Font = new System.Drawing.Font("Microsoft YaHei", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Header.ForeColor = System.Drawing.Color.White;
+            this.Header.Location = new System.Drawing.Point(104, 34);
+            this.Header.Name = "Header";
+            this.Header.Size = new System.Drawing.Size(206, 39);
+            this.Header.TabIndex = 1;
+            this.Header.Text = "Inserir Livros";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SandyBrown;
             this.panel1.Controls.Add(this.PT);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.Logo);
+            this.panel1.Controls.Add(this.Header);
             this.panel1.Location = new System.Drawing.Point(12, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(607, 109);
@@ -190,7 +190,7 @@ namespace WindowsFormsApp1
             this.PT.Location = new System.Drawing.Point(551, 39);
             this.PT.Name = "PT";
             this.PT.Size = new System.Drawing.Size(42, 39);
-            this.PT.TabIndex = 24;
+            this.PT.TabIndex = 2;
             this.PT.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.PT.UseVisualStyleBackColor = true;
             this.PT.Click += new System.EventHandler(this.PT_Click);
@@ -225,7 +225,7 @@ namespace WindowsFormsApp1
             this.categoriaTextBox.Margin = new System.Windows.Forms.Padding(5);
             this.categoriaTextBox.Name = "categoriaTextBox";
             this.categoriaTextBox.Size = new System.Drawing.Size(400, 29);
-            this.categoriaTextBox.TabIndex = 3;
+            this.categoriaTextBox.TabIndex = 8;
             // 
             // label7
             // 
@@ -235,7 +235,7 @@ namespace WindowsFormsApp1
             this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(89, 22);
-            this.label7.TabIndex = 21;
+            this.label7.TabIndex = 7;
             this.label7.Text = "Categoria";
             // 
             // label8
@@ -246,7 +246,7 @@ namespace WindowsFormsApp1
             this.label8.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(100, 22);
-            this.label8.TabIndex = 22;
+            this.label8.TabIndex = 9;
             this.label8.Text = "Linguagem";
             // 
             // linguagemTextBox
@@ -255,7 +255,7 @@ namespace WindowsFormsApp1
             this.linguagemTextBox.Margin = new System.Windows.Forms.Padding(5);
             this.linguagemTextBox.Name = "linguagemTextBox";
             this.linguagemTextBox.Size = new System.Drawing.Size(400, 29);
-            this.linguagemTextBox.TabIndex = 4;
+            this.linguagemTextBox.TabIndex = 10;
             // 
             // InserirLivro
             // 
@@ -287,7 +287,7 @@ namespace WindowsFormsApp1
             this.Name = "InserirLivro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "⠀⠀⠀⠀⠀⠀⠀⠀⠀";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -306,8 +306,8 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox anoTextBox;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox Logo;
+        private System.Windows.Forms.Label Header;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button PT;
         private System.Windows.Forms.Panel panel2;

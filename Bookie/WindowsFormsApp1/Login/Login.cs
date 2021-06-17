@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
@@ -21,13 +17,14 @@ namespace WindowsFormsApp1
         SqlDataReader reader;
 
         static public bool login = false;
+
         public Login()
         {
             InitializeComponent();
         }
 
  
-        private void loginButton_Click(object sender, EventArgs e)
+        private void BtLogin_Click(object sender, EventArgs e)
         {
             String result = "";
             try
@@ -66,21 +63,23 @@ namespace WindowsFormsApp1
                     con.Close();
                 }
 
-            }
-            catch (Exception)
-            { }
+                if (result == "1")
+                {
+                    this.Hide();
+                    var main = new Main();
+                    main.Show();
 
-            if (result == "1")
+
+                }
+            }
+            catch(Exception ex)
             {
-               this.Hide();
-               var main = new Main();
-               main.Show();
-
+              MessageBox.Show(ex.Message, "Erro no Evento: BtLogin_Click", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            
+
         }
 
-        private void sairButton_Click(object sender, EventArgs e)
+        private void BtSair_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
@@ -102,7 +101,6 @@ namespace WindowsFormsApp1
             passwordTextBox.UseSystemPasswordChar = true;
             usernameTextBox.Select();
         }
-
-        
+  
     }
 }

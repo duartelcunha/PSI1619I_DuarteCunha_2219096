@@ -32,28 +32,27 @@ namespace WindowsFormsApp1
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dev));
             this.panel1 = new System.Windows.Forms.Panel();
             this.Sair = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Header = new System.Windows.Forms.Label();
+            this.Logo = new System.Windows.Forms.PictureBox();
             this.Devolver = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.Atualizar = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
+            this.ProcInfo = new System.Windows.Forms.Label();
             this.Procurar = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
+            this.DataDev = new System.Windows.Forms.Label();
             this.datareturnDataPicker = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.NomeLivro = new System.Windows.Forms.Label();
+            this.DataReq = new System.Windows.Forms.Label();
             this.datareqTextBox = new System.Windows.Forms.TextBox();
             this.nomelivroTextBox = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.NIF = new System.Windows.Forms.Label();
             this.nifTextBox = new System.Windows.Forms.TextBox();
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             this.SuspendLayout();
@@ -62,8 +61,8 @@ namespace WindowsFormsApp1
             // 
             this.panel1.BackColor = System.Drawing.Color.SandyBrown;
             this.panel1.Controls.Add(this.Sair);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.Header);
+            this.panel1.Controls.Add(this.Logo);
             this.panel1.ForeColor = System.Drawing.Color.SandyBrown;
             this.panel1.Location = new System.Drawing.Point(13, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
@@ -85,27 +84,27 @@ namespace WindowsFormsApp1
             this.Sair.UseVisualStyleBackColor = true;
             this.Sair.Click += new System.EventHandler(this.Sair_Click);
             // 
-            // label6
+            // Header
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(87, 32);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(299, 39);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "Devolução de Livro";
+            this.Header.AutoSize = true;
+            this.Header.Font = new System.Drawing.Font("Microsoft YaHei", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Header.ForeColor = System.Drawing.Color.White;
+            this.Header.Location = new System.Drawing.Point(87, 32);
+            this.Header.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Header.Name = "Header";
+            this.Header.Size = new System.Drawing.Size(299, 39);
+            this.Header.TabIndex = 17;
+            this.Header.Text = "Devolução de Livro";
             // 
-            // pictureBox1
+            // Logo
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(16, 16);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(63, 67);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.Logo.Image = ((System.Drawing.Image)(resources.GetObject("Logo.Image")));
+            this.Logo.Location = new System.Drawing.Point(16, 16);
+            this.Logo.Margin = new System.Windows.Forms.Padding(4);
+            this.Logo.Name = "Logo";
+            this.Logo.Size = new System.Drawing.Size(63, 67);
+            this.Logo.TabIndex = 0;
+            this.Logo.TabStop = false;
             // 
             // Devolver
             // 
@@ -147,48 +146,33 @@ namespace WindowsFormsApp1
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.SandyBrown;
-            this.panel7.Controls.Add(this.Atualizar);
             this.panel7.Controls.Add(this.panel8);
-            this.panel7.Location = new System.Drawing.Point(58, 130);
+            this.panel7.Location = new System.Drawing.Point(56, 130);
             this.panel7.Margin = new System.Windows.Forms.Padding(4);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(230, 269);
+            this.panel7.Size = new System.Drawing.Size(230, 225);
             this.panel7.TabIndex = 23;
-            // 
-            // Atualizar
-            // 
-            this.Atualizar.BackColor = System.Drawing.Color.Chocolate;
-            this.Atualizar.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Atualizar.ForeColor = System.Drawing.Color.White;
-            this.Atualizar.Location = new System.Drawing.Point(60, 194);
-            this.Atualizar.Margin = new System.Windows.Forms.Padding(4);
-            this.Atualizar.Name = "Atualizar";
-            this.Atualizar.Size = new System.Drawing.Size(107, 58);
-            this.Atualizar.TabIndex = 8;
-            this.Atualizar.Text = "Atualizar";
-            this.Atualizar.UseVisualStyleBackColor = false;
-            this.Atualizar.Click += new System.EventHandler(this.Atualizar_Click);
             // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.White;
-            this.panel8.Controls.Add(this.label11);
+            this.panel8.Controls.Add(this.ProcInfo);
             this.panel8.Controls.Add(this.Procurar);
-            this.panel8.Location = new System.Drawing.Point(13, 10);
+            this.panel8.Location = new System.Drawing.Point(14, 17);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(205, 177);
+            this.panel8.Size = new System.Drawing.Size(202, 188);
             this.panel8.TabIndex = 6;
             // 
-            // label11
+            // ProcInfo
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(13, 132);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(177, 22);
-            this.label11.TabIndex = 7;
-            this.label11.Text = "Procurar Informação";
+            this.ProcInfo.AutoSize = true;
+            this.ProcInfo.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProcInfo.Location = new System.Drawing.Point(15, 155);
+            this.ProcInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ProcInfo.Name = "ProcInfo";
+            this.ProcInfo.Size = new System.Drawing.Size(177, 22);
+            this.ProcInfo.TabIndex = 7;
+            this.ProcInfo.Text = "Procurar Informação";
             // 
             // Procurar
             // 
@@ -197,21 +181,21 @@ namespace WindowsFormsApp1
             this.Procurar.Image = ((System.Drawing.Image)(resources.GetObject("Procurar.Image")));
             this.Procurar.Location = new System.Drawing.Point(0, 0);
             this.Procurar.Name = "Procurar";
-            this.Procurar.Size = new System.Drawing.Size(205, 129);
+            this.Procurar.Size = new System.Drawing.Size(202, 147);
             this.Procurar.TabIndex = 8;
             this.Procurar.UseVisualStyleBackColor = true;
             this.Procurar.Click += new System.EventHandler(this.Procurar_Click);
             // 
-            // label10
+            // DataDev
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft YaHei", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(324, 302);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(171, 24);
-            this.label10.TabIndex = 43;
-            this.label10.Text = "Data da Devolução";
+            this.DataDev.AutoSize = true;
+            this.DataDev.Font = new System.Drawing.Font("Microsoft YaHei", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataDev.Location = new System.Drawing.Point(324, 302);
+            this.DataDev.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.DataDev.Name = "DataDev";
+            this.DataDev.Size = new System.Drawing.Size(171, 24);
+            this.DataDev.TabIndex = 43;
+            this.DataDev.Text = "Data da Devolução";
             // 
             // datareturnDataPicker
             // 
@@ -221,28 +205,29 @@ namespace WindowsFormsApp1
             this.datareturnDataPicker.Name = "datareturnDataPicker";
             this.datareturnDataPicker.Size = new System.Drawing.Size(287, 29);
             this.datareturnDataPicker.TabIndex = 38;
+            this.datareturnDataPicker.Value = new System.DateTime(2021, 6, 17, 16, 18, 46, 0);
             // 
-            // label1
+            // NomeLivro
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(360, 197);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 24);
-            this.label1.TabIndex = 47;
-            this.label1.Text = "Nome do Livro";
+            this.NomeLivro.AutoSize = true;
+            this.NomeLivro.Font = new System.Drawing.Font("Microsoft YaHei", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NomeLivro.Location = new System.Drawing.Point(360, 197);
+            this.NomeLivro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.NomeLivro.Name = "NomeLivro";
+            this.NomeLivro.Size = new System.Drawing.Size(136, 24);
+            this.NomeLivro.TabIndex = 47;
+            this.NomeLivro.Text = "Nome do Livro";
             // 
-            // label2
+            // DataReq
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(323, 251);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(173, 24);
-            this.label2.TabIndex = 48;
-            this.label2.Text = "Data de Requisição";
+            this.DataReq.AutoSize = true;
+            this.DataReq.Font = new System.Drawing.Font("Microsoft YaHei", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataReq.Location = new System.Drawing.Point(323, 251);
+            this.DataReq.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.DataReq.Name = "DataReq";
+            this.DataReq.Size = new System.Drawing.Size(173, 24);
+            this.DataReq.TabIndex = 48;
+            this.DataReq.Text = "Data de Requisição";
             // 
             // datareqTextBox
             // 
@@ -262,16 +247,16 @@ namespace WindowsFormsApp1
             this.nomelivroTextBox.Size = new System.Drawing.Size(289, 29);
             this.nomelivroTextBox.TabIndex = 50;
             // 
-            // label3
+            // NIF
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(457, 149);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 24);
-            this.label3.TabIndex = 51;
-            this.label3.Text = "NIF";
+            this.NIF.AutoSize = true;
+            this.NIF.Font = new System.Drawing.Font("Microsoft YaHei", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NIF.Location = new System.Drawing.Point(457, 149);
+            this.NIF.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.NIF.Name = "NIF";
+            this.NIF.Size = new System.Drawing.Size(39, 24);
+            this.NIF.TabIndex = 51;
+            this.NIF.Text = "NIF";
             // 
             // nifTextBox
             // 
@@ -302,12 +287,12 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.Devolver);
             this.Controls.Add(this.nifTextBox);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.NIF);
             this.Controls.Add(this.nomelivroTextBox);
             this.Controls.Add(this.datareqTextBox);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.DataReq);
+            this.Controls.Add(this.NomeLivro);
+            this.Controls.Add(this.DataDev);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
@@ -322,7 +307,7 @@ namespace WindowsFormsApp1
             this.Load += new System.EventHandler(this.Dev_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
@@ -335,24 +320,23 @@ namespace WindowsFormsApp1
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button Sair;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label Header;
+        private System.Windows.Forms.PictureBox Logo;
         private System.Windows.Forms.Button Devolver;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label ProcInfo;
         private System.Windows.Forms.Button Procurar;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label DataDev;
         private System.Windows.Forms.DateTimePicker datareturnDataPicker;
-        private System.Windows.Forms.Button Atualizar;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label NomeLivro;
+        private System.Windows.Forms.Label DataReq;
         public System.Windows.Forms.TextBox datareqTextBox;
         public System.Windows.Forms.TextBox nomelivroTextBox;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label NIF;
         public System.Windows.Forms.TextBox nifTextBox;
         public System.Windows.Forms.TextBox idTextBox;
     }

@@ -113,7 +113,7 @@ namespace WindowsFormsApp1
             this.verUtilizadoresToolStripMenuItem.Name = "verUtilizadoresToolStripMenuItem";
             this.verUtilizadoresToolStripMenuItem.Size = new System.Drawing.Size(215, 30);
             this.verUtilizadoresToolStripMenuItem.Text = "Ver Utente";
-            this.verUtilizadoresToolStripMenuItem.Click += new System.EventHandler(this.verUtilizadoresToolStripMenuItem_Click);
+            this.verUtilizadoresToolStripMenuItem.Click += new System.EventHandler(this.verUtenteToolStripMenuItem_Click);
             // 
             // inserirUtilizadoresToolStripMenuItem
             // 
@@ -169,7 +169,7 @@ namespace WindowsFormsApp1
             this.retornarLivroToolStripMenuItem.Name = "retornarLivroToolStripMenuItem";
             this.retornarLivroToolStripMenuItem.Size = new System.Drawing.Size(256, 68);
             this.retornarLivroToolStripMenuItem.Text = "Devolução";
-            this.retornarLivroToolStripMenuItem.Click += new System.EventHandler(this.retornarLivroToolStripMenuItem_Click);
+            this.retornarLivroToolStripMenuItem.Click += new System.EventHandler(this.devolverLivroToolStripMenuItem_Click);
             // 
             // detalhesToolStripMenuItem
             // 
@@ -180,7 +180,7 @@ namespace WindowsFormsApp1
             this.detalhesToolStripMenuItem.Name = "detalhesToolStripMenuItem";
             this.detalhesToolStripMenuItem.Size = new System.Drawing.Size(256, 68);
             this.detalhesToolStripMenuItem.Text = "Informações";
-            this.detalhesToolStripMenuItem.Click += new System.EventHandler(this.detalhesToolStripMenuItem_Click);
+            this.detalhesToolStripMenuItem.Click += new System.EventHandler(this.infoToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 

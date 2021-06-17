@@ -30,112 +30,114 @@ namespace WindowsFormsApp1
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.Username = new System.Windows.Forms.Label();
+            this.Logo = new System.Windows.Forms.PictureBox();
+            this.Linha = new System.Windows.Forms.PictureBox();
+            this.Password = new System.Windows.Forms.Label();
+            this.LogoUsername = new System.Windows.Forms.PictureBox();
+            this.LogoPassword = new System.Windows.Forms.PictureBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
-            this.loginButton = new System.Windows.Forms.Button();
+            this.BtLogin = new System.Windows.Forms.Button();
             this.MPCheckBox = new System.Windows.Forms.CheckBox();
-            this.sairButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.BtSair = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Linha)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoUsername)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoPassword)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // Username
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(44, 198);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 22);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Username";
+            this.Username.AutoSize = true;
+            this.Username.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Username.Location = new System.Drawing.Point(44, 198);
+            this.Username.Name = "Username";
+            this.Username.Size = new System.Drawing.Size(90, 22);
+            this.Username.TabIndex = 0;
+            this.Username.Text = "Username";
             // 
-            // pictureBox1
+            // Logo
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-76, -55);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(428, 251);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.Logo.Image = ((System.Drawing.Image)(resources.GetObject("Logo.Image")));
+            this.Logo.Location = new System.Drawing.Point(-76, -55);
+            this.Logo.Name = "Logo";
+            this.Logo.Size = new System.Drawing.Size(428, 251);
+            this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Logo.TabIndex = 1;
+            this.Logo.TabStop = false;
             // 
-            // pictureBox2
+            // Linha
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(-66, 123);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(418, 50);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
+            this.Linha.Image = ((System.Drawing.Image)(resources.GetObject("Linha.Image")));
+            this.Linha.Location = new System.Drawing.Point(-66, 123);
+            this.Linha.Name = "Linha";
+            this.Linha.Size = new System.Drawing.Size(418, 50);
+            this.Linha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Linha.TabIndex = 2;
+            this.Linha.TabStop = false;
             // 
-            // label2
+            // Password
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(45, 255);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 22);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Password";
+            this.Password.AutoSize = true;
+            this.Password.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Password.Location = new System.Drawing.Point(45, 255);
+            this.Password.Name = "Password";
+            this.Password.Size = new System.Drawing.Size(89, 22);
+            this.Password.TabIndex = 3;
+            this.Password.Text = "Password";
             // 
-            // pictureBox4
+            // LogoUsername
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(12, 189);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(29, 30);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 5;
-            this.pictureBox4.TabStop = false;
+            this.LogoUsername.Image = ((System.Drawing.Image)(resources.GetObject("LogoUsername.Image")));
+            this.LogoUsername.Location = new System.Drawing.Point(12, 193);
+            this.LogoUsername.Name = "LogoUsername";
+            this.LogoUsername.Size = new System.Drawing.Size(29, 30);
+            this.LogoUsername.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.LogoUsername.TabIndex = 5;
+            this.LogoUsername.TabStop = false;
             // 
-            // pictureBox3
+            // LogoPassword
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(12, 249);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(29, 30);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 6;
-            this.pictureBox3.TabStop = false;
+            this.LogoPassword.Image = ((System.Drawing.Image)(resources.GetObject("LogoPassword.Image")));
+            this.LogoPassword.Location = new System.Drawing.Point(12, 250);
+            this.LogoPassword.Name = "LogoPassword";
+            this.LogoPassword.Size = new System.Drawing.Size(29, 30);
+            this.LogoPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.LogoPassword.TabIndex = 6;
+            this.LogoPassword.TabStop = false;
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordTextBox.Location = new System.Drawing.Point(138, 254);
+            this.passwordTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordTextBox.Location = new System.Drawing.Point(138, 253);
             this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(146, 25);
+            this.passwordTextBox.Size = new System.Drawing.Size(146, 27);
             this.passwordTextBox.TabIndex = 7;
             // 
             // usernameTextBox
             // 
-            this.usernameTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameTextBox.Location = new System.Drawing.Point(138, 197);
+            this.usernameTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameTextBox.Location = new System.Drawing.Point(138, 196);
             this.usernameTextBox.Name = "usernameTextBox";
-            this.usernameTextBox.Size = new System.Drawing.Size(146, 25);
+            this.usernameTextBox.Size = new System.Drawing.Size(146, 27);
             this.usernameTextBox.TabIndex = 8;
             // 
-            // loginButton
+            // BtLogin
             // 
-            this.loginButton.BackColor = System.Drawing.Color.Chocolate;
-            this.loginButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.loginButton.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginButton.ForeColor = System.Drawing.Color.White;
-            this.loginButton.Location = new System.Drawing.Point(163, 344);
-            this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(111, 54);
-            this.loginButton.TabIndex = 9;
-            this.loginButton.Text = "Login";
-            this.loginButton.UseVisualStyleBackColor = false;
-            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+            this.BtLogin.BackColor = System.Drawing.Color.Chocolate;
+            this.BtLogin.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BtLogin.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtLogin.ForeColor = System.Drawing.Color.White;
+            this.BtLogin.Location = new System.Drawing.Point(163, 344);
+            this.BtLogin.Name = "BtLogin";
+            this.BtLogin.Size = new System.Drawing.Size(111, 54);
+            this.BtLogin.TabIndex = 9;
+            this.BtLogin.Text = "Login";
+            this.BtLogin.UseVisualStyleBackColor = false;
+            this.BtLogin.Click += new System.EventHandler(this.BtLogin_Click);
             // 
             // MPCheckBox
             // 
@@ -149,19 +151,39 @@ namespace WindowsFormsApp1
             this.MPCheckBox.UseVisualStyleBackColor = true;
             this.MPCheckBox.CheckedChanged += new System.EventHandler(this.MPCheckBox_CheckedChanged);
             // 
-            // sairButton
+            // BtSair
             // 
-            this.sairButton.BackColor = System.Drawing.Color.Chocolate;
-            this.sairButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.sairButton.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sairButton.ForeColor = System.Drawing.Color.White;
-            this.sairButton.Location = new System.Drawing.Point(23, 344);
-            this.sairButton.Name = "sairButton";
-            this.sairButton.Size = new System.Drawing.Size(111, 54);
-            this.sairButton.TabIndex = 12;
-            this.sairButton.Text = "Sair";
-            this.sairButton.UseVisualStyleBackColor = false;
-            this.sairButton.Click += new System.EventHandler(this.sairButton_Click);
+            this.BtSair.BackColor = System.Drawing.Color.Chocolate;
+            this.BtSair.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BtSair.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtSair.ForeColor = System.Drawing.Color.White;
+            this.BtSair.Location = new System.Drawing.Point(23, 344);
+            this.BtSair.Name = "BtSair";
+            this.BtSair.Size = new System.Drawing.Size(111, 54);
+            this.BtSair.TabIndex = 12;
+            this.BtSair.Text = "Sair";
+            this.BtSair.UseVisualStyleBackColor = false;
+            this.BtSair.Click += new System.EventHandler(this.BtSair_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(45, 426);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(96, 16);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Username: admin";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft YaHei Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(151, 426);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(84, 16);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Password: 1234";
             // 
             // Login
             // 
@@ -170,17 +192,19 @@ namespace WindowsFormsApp1
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(296, 441);
             this.ControlBox = false;
-            this.Controls.Add(this.sairButton);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.BtSair);
             this.Controls.Add(this.MPCheckBox);
-            this.Controls.Add(this.loginButton);
+            this.Controls.Add(this.BtLogin);
             this.Controls.Add(this.usernameTextBox);
             this.Controls.Add(this.passwordTextBox);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.LogoPassword);
+            this.Controls.Add(this.LogoUsername);
+            this.Controls.Add(this.Password);
+            this.Controls.Add(this.Linha);
+            this.Controls.Add(this.Logo);
+            this.Controls.Add(this.Username);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.Name = "Login";
@@ -188,10 +212,10 @@ namespace WindowsFormsApp1
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Login_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Linha)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoUsername)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoPassword)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,16 +223,18 @@ namespace WindowsFormsApp1
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label Username;
+        private System.Windows.Forms.PictureBox Logo;
+        private System.Windows.Forms.PictureBox Linha;
+        private System.Windows.Forms.Label Password;
+        private System.Windows.Forms.PictureBox LogoUsername;
+        private System.Windows.Forms.PictureBox LogoPassword;
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.TextBox usernameTextBox;
-        private System.Windows.Forms.Button loginButton;
+        private System.Windows.Forms.Button BtLogin;
         private System.Windows.Forms.CheckBox MPCheckBox;
-        private System.Windows.Forms.Button sairButton;
+        private System.Windows.Forms.Button BtSair;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
