@@ -41,8 +41,6 @@ namespace WindowsFormsApp1
             this.BtLogin = new System.Windows.Forms.Button();
             this.MPCheckBox = new System.Windows.Forms.CheckBox();
             this.BtSair = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Linha)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoUsername)).BeginInit();
@@ -165,26 +163,6 @@ namespace WindowsFormsApp1
             this.BtSair.UseVisualStyleBackColor = false;
             this.BtSair.Click += new System.EventHandler(this.BtSair_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(45, 426);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 16);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Username: admin";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft YaHei Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(151, 426);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 16);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Password: 1234";
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -192,8 +170,6 @@ namespace WindowsFormsApp1
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(296, 441);
             this.ControlBox = false;
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.BtSair);
             this.Controls.Add(this.MPCheckBox);
             this.Controls.Add(this.BtLogin);
@@ -234,7 +210,5 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button BtLogin;
         private System.Windows.Forms.CheckBox MPCheckBox;
         private System.Windows.Forms.Button BtSair;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
     }
 }

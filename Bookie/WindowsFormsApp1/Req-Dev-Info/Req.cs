@@ -133,7 +133,8 @@ namespace WindowsFormsApp1
                                                 iTextSharp.text.Font font2 = new iTextSharp.text.Font(bf2, 14, iTextSharp.text.Font.NORMAL);
                                                 PdfWriter.GetInstance(doc, new FileStream(sfd.FileName, FileMode.Create));
                                                 doc.Open();
-                                                doc.Add(new iTextSharp.text.Paragraph("BOOKIE\n\n", font));
+                                                doc.Add(new iTextSharp.text.Paragraph("             BOOKIE", font));
+                                                doc.Add(new iTextSharp.text.Paragraph("_________________________________\n\n"));
                                                 doc.Add(new iTextSharp.text.Paragraph($"NIF: {this.nifTextBox.Text.Trim()}\n\n", font2));
                                                 doc.Add(new iTextSharp.text.Paragraph($"Nome: {this.nomecompletoTextBox.Text.Trim()}\n\n", font2));
                                                 doc.Add(new iTextSharp.text.Paragraph($"Livro: {this.nomelivroComboBox.Text.Trim()}\n\n", font2));
