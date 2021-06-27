@@ -122,7 +122,7 @@ namespace WindowsFormsApp1
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.SandyBrown;
-            this.panel4.Location = new System.Drawing.Point(-4, 432);
+            this.panel4.Location = new System.Drawing.Point(12, 432);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(832, 33);
             this.panel4.TabIndex = 46;
